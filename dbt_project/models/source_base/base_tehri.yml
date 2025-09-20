@@ -2,7 +2,7 @@ version: 2
 
 models:
   - name: base_tehri
-    description: Raw data from survey in Tehri, collected by Dr Garima Gupta. Each row represents the survey responses of a single respondent.
+    description: Raw data from survey in Tehri, collected by Dr Garima Gupta. Each row represents the survey responses of a single respondent. This step loads the data into the pipeline and establishes an identifier for each respondent. See `raw_data/tehri_cols.md` for details on all questions included in this dataset.
     data_tests:
       - dbt_utils.unique_combination_of_columns:
           arguments:

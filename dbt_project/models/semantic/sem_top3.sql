@@ -6,14 +6,14 @@ tehri_rankings as (
     id_respondent,
     rank,
     sdg_tehri
-  from {{ ref('se_top3_tehri') }}
+  from {{ ref('sem_top3_tehri_long') }}
 ),
 arunachal_rankings as (
   select 
     id_respondent,
     rank,
     sdg_arunachal
-  from {{ ref('se_top3_arunachal') }}
+  from {{ ref('sem_top3_arunachal_long') }}
 ),
 labelled as (
   select 

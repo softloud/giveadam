@@ -2,6 +2,6 @@ version: 2
 
 seeds: 
   - name: seed_tehri
-    description: All tehri questions.
+    description: All tehri questions. These data are a Kobo Toolbox export and include all questions from tehri survey.
   - name: seed_arunachal
-    description: Only top 5 ranking and age and gender in these data. 
+    description: Only top 5 ranking and age and gender in these data, an extraction from the full arunachal dataset which is not available due to institutional restrictions.

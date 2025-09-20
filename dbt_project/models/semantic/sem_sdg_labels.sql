@@ -1,6 +1,6 @@
 with tehri_sdg as (
   select id_respondent, sdg_tehri
-  from {{ ref('se_top3_tehri') }}
+  from {{ ref('sem_top3_tehri_long') }}
 ),
 sdg_distinct as (
   select distinct sdg_tehri from tehri_sdg

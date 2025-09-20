@@ -2,21 +2,26 @@ version: 2
 
 models:
   - name: se_top3_tehri
-    description: "Each row represents a respondent's ranking of their top 3 UN Sustainable Development Goals (SDGs) for Tehri, India."
+    description: "Each row represents a respondent's ranking of their top 3 UN Sustainable Development Goals (SDGs) for Tehri, India. These data are extracted in wide format from the original survey data preserving labelling for data validation."
     data_tests:
       - dbt_utils.unique_combination_of_columns:
           arguments:
             combination_of_columns:
               - id_respondent
-              - rank
     columns:
       - name: id_respondent
-        description: "Unique identifier for each respondent"
-        tests:
-          - not_null
-      - name: rank
+        description: "Unique identifier for each respondent."
         data_tests:
-          - accepted_values:
-              values: [1, 2, 3]
-      - name: sdg_tehri
-        description: 'UN SDG id as collected in the Tehri dataset.'
+          - not_null
+      - name: ranked_sdg_first
+        description: "The respondent's first choice of SDG."
+        data_tests:
+          - not_null
+      - name: ranked_sdg_second
+        data_tests:
+          - not_null
+        description: "The respondent's second choice of SDG."
+      - name: ranked_sdg_third
+        description: "The respondent's third choice of SDG."
+        data_tests:
+          - not_null

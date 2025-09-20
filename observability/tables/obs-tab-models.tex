@@ -16,16 +16,18 @@ Model & Description\\
 \hspace{1em}\cellcolor{gray!10}{sem\_respondents} & \cellcolor{gray!10}{NA}\\
 \hspace{1em}sem\_sdg\_labels & NA\\
 \hspace{1em}\cellcolor{gray!10}{sem\_top3} & \cellcolor{gray!10}{NA}\\
+\hspace{1em}sem\_top3\_arunachal\_long & Long format of top 3 SDG rankings from Arunachal Pradesh respondents.\\
+\hspace{1em}\cellcolor{gray!10}{sem\_top3\_tehri\_long} & \cellcolor{gray!10}{Each row represents a respondent's ranking of their top 3 UN Sustainable Development Goals (SDGs) for Tehri, India.}\\
 \addlinespace[0.3em]
 \multicolumn{2}{l}{\textbf{Source Entity Models}}\\
 \hspace{1em}se\_respondents\_arunachal & Each row represents a respondent from Arunachal Pradesh.\\
 \hspace{1em}\cellcolor{gray!10}{se\_respondents\_tehri} & \cellcolor{gray!10}{Each row represents a respondent from Tehri.}\\
-\hspace{1em}se\_top3\_arunachal & Each row represents a respondent's ranking of their top 3 UN Sustainable Development Goals (SDGs) for Arunachal Pradesh, India.\\
-\hspace{1em}\cellcolor{gray!10}{se\_top3\_tehri} & \cellcolor{gray!10}{Each row represents a respondent's ranking of their top 3 UN Sustainable Development Goals (SDGs) for Tehri, India.}\\
+\hspace{1em}se\_top3\_arunachal & Each row represents a respondent's ranking top 3 UN Sustainable Development Goals (SDGs) for Arunachal Pradesh, India. These data are extracted in wide format from the original survey data preserving labelling for data validation.\\
+\hspace{1em}\cellcolor{gray!10}{se\_top3\_tehri} & \cellcolor{gray!10}{Each row represents a respondent's ranking of their top 3 UN Sustainable Development Goals (SDGs) for Tehri, India. These data are extracted in wide format from the original survey data preserving labelling for data validation.}\\
 \addlinespace[0.3em]
 \multicolumn{2}{l}{\textbf{Base Models}}\\
-\hspace{1em}base\_arunachal & Raw data from survey in Arunachal Pradesh, collected by Dr Garima Gupta. Each row represents the survey responses of a single respondent.\\
-\hspace{1em}\cellcolor{gray!10}{base\_tehri} & \cellcolor{gray!10}{Raw data from survey in Tehri, collected by Dr Garima Gupta. Each row represents the survey responses of a single respondent.}\\
+\hspace{1em}base\_arunachal & Raw data from survey in Arunachal Pradesh, collected by Dr Garima Gupta. Each row represents the survey responses of a single respondent. This step loads the data into the pipeline and establishes an identifier for each respondent. Only top 5 ranking and age and gender in these data, an extraction from the full arunachal dataset which is not available due to institutional restrictions. For this pipeline the top 3 rankings are extracted for analysis.\\
+\hspace{1em}\cellcolor{gray!10}{base\_tehri} & \cellcolor{gray!10}{Raw data from survey in Tehri, collected by Dr Garima Gupta. Each row represents the survey responses of a single respondent. This step loads the data into the pipeline and establishes an identifier for each respondent. See `raw\_data/tehri\_cols.md` for details on all questions included in this dataset.}\\
 \bottomrule
 \end{tabular}
 \end{table}

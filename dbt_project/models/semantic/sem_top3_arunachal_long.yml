@@ -1,0 +1,22 @@
+version: 2
+
+models:
+  - name: sem_top3_arunachal_long
+    description: "Long format of top 3 SDG rankings from Arunachal Pradesh respondents."
+    data_tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns:
+              - id_respondent
+              - rank
+    columns:
+      - name: id_respondent
+        description: "Unique identifier for each respondent"
+        tests:
+          - not_null
+      - name: rank
+        data_tests:
+          - accepted_values:
+              values: [1, 2, 3]
+      - name: sdg_arunachal
+        description: 'UN SDG id as collected in the Arunachal dataset.'
