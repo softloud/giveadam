@@ -1,6 +1,6 @@
 # Data Directory
 
-This directory contains analysis-ready datasets derived from survey data on the social impacts of dams in North India. Data were collected by Dr. Garima Gupta and curated by Charles T. Gray using open source data pipeline tools.
+This directory contains analysis-ready datasets derived from survey data on the social impacts of dams in North India. Data were collected by Garima Gupta and curated by Charles T. Gray using open source data pipeline tools.
 
 ## Datasets
 
@@ -44,7 +44,7 @@ This directory contains analysis-ready datasets derived from survey data on the 
 ### Source Data
 - **Tehri Survey:** Community impact assessment in Tehri Dam region, Uttarakhand
 - **Arunachal Pradesh Survey:** SDG preference research in Arunachal Pradesh
-- **Collector:** Dr. Garima Gupta
+- **Collector:** Garima Gupta
 - **Raw Data Location:** [`raw_data/`](../raw_data/)
 
 ### Processing Pipeline
