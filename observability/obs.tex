@@ -8,33 +8,35 @@
 \usepackage{array}
 \usepackage{longtable}
 \usepackage{graphicx}
+\usepackage{url}
 \usepackage[left=0.25in, right=0.25in, top=0.5in, bottom=0.5in]{geometry}
 
 % title
-\title{Data methodology and observability}
+\title{Semantic data pipeline methodology and observability: giveadam project}
 \author{Charles T. Gray}
 
 \begin{document}
 
 \maketitle
 
-\tableofcontents
 
 
 \begin{abstract}
-Validation and observability of prioritisation of UN SDGs represented in two surveys facilitated and collected by Garima Gupta. Participants in one survey from the North Indian regions Tehri and the other survey participants from Arunachal Pradesh. 
+This document presents a novel semantic layering methodology for research data pipeline design, demonstrated through analysis of UN Sustainable Development Goal (SDG) priorities from dam-affected communities in North India. Survey data was collected by Garima Gupta from residents of Tehri (where a dam was constructed 20 years ago) and Arunachal Pradesh (where a dam is under development).
 
-This document outlines the data methodology of the github repository and observability framework for data governance. 
+The central methodological contribution is a semantically-structured approach to data transformation that extends dbt's engineering-focused patterns to prioritize research interpretability and stakeholder communication. Unlike standard dbt implementations that emphasize technical efficiency, this semantic layering methodology explicitly preserves research context, makes harmonization decisions transparent, and maintains conceptual clarity throughout the data pipeline.
 
-This project employs a structured approach to data management, ensuring data quality, integrity, and usability through various layers of data observability. The observability framework is designed to monitor and validate data at each stage of the pipeline, providing transparency, accountability, and extensiblity in the data handling processes.
+The semantic layer architecture consists of four conceptually distinct stages: source base (raw data cleaning), source entities (region-specific preservation), semantic models (cross-source harmonization), and analytic models (research-ready datasets). This approach addresses the critical gap between technical data engineering practices and research methodology requirements, enabling automated observability while maintaining scholarly rigor.
 
-This document and the associated data are curated for submission to the beta rollout of the Frontiers FAIR data management platform.
+This semantic layering methodology offers a replicable framework for research data management that bridges the divide between engineering efficiency and research transparency, with applications across all domains requiring multi-source data integration and stakeholder communication.
 
 \end{abstract}
 
+\tableofcontents
+
 \section{What are these data?}
 
-The data in this project aggregates two region-based surveys, with responses from participants in Tehri and Arunachal Pradesh, focusing on their ranked top three priorities of the United Nations Sustainable Development Goals (UN SDGs). The data was collected by Garima Gupta by surveying residents of the two regions in Hindi. The data is stored in the \texttt{analysis\_data} directory. This project was created by Charles T. Gray  to aggregate survey responses across regions to investigate the following question.
+The data in this project aggregates two region-based surveys, with responses from participants in Tehri and Arunachal Pradesh, focusing on their ranked top three priorities of the United Nations Sustainable Development Goals (UN SDGs). The data was collected by Garima Gupta by surveying residents of the two regions in Hindi. The data is stored in the \texttt{data/} directory of the giveadam repository (see Section~\ref{sec:repository-arch} for complete repository structure). This project was created by Charles T. Gray to aggregate survey responses across regions using a novel semantic layering methodology (detailed in Section~\ref{sec:semantic-methodology}) to investigate the following question.
 
 \begin{quote}
   \textit{What are the differences in SDG priorities between residents of Tehri, where a dam was constructed 20 years ago for hydroelectric power, and Arunachal Pradesh, where a dam is currently being developed?}
@@ -48,31 +50,113 @@ Figure \ref{fig:top3-treemap} shows a treemap of the top 3 UN SDG priorities fro
   \caption{\label{fig:top3-treemap} Treemap of top 3 UN SDG priorities from survey respondents in Tehri (dam constructed 20 years ago) and Arunachal Pradesh (dam under development), North India. Each rectangle represents a specific UN SDG, with its size proportional to the number of respondents who ranked it among their top three priorities. The treemap visually highlights the most and least prioritized SDGs in each region, providing insights into regional differences in development priorities.}
 \end{figure}
 
-By structuring the data in tidy format (one row per ranking by one respondent), 
+By structuring the data in tidy format (one row per ranking by one respondent), the dataset enables flexible analysis across multiple dimensions of respondent characteristics and preferences. 
 
-\section{This data is FAIR}
+\section{Semantic data pipeline methodology}
+\label{sec:semantic-methodology}
 
-\subsection{Findable}
+The core methodological innovation of the giveadam project is a semantic layering approach that reconceptualizes data transformation pipelines for research contexts. This methodology addresses a fundamental limitation in current data engineering practices: the tension between technical efficiency and research interpretability within the modern data stack paradigm \cite{modern_data_stack_airbyte}.
 
-CSV files respresenting respondent metadata and top 3 priorities of UN SDGs are found in \texttt{analysis\_data}. The data are described in the \texttt{data\_dictionary.md} file. The data are version controlled in the github repository \texttt{sig\_gg}.
+\subsection{The semantic layering paradigm}
+\label{subsec:semantic-paradigm}
 
-\subsection{Accessible}
+Traditional data engineering prioritizes performance optimization and code maintainability, often at the expense of conceptual clarity for non-technical stakeholders. The semantic layering methodology inverts this priority structure, organizing transformations around research concepts rather than technical convenience. This approach ensures that:
 
-The data are provided in tidy format with descriptions, columns, and validations detailed in DBT. Column names were chosen for interpreability. 
+\begin{enumerate}
+    \item \textbf{Research context is preserved} throughout the transformation pipeline
+    \item \textbf{Harmonization decisions are explicit} and auditable by domain experts  
+    \item \textbf{Stakeholder communication} uses conceptual rather than technical terminology
+    \item \textbf{Methodological transparency} is maintained without sacrificing automation
+\end{enumerate}
 
-\subsubsection{Responses to top 3 priorities of UN SDGs}
+\subsection{Repository architecture supporting semantic design}
+\label{sec:repository-arch}
 
-These responses are enriched with respondent metadata that corresponds to the respondent dataset also provided. 
+The giveadam repository is organized into distinct functional areas:
+
 \begin{itemize}
-  \item \textbf{response\_id:} Unique identifier for each response.
-  \item \textbf{respondent\_id:} Unique identifier for each respondent
-  \item \textbf{region:} Region where the data was collected (Tehri or Arunachal Pradesh).
-  \item \textbf{sdg\_rank:} Rank of the UN SDG priority (1, 2, or 3).
-  \item \textbf{sdg\_number:} Unique identifier for each UN SDG (1-17).
-  \item \textbf{sdg\_label:} UN SDG as text label.
-  \item \textbf{age:} Age of the respondent.
-  \item \textbf{gender:} Gender of the respondent.
-  \item \textbf{displacement\_status:} Displacement status of the respondent.
+    \item \textbf{raw\_data/} — Original survey data files as provided by Garima Gupta
+    \item \textbf{data/} — Published, analysis-ready datasets (pipeline outputs)
+    \item \textbf{dbt\_project/} — Data transformation pipeline with semantic layering
+    \item \textbf{observability/} — Automated methodology documentation and quality reports
+    \item \textbf{scripts/} — Data preparation and analysis scripts (R, Python)
+    \item \textbf{vis-scripts/} — Visualization generation scripts
+\end{itemize}
+
+\subsection{Core innovation: Semantic transformation architecture}
+\label{subsec:core-innovation}
+
+The central methodological contribution lies in reimagining data transformation layers as conceptual research stages rather than technical processing steps. Standard dbt implementations use staging → intermediate → marts layers optimized for engineering workflows \cite{dbt_docs_structure}. The semantic layering methodology introduces a fundamentally different paradigm:
+
+\begin{itemize}
+    \item \textbf{source\_base/} — Raw data integrity and initial cleaning
+    \item \textbf{source\_entities/} — Context-preserving regional data entities
+    \item \textbf{semantic/} — Explicit cross-source harmonization with documented assumptions
+    \item \textbf{analytic/} — Research-question-specific datasets ready for analysis
+\end{itemize}
+
+\subsubsection{Why semantic layering transforms research data management}
+\label{subsubsec:semantic-benefits}
+
+Each semantic layer addresses specific research methodology requirements:
+
+\begin{enumerate}
+    \item \textbf{Context preservation} — Source entities maintain regional survey characteristics, preventing premature harmonization that obscures methodological differences
+    \item \textbf{Transparent harmonization} — Semantic models explicitly document how different data sources are reconciled (e.g., SDG labeling differences between regions)
+    \item \textbf{Assumption visibility} — Every transformation decision is captured and testable, enabling methodological scrutiny
+    \item \textbf{Stakeholder accessibility} — Layer terminology reflects research concepts (semantic, analytic) rather than engineering jargon (staging, marts)
+    \item \textbf{Iterative extensibility} — New research questions can be addressed by extending the analytic layer without disrupting upstream logic
+\end{enumerate}
+
+This approach resolves the fundamental tension between automated data processing and research transparency, enabling both computational efficiency and methodological rigor.
+
+\subsection{Automated observability for research transparency}
+
+The observability framework generates this methodology documentation automatically from pipeline artifacts, ensuring that:
+\begin{itemize}
+    \item Documentation remains synchronized with actual transformations
+    \item All data quality assumptions are explicitly validated and reported
+    \item Research methodology is fully reproducible from code
+    \item Stakeholders can verify data processing decisions without technical expertise
+\end{itemize}
+
+The complete automated documentation process includes both methodology generation and data publication. The validation tables in this document are generated through the automated process detailed in Section~\ref{subsec:obs-table-gen}. Additionally, \texttt{scripts/publish\_data.R} extracts the final analytic models from the dbt pipeline and exports them as CSV files to the \texttt{data/} directory for publication and external use.
+
+The validation tables presented in this document are high-level summaries. Engineers or researchers requiring deeper pipeline investigation can use \texttt{dbt docs generate} and \texttt{dbt docs serve} for an interactive exploration of the complete data lineage, including detailed model specifications, column-level lineage, and test results.
+
+\section{FAIR principles implementation}
+\label{sec:fair}
+
+The giveadam project implements all four FAIR principles \cite{wilkinson2016fair} through its semantic layering methodology and automated observability framework detailed in Section~\ref{sec:semantic-methodology}. This section demonstrates how the semantic approach enhances traditional FAIR compliance by making research processes themselves findable, accessible, interoperable, and reusable.
+
+\subsection{Findable: Discovery and identification}
+
+\textbf{Rich metadata and identifiers:} The datasets are published with comprehensive metadata in \texttt{data/README.md}, including detailed column descriptions, data provenance, and research context. Each dataset has unique identifiers (\texttt{respondents.csv}, \texttt{SDG\_rankings.csv}) and is version-controlled in the GitHub repository \texttt{giveadam} at \texttt{https://github.com/softloud/giveadam}.
+
+\textbf{Semantic documentation:} Unlike standard data repositories, the semantic layering approach provides findable documentation at multiple conceptual levels. Researchers can locate relevant transformations by research concept (semantic models in Table~\ref{tab:dbt_models}) rather than technical implementation details. The four-layer architecture shown in Figure~\ref{fig:dbtdag} enables discovery through conceptual navigation.
+
+\textbf{Automated cataloging:} The observability framework generates searchable metadata from pipeline artifacts (Table~\ref{tab:dbt_models}), ensuring that all data transformations and quality checks are discoverable through the automated documentation system detailed in Section~\ref{subsec:obs-table-gen}.
+
+\subsection{Accessible: Retrieval and usability}
+
+\textbf{Open access and standard protocols:} Data are published in universally accessible CSV format \cite{csv_rfc} without authentication barriers. The complete repository is openly available via HTTPS and Git protocols \cite{git}, supporting both web browser access and programmatic retrieval through GitHub \cite{github}.
+
+\textbf{Human and machine readable:} Column names follow interpretable conventions prioritizing domain understanding over technical convenience. The semantic layer architecture (Figure~\ref{fig:dbtdag}) ensures that data structure reflects research logic rather than processing efficiency.
+
+\textbf{Multiple access modalities:} Researchers can access data through multiple pathways: direct CSV download, Git repository cloning \cite{git}, or programmatic URL access in R \cite{r_core} or Python \cite{python}. The interactive dbt documentation (\texttt{dbt docs serve}) \cite{dbt_core} provides a web-based interface for exploring complete data lineage.
+
+\subsubsection{SDG rankings dataset}
+
+This dataset contains respondent rankings enriched with demographic metadata:
+\begin{itemize}
+  \item \textbf{id\_respondent:} Unique identifier for each respondent
+  \item \textbf{rank:} Priority ranking (1=highest, 2=medium, 3=lowest priority)
+  \item \textbf{sdg\_number:} UN SDG number (1-17)
+  \item \textbf{sdg\_label:} Full name of the Sustainable Development Goal
+  \item \textbf{age:} Age of respondent in years
+  \item \textbf{gender:} Self-reported gender
+  \item \textbf{displacement\_status:} Dam impact classification
+  \item \textbf{region:} Survey location (tehri, arunachal)
 \end{itemize}
 
 By enriching the responses with respondent metadata, we can analyse responses in the context of respondent demographics and characteristics. For example, in Figure~\ref{fig:top3-gender-treemap}, we can see the distribution of top 3 UN SDG priorities by gender.
@@ -83,63 +167,220 @@ By enriching the responses with respondent metadata, we can analyse responses in
   \caption{\label{fig:top3-gender-treemap} Treemap of top 3 UN SDG priorities from survey respondents in Tehri and Arunachal Pradesh, North India, by gender. Each rectangle represents a specific UN SDG, with its size proportional to the number of respondents of a particular gender who ranked it among their top three priorities. The treemap visually highlights the most and least prioritized SDGs in each region, providing insights into gender differences in development priorities.}
 \end{figure}
 
-
-\subsubsection{Respondent metadata}
+\subsubsection{Respondents dataset}
 
 \begin{itemize}
-  \item \textbf{respondent\_id:} Unique identifier for each respondent.
-  \item \textbf{region:} Region where the data was collected (Tehri or Arunachal Pradesh).
-  \item \textbf{age:} Age of the respondent.
-  \item \textbf{gender:} Gender of the respondent.
-  \item \textbf{displacement\_status:} Displacement status of the respondent.
+  \item \textbf{id\_respondent:} Unique identifier for each respondent
+  \item \textbf{age:} Age of respondent in years
+  \item \textbf{gender:} Self-reported gender (Male, Female, Prefer not to say)
+  \item \textbf{displacement\_status:} Impact classification related to dam construction
+  \item \textbf{region:} Survey location (tehri, arunachal)
 \end{itemize}
 
-\subsection{Interoperable}
+\subsection{Interoperable: Integration and exchange}
 
-The data are published in \texttt{.csv} format on a publically available github repository \texttt{sig\_gg}, readable by url into Python or R.  
+\textbf{Standard data formats and vocabularies:} Data are published in CSV format \cite{csv_rfc} using UTF-8 encoding with standardized missing value representation (NA). Column naming follows consistent conventions across datasets, enabling seamless joining and integration across the semantic layers shown in Figure~\ref{fig:dbtdag}.
 
-\subsection{Reusable}
+\textbf{Semantic harmonization documentation:} The semantic layer explicitly addresses interoperability challenges by documenting how disparate data sources are harmonized. For example, SDG labeling differences between regional surveys are reconciled with full documentation of mapping decisions in the semantic models (Table~\ref{tab:dbt_models}), enabling other researchers to understand and adapt the harmonization logic.
 
-The data pipeline is extensible. The repository can be forked and the DBT pipeline extended to transform the data in additional ways or patch in additional source data. The data are licensed under a Creative Commons Attribution 4.0 International (CC BY 4.0) license, allowing others to share and adapt the data with appropriate credit.
+\textbf{Modular pipeline architecture:} The dbt project structure (Section~\ref{sec:repository-arch}) separates concerns across semantic layers, enabling selective reuse of transformation logic. Researchers can adopt the source entity patterns for context preservation while modifying semantic harmonization for different research domains. Each semantic layer (Table~\ref{tab:dbt_models}) implements specific interoperability functions that can be independently understood and modified.
+
+\textbf{Cross-tool compatibility:} Tidy data principles ensure compatibility across analytical software. The semantic layer structure provides conceptual interoperability—researchers can understand and adapt the methodology regardless of their technical implementation preferences.
+
+\subsection{Reusable: Extension and adaptation}
+
+\textbf{Comprehensive provenance and documentation:} Complete methodology documentation enables confident reuse across research contexts. The automated observability system (Section~\ref{subsec:obs-table-gen}) ensures that documentation evolves with implementation, preventing methodology drift that undermines reusability.
+
+\textbf{Extensible semantic framework:} The semantic layering methodology provides a reusable framework beyond this specific dataset. The four-layer architecture (source base → source entities → semantic → analytic) demonstrated in Figure~\ref{fig:dbtdag} can be adapted for any multi-source research data integration challenge.
+
+\textbf{Quality assurance infrastructure:} The validation framework (Table~\ref{tab:dbt_tests}) provides reusable patterns for data quality verification across research contexts. These automated tests ensure that reused components maintain data integrity standards.
+
+\textbf{Licensing and attribution:} Data are licensed under Creative Commons Attribution 4.0 International (CC BY 4.0) \cite{creative_commons}, enabling broad reuse with appropriate attribution. The license covers both datasets and methodology, encouraging adaptation of the semantic layering approach.
+
+\textbf{Technical infrastructure reusability:} The repository can be forked and the dbt pipeline extended for new data sources or research questions. The modular structure supports iterative development—researchers can extend the analytic layer for new questions without modifying upstream transformations.
+
+\textbf{Methodological transferability:} The semantic layering approach addresses fundamental challenges in research data management that extend beyond this specific domain. The methodology's emphasis on context preservation, transparent harmonization, and stakeholder communication applies to any research requiring multi-source data integration and methodological transparency.
 
 \section{Data lineage}
-
-In \texttt{raw\_data} the original two survey data are found. To aggregate across the \texttt{.csv} and Kobo tool data export in \texttt{.xlsx} format, a data transformation pipeline was implemented using the Data Build Tool (DBT) in the \texttt{dbt\_project} directory. The DBT project consists of SQL scripts, tests, and documentation that transform the raw data into a tidy format suitable for analysis. Identifying which columns to extract from the Kobo export was nontrivial, \texttt{scripts/tehri-cols.R} contains the script used to identify the relevant columns, and a markdown table identifying the columns associated with survey questions can be found in \texttt{analysis\_data/tehri.md}.
-
-Figure~\ref{fig:dbtdag} shows the directed acyclic graph (DAG) for the Data Build Tool (DBT) project \texttt{dbt\_project} that produced the .csv data found in \texttt{analysis\_data}. The DAG illustrates the relationships and dependencies between various data models, tests, and sources within the project. Each node represents a table produced during transformation, while the edges indicate the flow of data and dependencies among them. This visualization illustrates how data is transformed and validated throughout the pipeline, ensuring data integrity and reliability.
+\label{sec:data-lineage}
 
 \begin{figure}[ht]
 \centering
 \includegraphics[width=\textwidth]{img/dbt-dag.png}
-\caption{Data Build Tool (DBT) directed acyclic graph (DAG).}
+\caption{Data Build Tool (dbt) directed acyclic graph (DAG) showing the semantic layer structure from source entities through analytic models.}
 \label{fig:dbtdag}
 \end{figure}
 
-Table~\ref{tab:dbt_models} lists the DBT models created by the \texttt{dbt\_project}, ordered by observability layer. 
+In \texttt{raw\_data/} the original two survey datasets are found. To aggregate across the \texttt{.csv} \cite{csv_rfc} and Kobo tool \cite{kobo_toolbox} data export in \texttt{.xlsx} format, a data transformation pipeline was implemented using the Data Build Tool (dbt) \cite{dbt_core,dbt_duckdb} in the \texttt{dbt\_project/} directory (detailed in Section~\ref{sec:repository-arch}). The dbt project consists of SQL \cite{sql} scripts, tests, and documentation that transform the raw data into a tidy format suitable for analysis. Identifying which columns to extract from the Kobo export was nontrivial; \texttt{scripts/tehri-cols.R} contains the R script \cite{r_core,tidyverse} used to identify the relevant columns, and a markdown table \cite{markdown} identifying the columns associated with survey questions can be found in \texttt{figure\_and\_tables/tehri\_columns.md}.
+
+Data quality assurance includes automated identification and exclusion of test data. Two test rows were identified and excluded from the Tehri dataset due to substantial missingness and clear test data indicators (documented in \texttt{dbt\_project/analyses/tehri\_rows\_excluded.sql}). This exclusion process reflects the methodological principles outlined in Section~\ref{sec:semantic-methodology}.
+
+Figure~\ref{fig:dbtdag} shows the directed acyclic graph (DAG) for the Data Build Tool (dbt) project \texttt{dbt\_project/} that produced the .csv data found in \texttt{data/}. The DAG illustrates the relationships and dependencies between various data models, tests, and sources within the project. Each node represents a table produced during transformation, while the edges indicate the flow of data and dependencies among them. This visualization demonstrates the four-layer semantic architecture described in Section~\ref{subsec:semantic-layers} and shows how data is transformed and validated throughout the pipeline, ensuring data integrity and reliability.
+
+Table~\ref{tab:dbt_models} lists the dbt models created by the \texttt{dbt\_project/}, ordered by semantic layer. These models implement the semantic extension of dbt's standard layering approach detailed in Section~\ref{subsec:core-innovation}. The validation framework supporting these models is documented in Table~\ref{tab:dbt_tests}. 
 
 \input{tables/obs-tab-models.tex}
 
-\section{Data observability}
+\section{Semantic layer implementation and observability}
+\label{sec:semantic-implementation}
 
-\subsection{Layers}
+The observability framework operationalizes the semantic layering methodology through automated monitoring and validation at each conceptual stage. This implementation demonstrates how semantic design principles translate into technical infrastructure while maintaining research transparency.
 
-The data observability framework implemented in the \texttt{dbt\_project} is structured into four distinct layers: base models, source entities, semantic models, and analytic models. Each layer serves a specific purpose in ensuring data quality, integrity, and usability throughout the data pipeline.
+\subsection{Semantic layers as methodological framework}
+\label{subsec:semantic-layers}
+
+The four-layer semantic architecture serves as both a conceptual framework and technical implementation. Each layer embodies specific research methodology principles:
 
 \begin{itemize}
-    \item \textbf{Base Models:} These are the foundational models that directly interact with raw data sources. They perform initial data extraction and loading (ETL) processes to prepare the data for further analysis. Base models focus on cleaning and structuring the data to ensure it is in a usable format. These models were loaded from CSV files as seeds. The script to convert the raw files to csv to be seeded is found in \texttt{scripts/seed-data.R}.
+    \item \textbf{Source Base Models:} Embody the principle of data integrity preservation. These foundational models maintain fidelity to original data sources while implementing only essential cleaning operations. By materializing as seeds, they create an immutable record of processed raw data, enabling complete methodological auditing.
 
-    \item \textbf{Source Entities:} This layer represents the core data entities (responses and respondents) by source derived from the base models for respondents and responses. This layer allows for easier validation of data integrity as each source has different labelling and structure.
+    \item \textbf{Source Entities:} Operationalize the context preservation principle. Each regional dataset maintains its original structure and labeling conventions, preventing premature harmonization. This layer enables validation of regional data characteristics and supports comparative analysis of data collection methodologies.
     
-    \item \textbf{Semantic Models:} Semantic models aggregate source entities to semantic entities: respondents, responses. This layer ensures the consistency of labelling, for example, UN SDGs were labelled very differently in the two datasets.
+    \item \textbf{Semantic Models:} Implement the transparent harmonization principle. This layer explicitly documents how cross-source differences are resolved, such as reconciling disparate SDG labeling systems. All harmonization logic is encoded in SQL with accompanying documentation, making methodological decisions auditable and modifiable.
     
-    \item \textbf{Analytic Models:} The analytic layer enriched semantic data. For example, responses are enriched with respondent metadata such as region, age, gender, and displacement status. 
+    \item \textbf{Analytic Models:} Realize the research-readiness principle. These models combine harmonized data with enriched metadata to directly support specific research questions. By materializing as tables, they optimize performance for iterative analysis while maintaining full lineage to upstream decisions.
 \end{itemize}
+
+\subsubsection{Methodological advantages of semantic layering}
+
+This semantic architecture delivers specific methodological benefits that standard data engineering approaches cannot provide:
+
+\begin{enumerate}
+    \item \textbf{Assumption explicitness:} Every harmonization decision is documented and testable
+    \item \textbf{Context preservation:} Regional and methodological differences are maintained until explicitly resolved
+    \item \textbf{Stakeholder communication:} Layer names and logic reflect research concepts rather than technical implementation
+    \item \textbf{Methodological auditability:} Complete transformation lineage enables scholarly review and replication
+    \item \textbf{Iterative extensibility:} New research directions can be accommodated without fundamental restructuring
+\end{enumerate}
+
+\subsection{Interactive data exploration}
+
+The validation tables presented in this document provide high-level summaries of data quality and pipeline structure. For comprehensive pipeline investigation, stakeholders can access the full interactive documentation using:
+
+\begin{verbatim}
+cd dbt_project/
+dbt docs generate
+dbt docs serve
+\end{verbatim}
+
+This provides an interactive web interface showing detailed model specifications, column-level lineage, test results, and complete data flow visualization.
+
+\subsection{Observability table generation}
+\label{subsec:obs-table-gen}
+
+The validation tables presented in this document (Tables~\ref{tab:dbt_models} and~\ref{tab:dbt_tests}) are automatically generated from dbt artifacts to ensure methodology documentation remains synchronized with the actual pipeline implementation.
+
+\subsubsection{Automated metadata extraction}
+
+The observability tables are generated through the following automated process:
+
+\begin{enumerate}
+    \item \textbf{dbt artifacts generation} — Running \texttt{dbt build} produces \texttt{manifest.json} and \texttt{run\_results.json} containing complete pipeline metadata
+    \item \textbf{Python extraction} — \texttt{create-obs-tables/get-obs-dat.py} extracts model descriptions and test results from JSON artifacts
+    \item \textbf{R formatting} — \texttt{create-obs-tables/obs-table.R} formats extracted data into LaTeX tables
+    \item \textbf{Document compilation} — LaTeX tables are included in this methodology document via \texttt{\textbackslash input} commands
+\end{enumerate}
+
+This automation ensures that any changes to model descriptions, test specifications, or pipeline structure are immediately reflected in the methodology documentation, maintaining complete transparency between implementation and documentation.
+
+\subsubsection{Model materializations}
+
+The semantic layers employ different dbt materializations optimized for their function:
+
+\begin{itemize}
+    \item \textbf{Source base models} — Materialized as \texttt{seeds} (CSV files loaded directly into DuckDB)
+    \item \textbf{Source entity models} — Materialized as \texttt{views} to preserve disk space while maintaining fast access for downstream models
+    \item \textbf{Semantic models} — Materialized as \texttt{views} to enable flexible harmonization logic without storage overhead
+    \item \textbf{Analytic models} — Materialized as \texttt{tables} to optimize query performance for research analysis and data export
+\end{itemize}
+
+The progression from views to tables reflects the increasing stability and query frequency of models as they approach the analytical layer. Source and semantic layers prioritize flexibility and maintainability through views, while analytic models prioritize performance through table materialization for repeated research queries.
 
 \subsection{Data validation}
 
-Table~\ref{tab:dbt_tests} lists the DBT tests applied to \texttt{dbt\_project} transformations, ordered by observability layer. These tests tell us what assumptions we have validated at each transformation step in the lineage (Figure~\ref{fig:dbtdag}).
+Table~\ref{tab:dbt_tests} lists the dbt tests applied to \texttt{dbt\_project/} transformations, ordered by semantic layer. These tests document the data quality assumptions validated at each transformation step in the lineage (Figure~\ref{fig:dbtdag}). The tests ensure data integrity across the semantic pipeline and provide automated quality assurance for research reproducibility.
 
 \input{tables/obs-tab-tests.tex}
 
+\section{Use of NLP tools}
+
+The giveadam project architecture, semantic data pipeline design, and all data transformations were conceived and implemented by Charles T. Gray. GitHub Copilot \cite{copilot} was used for documentation editing and selected development operations tasks (supporting JSON manifest parsing scripts), but did not contribute to the fundamental design decisions, data modeling approach, or core analytical implementations. All code development, methodological innovations, and research insights represent the original work of the author.
+
+\bibliographystyle{plain}
+\begin{thebibliography}{99}
+
+\bibitem{wilkinson2016fair}
+Wilkinson, M. D., Dumontier, M., Aalbersberg, I. J., Appleton, G., Axton, M., Baak, A., ... \& Mons, B. (2016). The FAIR Guiding Principles for scientific data management and stewardship. \textit{Scientific Data}, 3(1), 1-9.
+
+\bibitem{dbt_docs_structure}
+dbt Labs. (2024). How we structure our dbt projects. \textit{dbt Documentation}. Retrieved from \url{https://docs.getdbt.com/best-practices/how-we-structure/1-guide-overview}
+
+\bibitem{modern_data_stack_airbyte}
+Airbyte. (2023). What is the modern data stack and why should you care? \textit{Airbyte Blog}. Retrieved from \url{https://airbyte.com/blog/modern-data-stack}
+
+\bibitem{kimball2013data}
+Kimball, R., \& Ross, M. (2013). \textit{The data warehouse toolkit: the definitive guide to dimensional modeling}. John Wiley \& Sons.
+
+\bibitem{dbt_core}
+dbt Labs. (2024). dbt Core: Transform data in your warehouse. Version 1.9+. Retrieved from \url{https://github.com/dbt-labs/dbt-core}
+
+\bibitem{dbt_duckdb}
+MotherDuck \& dbt Labs. (2024). dbt-duckdb: dbt adapter for DuckDB. Version 1.9.6+. Retrieved from \url{https://github.com/duckdb/dbt-duckdb}
+
+\bibitem{duckdb}
+Raasveldt, M., \& Mühleisen, H. (2019). DuckDB: an embeddable analytical database. In \textit{Proceedings of the 2019 International Conference on Management of Data} (pp. 1981-1984).
+
+\bibitem{python}
+Van Rossum, G., \& Drake, F. L. (2009). \textit{Python 3 Reference Manual}. CreateSpace.
+
+\bibitem{r_core}
+R Core Team. (2024). R: A language and environment for statistical computing. R Foundation for Statistical Computing, Vienna, Austria. Retrieved from \url{https://www.R-project.org/}
+
+\bibitem{tidyverse}
+Wickham, H., Averick, M., Bryan, J., Chang, W., McGowan, L. D., François, R., ... \& Yutani, H. (2019). Welcome to the tidyverse. \textit{Journal of Open Source Software}, 4(43), 1686.
+
+\bibitem{pandas}
+McKinney, W. (2010). Data structures for statistical computing in Python. In S. van der Walt \& J. Millman (Eds.), \textit{Proceedings of the 9th Python in Science Conference} (pp. 56-61).
+
+\bibitem{uv_package_manager}
+Astral. (2024). uv: An extremely fast Python package installer and resolver. Retrieved from \url{https://github.com/astral-sh/uv}
+
+\bibitem{git}
+Chacon, S., \& Straub, B. (2014). \textit{Pro Git}. Apress.
+
+\bibitem{github}
+GitHub, Inc. (2024). GitHub: Where the world builds software. Retrieved from \url{https://github.com}
+
+\bibitem{latex}
+Lamport, L. (1994). \textit{LaTeX: a document preparation system: user's guide and reference manual}. Addison-Wesley.
+
+\bibitem{vscode}
+Microsoft Corporation. (2024). Visual Studio Code. Retrieved from \url{https://code.visualstudio.com/}
+
+\bibitem{copilot}
+GitHub, Inc. (2024). GitHub Copilot. Retrieved from \url{https://github.com/features/copilot}
+
+\bibitem{creative_commons}
+Creative Commons. (2024). Creative Commons Attribution 4.0 International License. Retrieved from \url{https://creativecommons.org/licenses/by/4.0/}
+
+\bibitem{kobo_toolbox}
+Harvard Humanitarian Initiative. (2024). KoBo Toolbox: Data collection tools for challenging environments. Retrieved from \url{https://www.kobotoolbox.org/}
+
+\bibitem{json}
+Bray, T. (2017). The JavaScript Object Notation (JSON) Data Interchange Format. RFC 8259. Retrieved from \url{https://tools.ietf.org/html/rfc8259}
+
+\bibitem{yaml}
+Ben-Kiki, O., Evans, C., \& döt Net, I. (2009). YAML Ain't Markup Language (YAML™) Version 1.2. Retrieved from \url{https://yaml.org/spec/1.2/spec.html}
+
+\bibitem{sql}
+Chamberlin, D., \& Boyce, R. (1974). SEQUEL: A structured English query language. In \textit{Proceedings of the 1974 ACM SIGFIDET workshop on Data description, access and control} (pp. 249-264).
+
+\bibitem{markdown}
+Gruber, J. (2004). Markdown. Retrieved from \url{https://daringfireball.net/projects/markdown/}
+
+\bibitem{csv_rfc}
+Shafranovich, Y. (2005). Common Format and MIME Type for Comma-Separated Values (CSV) Files. RFC 4180. Retrieved from \url{https://tools.ietf.org/html/rfc4180}
+
+\end{thebibliography}
 
 \end{document}

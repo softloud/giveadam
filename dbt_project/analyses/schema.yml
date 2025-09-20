@@ -1,0 +1,27 @@
+version: 2
+
+analyses:
+  - name: tehri_rows_excluded
+    description: |
+      Analysis to identify test rows and problematic data that were excluded from the final dataset.
+      
+      **Data Quality Issues Identified:**
+      - Two test rows with 'test' in free-text responses (other_specify_13 field)
+      - Rows with substantial missingness and clearly test data
+      - Records where displacement status was marked as 'NA' indicating incomplete responses
+      
+      **Exclusion Criteria:**
+      1. Free-text responses containing 'test' (indicating test entries)
+      2. Missing displacement status data (critical for analysis)
+      
+      **Impact:** 2 rows excluded from Tehri dataset, resulting in clean analytical dataset
+      
+      This analysis supports data transparency and reproducibility by documenting 
+      all data cleaning decisions made during the pipeline.
+    columns:
+      - name: id_respondent
+        description: Identifier of respondents that were excluded
+      - name: other_specify_13
+        description: Free-text field that contained 'test' entries
+      - name: how_was_the_respondent_affected_by_the_construction_of_the_dam
+        description: Displacement status field that was missing (marked as 'NA')

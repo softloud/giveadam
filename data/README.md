@@ -22,6 +22,12 @@ This directory contains analysis-ready datasets derived from survey data on the 
 
 **Geographic Coverage:** Tehri Dam region (Uttarakhand) and Arunachal Pradesh, India
 
+**Data Cleaning:** 2 test rows were excluded from the Tehri dataset due to:
+- Substantial missingness and clear test data indicators
+- Free-text responses containing 'test' entries
+- Missing displacement status (marked as 'NA')
+- See [`dbt_project/analyses/tehri_rows_excluded.sql`](../dbt_project/analyses/tehri_rows_excluded.sql) for exclusion criteria
+
 ### `SDG_rankings.csv`
 **Description:** Respondent rankings of their top 3 UN Sustainable Development Goals (SDGs) by priority, with associated demographic information.
 
