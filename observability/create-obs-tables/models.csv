@@ -2,11 +2,11 @@ node,description
 model.dbt_project.sem_sdg_labels,
 model.dbt_project.sem_respondents,
 model.dbt_project.sem_top3,
+model.dbt_project.base_tehri,"Raw data from survey in Tehri, collected by Dr Garima Gupta. Each row represents the survey responses of a single respondent."
+model.dbt_project.base_arunachal,"Raw data from survey in Arunachal Pradesh, collected by Dr Garima Gupta. Each row represents the survey responses of a single respondent."
+model.dbt_project.se_top3_tehri,"Each row represents a respondent's ranking of their top 3 UN Sustainable Development Goals (SDGs) for Tehri, India."
+model.dbt_project.se_top3_arunachal,"Each row represents a respondent's ranking of their top 3 UN Sustainable Development Goals (SDGs) for Arunachal Pradesh, India."
+model.dbt_project.se_respondents_arunachal,Each row represents a respondent from Arunachal Pradesh.
 model.dbt_project.se_respondents_tehri,Each row represents a respondent from Tehri.
 model.dbt_project.ana_top3,
 model.dbt_project.ana_respondents,
-model.dbt_project.se_respondents_arunachal,Each row represents a respondent from Arunachal Pradesh.
-model.dbt_project.base_tehri,"Raw data from survey in Tehri, collected by Dr Garima Gupta. Each row represents the survey responses of a single respondent."
-model.dbt_project.base_arunachal,"Raw data from survey in Arunachal Pradesh, collected by Dr Garima Gupta. Each row represents the survey responses of a single respondent."
-model.dbt_project.se_top3_arunachal,"Each row represents a respondent's ranking of their top 3 UN Sustainable Development Goals (SDGs) for Arunachal Pradesh, India."
-model.dbt_project.se_top3_tehri,"Each row represents a respondent's ranking of their top 3 UN Sustainable Development Goals (SDGs) for Tehri, India."
