@@ -1,0 +1,472 @@
+id_respondent,rank,sdg_number,sdg_label,age,gender,displacement_status,region
+respondent-1-arunachal,1,8,Decent Work and Economic Growth,NA,Male,NA,arunachal
+respondent-1-arunachal,2,7,Affordable and Clean Energy,NA,Male,NA,arunachal
+respondent-1-arunachal,3,4,Quality Education,NA,Male,NA,arunachal
+respondent-1-tehri,1,7,Affordable and Clean Energy,20,Male,Displaced,tehri
+respondent-1-tehri,2,1,No Poverty,20,Male,Displaced,tehri
+respondent-1-tehri,3,1,No Poverty,20,Male,Displaced,tehri
+respondent-10-arunachal,1,1,No Poverty,36,Male,NA,arunachal
+respondent-10-arunachal,2,6,Clean Water and Sanitation,36,Male,NA,arunachal
+respondent-10-arunachal,3,13,Climate Action,36,Male,NA,arunachal
+respondent-10-tehri,1,1,No Poverty,33,Female,Displaced,tehri
+respondent-10-tehri,2,2,Zero Hunger,33,Female,Displaced,tehri
+respondent-10-tehri,3,2,Zero Hunger,33,Female,Displaced,tehri
+respondent-100-tehri,1,2,Zero Hunger,78,Female,Affected but not displaced (downstream),tehri
+respondent-100-tehri,2,1,No Poverty,78,Female,Affected but not displaced (downstream),tehri
+respondent-100-tehri,3,2,Zero Hunger,78,Female,Affected but not displaced (downstream),tehri
+respondent-101-tehri,1,2,Zero Hunger,25,Male,Affected but not displaced (downstream),tehri
+respondent-101-tehri,2,1,No Poverty,25,Male,Affected but not displaced (downstream),tehri
+respondent-101-tehri,3,16,"Peace, Justice and Strong Institutions",25,Male,Affected but not displaced (downstream),tehri
+respondent-102-tehri,1,7,Affordable and Clean Energy,32,Male,Affected but not displaced (downstream),tehri
+respondent-102-tehri,2,1,No Poverty,32,Male,Affected but not displaced (downstream),tehri
+respondent-102-tehri,3,4,Quality Education,32,Male,Affected but not displaced (downstream),tehri
+respondent-103-tehri,1,2,Zero Hunger,66,Male,Affected but not displaced (downstream),tehri
+respondent-103-tehri,2,7,Affordable and Clean Energy,66,Male,Affected but not displaced (downstream),tehri
+respondent-103-tehri,3,4,Quality Education,66,Male,Affected but not displaced (downstream),tehri
+respondent-104-tehri,1,15,Life on Land,39,Female,Affected but not displaced (downstream),tehri
+respondent-104-tehri,2,7,Affordable and Clean Energy,39,Female,Affected but not displaced (downstream),tehri
+respondent-104-tehri,3,3,Good Health and Well-being,39,Female,Affected but not displaced (downstream),tehri
+respondent-105-tehri,1,15,Life on Land,67,Male,Not affected (far from dam),tehri
+respondent-105-tehri,2,13,Climate Action,67,Male,Not affected (far from dam),tehri
+respondent-105-tehri,3,3,Good Health and Well-being,67,Male,Not affected (far from dam),tehri
+respondent-106-tehri,1,1,No Poverty,45,Female,Affected but not displaced (downstream),tehri
+respondent-106-tehri,2,15,Life on Land,45,Female,Affected but not displaced (downstream),tehri
+respondent-106-tehri,3,2,Zero Hunger,45,Female,Affected but not displaced (downstream),tehri
+respondent-107-tehri,1,7,Affordable and Clean Energy,65,Male,Affected but not displaced (downstream),tehri
+respondent-107-tehri,2,2,Zero Hunger,65,Male,Affected but not displaced (downstream),tehri
+respondent-107-tehri,3,2,Zero Hunger,65,Male,Affected but not displaced (downstream),tehri
+respondent-108-tehri,1,7,Affordable and Clean Energy,21,Female,Affected but not displaced (downstream),tehri
+respondent-108-tehri,2,1,No Poverty,21,Female,Affected but not displaced (downstream),tehri
+respondent-108-tehri,3,1,No Poverty,21,Female,Affected but not displaced (downstream),tehri
+respondent-109-tehri,1,2,Zero Hunger,54,Male,Affected but not displaced (downstream),tehri
+respondent-109-tehri,2,1,No Poverty,54,Male,Affected but not displaced (downstream),tehri
+respondent-109-tehri,3,2,Zero Hunger,54,Male,Affected but not displaced (downstream),tehri
+respondent-11-arunachal,1,4,Quality Education,29,Male,NA,arunachal
+respondent-11-arunachal,2,3,Good Health and Well-being,29,Male,NA,arunachal
+respondent-11-arunachal,3,6,Clean Water and Sanitation,29,Male,NA,arunachal
+respondent-11-tehri,1,2,Zero Hunger,27,Female,Affected but not displaced (nearby village),tehri
+respondent-11-tehri,2,1,No Poverty,27,Female,Affected but not displaced (nearby village),tehri
+respondent-11-tehri,3,1,No Poverty,27,Female,Affected but not displaced (nearby village),tehri
+respondent-110-tehri,1,1,No Poverty,48,Female,Affected but not displaced (downstream),tehri
+respondent-110-tehri,2,2,Zero Hunger,48,Female,Affected but not displaced (downstream),tehri
+respondent-110-tehri,3,3,Good Health and Well-being,48,Female,Affected but not displaced (downstream),tehri
+respondent-111-tehri,1,7,Affordable and Clean Energy,29,Male,Not affected (far from dam),tehri
+respondent-111-tehri,2,2,Zero Hunger,29,Male,Not affected (far from dam),tehri
+respondent-111-tehri,3,3,Good Health and Well-being,29,Male,Not affected (far from dam),tehri
+respondent-113-tehri,1,1,No Poverty,20,Male,Not affected (far from dam),tehri
+respondent-113-tehri,2,2,Zero Hunger,20,Male,Not affected (far from dam),tehri
+respondent-113-tehri,3,8,Decent Work and Economic Growth,20,Male,Not affected (far from dam),tehri
+respondent-114-tehri,1,15,Life on Land,26,Female,Not affected (far from dam),tehri
+respondent-114-tehri,2,13,Climate Action,26,Female,Not affected (far from dam),tehri
+respondent-114-tehri,3,5,Gender Equality,26,Female,Not affected (far from dam),tehri
+respondent-115-tehri,1,2,Zero Hunger,24,Female,Not affected (far from dam),tehri
+respondent-115-tehri,2,1,No Poverty,24,Female,Not affected (far from dam),tehri
+respondent-115-tehri,3,3,Good Health and Well-being,24,Female,Not affected (far from dam),tehri
+respondent-116-tehri,1,15,Life on Land,28,Male,Not affected (far from dam),tehri
+respondent-116-tehri,2,13,Climate Action,28,Male,Not affected (far from dam),tehri
+respondent-116-tehri,3,11,Sustainable Cities and Communities,28,Male,Not affected (far from dam),tehri
+respondent-117-tehri,1,15,Life on Land,29,Female,Not affected (far from dam),tehri
+respondent-117-tehri,2,13,Climate Action,29,Female,Not affected (far from dam),tehri
+respondent-117-tehri,3,10,Reduced Inequality,29,Female,Not affected (far from dam),tehri
+respondent-118-tehri,1,13,Climate Action,31,Male,Not affected (far from dam),tehri
+respondent-118-tehri,2,15,Life on Land,31,Male,Not affected (far from dam),tehri
+respondent-118-tehri,3,1,No Poverty,31,Male,Not affected (far from dam),tehri
+respondent-119-tehri,1,13,Climate Action,30,Female,Not affected (far from dam),tehri
+respondent-119-tehri,2,15,Life on Land,30,Female,Not affected (far from dam),tehri
+respondent-119-tehri,3,5,Gender Equality,30,Female,Not affected (far from dam),tehri
+respondent-12-arunachal,1,4,Quality Education,26,Male,NA,arunachal
+respondent-12-arunachal,2,1,No Poverty,26,Male,NA,arunachal
+respondent-12-arunachal,3,16,"Peace, Justice and Strong Institutions",26,Male,NA,arunachal
+respondent-12-tehri,1,1,No Poverty,33,Female,Not affected (far from dam),tehri
+respondent-12-tehri,2,7,Affordable and Clean Energy,33,Female,Not affected (far from dam),tehri
+respondent-12-tehri,3,8,Decent Work and Economic Growth,33,Female,Not affected (far from dam),tehri
+respondent-120-tehri,1,7,Affordable and Clean Energy,22,Female,Not affected (far from dam),tehri
+respondent-120-tehri,2,15,Life on Land,22,Female,Not affected (far from dam),tehri
+respondent-120-tehri,3,5,Gender Equality,22,Female,Not affected (far from dam),tehri
+respondent-121-tehri,1,1,No Poverty,29,Female,Not affected (far from dam),tehri
+respondent-121-tehri,2,15,Life on Land,29,Female,Not affected (far from dam),tehri
+respondent-121-tehri,3,3,Good Health and Well-being,29,Female,Not affected (far from dam),tehri
+respondent-122-tehri,1,7,Affordable and Clean Energy,32,Male,Not affected (far from dam),tehri
+respondent-122-tehri,2,15,Life on Land,32,Male,Not affected (far from dam),tehri
+respondent-122-tehri,3,5,Gender Equality,32,Male,Not affected (far from dam),tehri
+respondent-123-tehri,1,13,Climate Action,27,Female,Not affected (far from dam),tehri
+respondent-123-tehri,2,15,Life on Land,27,Female,Not affected (far from dam),tehri
+respondent-123-tehri,3,1,No Poverty,27,Female,Not affected (far from dam),tehri
+respondent-124-tehri,1,1,No Poverty,34,Male,Not affected (far from dam),tehri
+respondent-124-tehri,2,7,Affordable and Clean Energy,34,Male,Not affected (far from dam),tehri
+respondent-124-tehri,3,2,Zero Hunger,34,Male,Not affected (far from dam),tehri
+respondent-125-tehri,1,13,Climate Action,23,Female,Not affected (far from dam),tehri
+respondent-125-tehri,2,15,Life on Land,23,Female,Not affected (far from dam),tehri
+respondent-125-tehri,3,8,Decent Work and Economic Growth,23,Female,Not affected (far from dam),tehri
+respondent-126-tehri,1,7,Affordable and Clean Energy,63,Female,Not affected (far from dam),tehri
+respondent-126-tehri,2,15,Life on Land,63,Female,Not affected (far from dam),tehri
+respondent-126-tehri,3,1,No Poverty,63,Female,Not affected (far from dam),tehri
+respondent-127-tehri,1,7,Affordable and Clean Energy,67,Female,Not affected (far from dam),tehri
+respondent-127-tehri,2,13,Climate Action,67,Female,Not affected (far from dam),tehri
+respondent-127-tehri,3,6,Clean Water and Sanitation,67,Female,Not affected (far from dam),tehri
+respondent-128-tehri,1,1,No Poverty,19,Male,Not affected (far from dam),tehri
+respondent-128-tehri,2,2,Zero Hunger,19,Male,Not affected (far from dam),tehri
+respondent-128-tehri,3,1,No Poverty,19,Male,Not affected (far from dam),tehri
+respondent-129-tehri,1,1,No Poverty,20,Male,Not affected (far from dam),tehri
+respondent-129-tehri,2,2,Zero Hunger,20,Male,Not affected (far from dam),tehri
+respondent-129-tehri,3,5,Gender Equality,20,Male,Not affected (far from dam),tehri
+respondent-13-arunachal,1,13,Climate Action,37,Female,NA,arunachal
+respondent-13-arunachal,2,12,Responsible Consumption and Production,37,Female,NA,arunachal
+respondent-13-arunachal,3,11,Sustainable Cities and Communities,37,Female,NA,arunachal
+respondent-13-tehri,1,1,No Poverty,26,Prefer not to say,Not affected (far from dam),tehri
+respondent-13-tehri,2,2,Zero Hunger,26,Prefer not to say,Not affected (far from dam),tehri
+respondent-13-tehri,3,10,Reduced Inequality,26,Prefer not to say,Not affected (far from dam),tehri
+respondent-130-tehri,1,7,Affordable and Clean Energy,74,Female,Not affected (far from dam),tehri
+respondent-130-tehri,2,1,No Poverty,74,Female,Not affected (far from dam),tehri
+respondent-130-tehri,3,3,Good Health and Well-being,74,Female,Not affected (far from dam),tehri
+respondent-131-tehri,1,7,Affordable and Clean Energy,26,Female,Not affected (far from dam),tehri
+respondent-131-tehri,2,1,No Poverty,26,Female,Not affected (far from dam),tehri
+respondent-131-tehri,3,3,Good Health and Well-being,26,Female,Not affected (far from dam),tehri
+respondent-132-tehri,1,7,Affordable and Clean Energy,27,Female,Not affected (far from dam),tehri
+respondent-132-tehri,2,13,Climate Action,27,Female,Not affected (far from dam),tehri
+respondent-132-tehri,3,12,Responsible Consumption and Production,27,Female,Not affected (far from dam),tehri
+respondent-133-tehri,1,2,Zero Hunger,32,Male,Not affected (far from dam),tehri
+respondent-133-tehri,2,15,Life on Land,32,Male,Not affected (far from dam),tehri
+respondent-133-tehri,3,6,Clean Water and Sanitation,32,Male,Not affected (far from dam),tehri
+respondent-134-tehri,1,1,No Poverty,48,Male,Affected but not displaced (downstream),tehri
+respondent-134-tehri,2,2,Zero Hunger,48,Male,Affected but not displaced (downstream),tehri
+respondent-134-tehri,3,2,Zero Hunger,48,Male,Affected but not displaced (downstream),tehri
+respondent-135-tehri,1,1,No Poverty,68,Female,Affected but not displaced (downstream),tehri
+respondent-135-tehri,2,2,Zero Hunger,68,Female,Affected but not displaced (downstream),tehri
+respondent-135-tehri,3,2,Zero Hunger,68,Female,Affected but not displaced (downstream),tehri
+respondent-136-tehri,1,2,Zero Hunger,23,Female,Affected but not displaced (downstream),tehri
+respondent-136-tehri,2,1,No Poverty,23,Female,Affected but not displaced (downstream),tehri
+respondent-136-tehri,3,3,Good Health and Well-being,23,Female,Affected but not displaced (downstream),tehri
+respondent-137-tehri,1,7,Affordable and Clean Energy,62,Male,Affected but not displaced (downstream),tehri
+respondent-137-tehri,2,13,Climate Action,62,Male,Affected but not displaced (downstream),tehri
+respondent-137-tehri,3,3,Good Health and Well-being,62,Male,Affected but not displaced (downstream),tehri
+respondent-138-tehri,1,1,No Poverty,57,Female,Affected but not displaced (downstream),tehri
+respondent-138-tehri,2,2,Zero Hunger,57,Female,Affected but not displaced (downstream),tehri
+respondent-138-tehri,3,1,No Poverty,57,Female,Affected but not displaced (downstream),tehri
+respondent-14-arunachal,1,4,Quality Education,37,Female,NA,arunachal
+respondent-14-arunachal,2,3,Good Health and Well-being,37,Female,NA,arunachal
+respondent-14-arunachal,3,8,Decent Work and Economic Growth,37,Female,NA,arunachal
+respondent-14-tehri,1,1,No Poverty,43,Female,Affected but not displaced (nearby village),tehri
+respondent-14-tehri,2,7,Affordable and Clean Energy,43,Female,Affected but not displaced (nearby village),tehri
+respondent-14-tehri,3,7,Affordable and Clean Energy,43,Female,Affected but not displaced (nearby village),tehri
+respondent-15-arunachal,1,12,Responsible Consumption and Production,31,Male,NA,arunachal
+respondent-15-arunachal,2,1,No Poverty,31,Male,NA,arunachal
+respondent-15-arunachal,3,4,Quality Education,31,Male,NA,arunachal
+respondent-15-tehri,1,7,Affordable and Clean Energy,30,Male,Affected but not displaced (downstream),tehri
+respondent-15-tehri,2,1,No Poverty,30,Male,Affected but not displaced (downstream),tehri
+respondent-15-tehri,3,3,Good Health and Well-being,30,Male,Affected but not displaced (downstream),tehri
+respondent-16-arunachal,1,15,Life on Land,35,Male,NA,arunachal
+respondent-16-arunachal,2,4,Quality Education,35,Male,NA,arunachal
+respondent-16-arunachal,3,3,Good Health and Well-being,35,Male,NA,arunachal
+respondent-16-tehri,1,2,Zero Hunger,NA,Male,Affected but not displaced (nearby village),tehri
+respondent-16-tehri,2,15,Life on Land,NA,Male,Affected but not displaced (nearby village),tehri
+respondent-16-tehri,3,12,Responsible Consumption and Production,NA,Male,Affected but not displaced (nearby village),tehri
+respondent-17-arunachal,1,1,No Poverty,30,Female,NA,arunachal
+respondent-17-arunachal,2,4,Quality Education,30,Female,NA,arunachal
+respondent-17-arunachal,3,3,Good Health and Well-being,30,Female,NA,arunachal
+respondent-17-tehri,1,2,Zero Hunger,32,Male,Displaced,tehri
+respondent-17-tehri,2,1,No Poverty,32,Male,Displaced,tehri
+respondent-17-tehri,3,9,"Industry, Innovation and Infrastructure",32,Male,Displaced,tehri
+respondent-18-arunachal,1,1,No Poverty,29,Female,NA,arunachal
+respondent-18-arunachal,2,3,Good Health and Well-being,29,Female,NA,arunachal
+respondent-18-arunachal,3,4,Quality Education,29,Female,NA,arunachal
+respondent-18-tehri,1,1,No Poverty,38,Female,Not affected (far from dam),tehri
+respondent-18-tehri,2,15,Life on Land,38,Female,Not affected (far from dam),tehri
+respondent-18-tehri,3,7,Affordable and Clean Energy,38,Female,Not affected (far from dam),tehri
+respondent-19-arunachal,1,1,No Poverty,30,Female,NA,arunachal
+respondent-19-arunachal,2,13,Climate Action,30,Female,NA,arunachal
+respondent-19-arunachal,3,5,Gender Equality,30,Female,NA,arunachal
+respondent-19-tehri,1,1,No Poverty,35,Male,Not affected (far from dam),tehri
+respondent-19-tehri,2,7,Affordable and Clean Energy,35,Male,Not affected (far from dam),tehri
+respondent-19-tehri,3,17,Partnerships for the Goals,35,Male,Not affected (far from dam),tehri
+respondent-2-arunachal,1,13,Climate Action,39,Male,NA,arunachal
+respondent-2-arunachal,2,3,Good Health and Well-being,39,Male,NA,arunachal
+respondent-2-arunachal,3,4,Quality Education,39,Male,NA,arunachal
+respondent-2-tehri,1,1,No Poverty,34,Female,Not affected (near to dam),tehri
+respondent-2-tehri,2,2,Zero Hunger,34,Female,Not affected (near to dam),tehri
+respondent-2-tehri,3,6,Clean Water and Sanitation,34,Female,Not affected (near to dam),tehri
+respondent-20-arunachal,1,1,No Poverty,26,Female,NA,arunachal
+respondent-20-arunachal,2,5,Gender Equality,26,Female,NA,arunachal
+respondent-20-arunachal,3,4,Quality Education,26,Female,NA,arunachal
+respondent-20-tehri,1,15,Life on Land,21,Male,Affected but not displaced (nearby village),tehri
+respondent-20-tehri,2,1,No Poverty,21,Male,Affected but not displaced (nearby village),tehri
+respondent-20-tehri,3,15,Life on Land,21,Male,Affected but not displaced (nearby village),tehri
+respondent-21-arunachal,1,1,No Poverty,30,Male,NA,arunachal
+respondent-21-arunachal,2,2,Zero Hunger,30,Male,NA,arunachal
+respondent-21-arunachal,3,3,Good Health and Well-being,30,Male,NA,arunachal
+respondent-21-tehri,1,1,No Poverty,20,Male,Affected but not displaced (nearby village),tehri
+respondent-21-tehri,2,15,Life on Land,20,Male,Affected but not displaced (nearby village),tehri
+respondent-21-tehri,3,16,"Peace, Justice and Strong Institutions",20,Male,Affected but not displaced (nearby village),tehri
+respondent-22-tehri,1,15,Life on Land,24,Male,Affected but not displaced (nearby village),tehri
+respondent-22-tehri,2,2,Zero Hunger,24,Male,Affected but not displaced (nearby village),tehri
+respondent-22-tehri,3,6,Clean Water and Sanitation,24,Male,Affected but not displaced (nearby village),tehri
+respondent-23-tehri,1,1,No Poverty,38,Male,Affected but not displaced (nearby village),tehri
+respondent-23-tehri,2,2,Zero Hunger,38,Male,Affected but not displaced (nearby village),tehri
+respondent-23-tehri,3,3,Good Health and Well-being,38,Male,Affected but not displaced (nearby village),tehri
+respondent-24-tehri,1,1,No Poverty,19,Female,Affected but not displaced (nearby village),tehri
+respondent-24-tehri,2,2,Zero Hunger,19,Female,Affected but not displaced (nearby village),tehri
+respondent-24-tehri,3,17,Partnerships for the Goals,19,Female,Affected but not displaced (nearby village),tehri
+respondent-25-tehri,1,1,No Poverty,19,Female,Displaced,tehri
+respondent-25-tehri,2,2,Zero Hunger,19,Female,Displaced,tehri
+respondent-25-tehri,3,5,Gender Equality,19,Female,Displaced,tehri
+respondent-26-tehri,1,13,Climate Action,20,Male,Affected but not displaced (nearby village),tehri
+respondent-26-tehri,2,2,Zero Hunger,20,Male,Affected but not displaced (nearby village),tehri
+respondent-26-tehri,3,12,Responsible Consumption and Production,20,Male,Affected but not displaced (nearby village),tehri
+respondent-27-tehri,1,1,No Poverty,19,Female,Displaced,tehri
+respondent-27-tehri,2,15,Life on Land,19,Female,Displaced,tehri
+respondent-27-tehri,3,2,Zero Hunger,19,Female,Displaced,tehri
+respondent-28-tehri,1,15,Life on Land,19,Female,Not affected (far from dam),tehri
+respondent-28-tehri,2,13,Climate Action,19,Female,Not affected (far from dam),tehri
+respondent-28-tehri,3,9,"Industry, Innovation and Infrastructure",19,Female,Not affected (far from dam),tehri
+respondent-29-tehri,1,1,No Poverty,26,Male,Displaced,tehri
+respondent-29-tehri,2,13,Climate Action,26,Male,Displaced,tehri
+respondent-29-tehri,3,8,Decent Work and Economic Growth,26,Male,Displaced,tehri
+respondent-3-arunachal,1,4,Quality Education,27,Male,NA,arunachal
+respondent-3-arunachal,2,13,Climate Action,27,Male,NA,arunachal
+respondent-3-arunachal,3,15,Life on Land,27,Male,NA,arunachal
+respondent-30-tehri,1,1,No Poverty,19,Male,Displaced,tehri
+respondent-30-tehri,2,7,Affordable and Clean Energy,19,Male,Displaced,tehri
+respondent-30-tehri,3,4,Quality Education,19,Male,Displaced,tehri
+respondent-31-tehri,1,15,Life on Land,23,Female,Affected but not displaced (nearby village),tehri
+respondent-31-tehri,2,13,Climate Action,23,Female,Affected but not displaced (nearby village),tehri
+respondent-31-tehri,3,12,Responsible Consumption and Production,23,Female,Affected but not displaced (nearby village),tehri
+respondent-32-tehri,1,1,No Poverty,39,Female,Affected but not displaced (downstream),tehri
+respondent-32-tehri,2,2,Zero Hunger,39,Female,Affected but not displaced (downstream),tehri
+respondent-32-tehri,3,4,Quality Education,39,Female,Affected but not displaced (downstream),tehri
+respondent-33-tehri,1,2,Zero Hunger,20,Female,Affected but not displaced (nearby village),tehri
+respondent-33-tehri,2,7,Affordable and Clean Energy,20,Female,Affected but not displaced (nearby village),tehri
+respondent-33-tehri,3,4,Quality Education,20,Female,Affected but not displaced (nearby village),tehri
+respondent-34-tehri,1,15,Life on Land,19,Male,Not affected (far from dam),tehri
+respondent-34-tehri,2,7,Affordable and Clean Energy,19,Male,Not affected (far from dam),tehri
+respondent-34-tehri,3,6,Clean Water and Sanitation,19,Male,Not affected (far from dam),tehri
+respondent-35-tehri,1,13,Climate Action,19,Male,Not affected (far from dam),tehri
+respondent-35-tehri,2,7,Affordable and Clean Energy,19,Male,Not affected (far from dam),tehri
+respondent-35-tehri,3,2,Zero Hunger,19,Male,Not affected (far from dam),tehri
+respondent-36-tehri,1,13,Climate Action,29,Male,Affected but not displaced (nearby village),tehri
+respondent-36-tehri,2,2,Zero Hunger,29,Male,Affected but not displaced (nearby village),tehri
+respondent-36-tehri,3,12,Responsible Consumption and Production,29,Male,Affected but not displaced (nearby village),tehri
+respondent-37-tehri,1,2,Zero Hunger,56,Male,Displaced,tehri
+respondent-37-tehri,2,1,No Poverty,56,Male,Displaced,tehri
+respondent-37-tehri,3,3,Good Health and Well-being,56,Male,Displaced,tehri
+respondent-38-tehri,1,13,Climate Action,34,Male,Affected but not displaced (nearby village),tehri
+respondent-38-tehri,2,1,No Poverty,34,Male,Affected but not displaced (nearby village),tehri
+respondent-38-tehri,3,7,Affordable and Clean Energy,34,Male,Affected but not displaced (nearby village),tehri
+respondent-39-tehri,1,1,No Poverty,24,Male,Not affected (near to dam),tehri
+respondent-39-tehri,2,2,Zero Hunger,24,Male,Not affected (near to dam),tehri
+respondent-39-tehri,3,9,"Industry, Innovation and Infrastructure",24,Male,Not affected (near to dam),tehri
+respondent-4-arunachal,1,6,Clean Water and Sanitation,35,Female,NA,arunachal
+respondent-4-arunachal,2,4,Quality Education,35,Female,NA,arunachal
+respondent-4-arunachal,3,8,Decent Work and Economic Growth,35,Female,NA,arunachal
+respondent-4-tehri,1,7,Affordable and Clean Energy,47,Male,Displaced,tehri
+respondent-4-tehri,2,15,Life on Land,47,Male,Displaced,tehri
+respondent-4-tehri,3,11,Sustainable Cities and Communities,47,Male,Displaced,tehri
+respondent-40-tehri,1,1,No Poverty,39,Male,Displaced,tehri
+respondent-40-tehri,2,2,Zero Hunger,39,Male,Displaced,tehri
+respondent-40-tehri,3,6,Clean Water and Sanitation,39,Male,Displaced,tehri
+respondent-41-tehri,1,1,No Poverty,24,Male,Affected but not displaced (nearby village),tehri
+respondent-41-tehri,2,2,Zero Hunger,24,Male,Affected but not displaced (nearby village),tehri
+respondent-41-tehri,3,2,Zero Hunger,24,Male,Affected but not displaced (nearby village),tehri
+respondent-42-tehri,1,1,No Poverty,25,Female,Displaced,tehri
+respondent-42-tehri,2,2,Zero Hunger,25,Female,Displaced,tehri
+respondent-42-tehri,3,6,Clean Water and Sanitation,25,Female,Displaced,tehri
+respondent-43-tehri,1,15,Life on Land,52,Male,Displaced,tehri
+respondent-43-tehri,2,1,No Poverty,52,Male,Displaced,tehri
+respondent-43-tehri,3,15,Life on Land,52,Male,Displaced,tehri
+respondent-44-tehri,1,1,No Poverty,46,Male,Affected but not displaced (nearby village),tehri
+respondent-44-tehri,2,15,Life on Land,46,Male,Affected but not displaced (nearby village),tehri
+respondent-44-tehri,3,12,Responsible Consumption and Production,46,Male,Affected but not displaced (nearby village),tehri
+respondent-45-tehri,1,1,No Poverty,75,Female,Displaced,tehri
+respondent-45-tehri,2,2,Zero Hunger,75,Female,Displaced,tehri
+respondent-45-tehri,3,5,Gender Equality,75,Female,Displaced,tehri
+respondent-46-tehri,1,1,No Poverty,50,Female,Affected but not displaced (nearby village),tehri
+respondent-46-tehri,2,2,Zero Hunger,50,Female,Affected but not displaced (nearby village),tehri
+respondent-46-tehri,3,3,Good Health and Well-being,50,Female,Affected but not displaced (nearby village),tehri
+respondent-47-tehri,1,2,Zero Hunger,64,Female,Displaced,tehri
+respondent-47-tehri,2,1,No Poverty,64,Female,Displaced,tehri
+respondent-47-tehri,3,1,No Poverty,64,Female,Displaced,tehri
+respondent-48-tehri,1,1,No Poverty,44,Female,Affected but not displaced (nearby village),tehri
+respondent-48-tehri,2,2,Zero Hunger,44,Female,Affected but not displaced (nearby village),tehri
+respondent-48-tehri,3,1,No Poverty,44,Female,Affected but not displaced (nearby village),tehri
+respondent-49-tehri,1,1,No Poverty,49,Male,Affected but not displaced (nearby village),tehri
+respondent-49-tehri,2,2,Zero Hunger,49,Male,Affected but not displaced (nearby village),tehri
+respondent-49-tehri,3,11,Sustainable Cities and Communities,49,Male,Affected but not displaced (nearby village),tehri
+respondent-5-arunachal,1,1,No Poverty,40,Male,NA,arunachal
+respondent-5-arunachal,2,15,Life on Land,40,Male,NA,arunachal
+respondent-5-arunachal,3,4,Quality Education,40,Male,NA,arunachal
+respondent-5-tehri,1,2,Zero Hunger,46,Male,Affected but not displaced (nearby village),tehri
+respondent-5-tehri,2,1,No Poverty,46,Male,Affected but not displaced (nearby village),tehri
+respondent-5-tehri,3,1,No Poverty,46,Male,Affected but not displaced (nearby village),tehri
+respondent-50-tehri,1,1,No Poverty,54,Female,Affected but not displaced (nearby village),tehri
+respondent-50-tehri,2,2,Zero Hunger,54,Female,Affected but not displaced (nearby village),tehri
+respondent-50-tehri,3,3,Good Health and Well-being,54,Female,Affected but not displaced (nearby village),tehri
+respondent-51-tehri,1,1,No Poverty,52,Male,Affected but not displaced (nearby village),tehri
+respondent-51-tehri,2,2,Zero Hunger,52,Male,Affected but not displaced (nearby village),tehri
+respondent-51-tehri,3,3,Good Health and Well-being,52,Male,Affected but not displaced (nearby village),tehri
+respondent-52-tehri,1,2,Zero Hunger,39,Female,Affected but not displaced (nearby village),tehri
+respondent-52-tehri,2,1,No Poverty,39,Female,Affected but not displaced (nearby village),tehri
+respondent-52-tehri,3,2,Zero Hunger,39,Female,Affected but not displaced (nearby village),tehri
+respondent-53-tehri,1,1,No Poverty,38,Female,Affected but not displaced (nearby village),tehri
+respondent-53-tehri,2,2,Zero Hunger,38,Female,Affected but not displaced (nearby village),tehri
+respondent-53-tehri,3,1,No Poverty,38,Female,Affected but not displaced (nearby village),tehri
+respondent-54-tehri,1,1,No Poverty,76,Male,Affected but not displaced (nearby village),tehri
+respondent-54-tehri,2,2,Zero Hunger,76,Male,Affected but not displaced (nearby village),tehri
+respondent-54-tehri,3,2,Zero Hunger,76,Male,Affected but not displaced (nearby village),tehri
+respondent-55-tehri,1,2,Zero Hunger,42,Male,Affected but not displaced (nearby village),tehri
+respondent-55-tehri,2,1,No Poverty,42,Male,Affected but not displaced (nearby village),tehri
+respondent-55-tehri,3,4,Quality Education,42,Male,Affected but not displaced (nearby village),tehri
+respondent-56-tehri,1,1,No Poverty,25,Female,Affected but not displaced (nearby village),tehri
+respondent-56-tehri,2,2,Zero Hunger,25,Female,Affected but not displaced (nearby village),tehri
+respondent-56-tehri,3,3,Good Health and Well-being,25,Female,Affected but not displaced (nearby village),tehri
+respondent-57-tehri,1,15,Life on Land,47,Male,Affected but not displaced (nearby village),tehri
+respondent-57-tehri,2,2,Zero Hunger,47,Male,Affected but not displaced (nearby village),tehri
+respondent-57-tehri,3,7,Affordable and Clean Energy,47,Male,Affected but not displaced (nearby village),tehri
+respondent-58-tehri,1,1,No Poverty,69,Female,Affected but not displaced (nearby village),tehri
+respondent-58-tehri,2,2,Zero Hunger,69,Female,Affected but not displaced (nearby village),tehri
+respondent-58-tehri,3,3,Good Health and Well-being,69,Female,Affected but not displaced (nearby village),tehri
+respondent-59-tehri,1,1,No Poverty,69,Female,Affected but not displaced (nearby village),tehri
+respondent-59-tehri,2,2,Zero Hunger,69,Female,Affected but not displaced (nearby village),tehri
+respondent-59-tehri,3,1,No Poverty,69,Female,Affected but not displaced (nearby village),tehri
+respondent-6-arunachal,1,4,Quality Education,28,Male,NA,arunachal
+respondent-6-arunachal,2,3,Good Health and Well-being,28,Male,NA,arunachal
+respondent-6-arunachal,3,13,Climate Action,28,Male,NA,arunachal
+respondent-6-tehri,1,13,Climate Action,25,Male,Not affected (far from dam),tehri
+respondent-6-tehri,2,7,Affordable and Clean Energy,25,Male,Not affected (far from dam),tehri
+respondent-6-tehri,3,13,Climate Action,25,Male,Not affected (far from dam),tehri
+respondent-60-tehri,1,1,No Poverty,42,Female,Affected but not displaced (nearby village),tehri
+respondent-60-tehri,2,2,Zero Hunger,42,Female,Affected but not displaced (nearby village),tehri
+respondent-60-tehri,3,2,Zero Hunger,42,Female,Affected but not displaced (nearby village),tehri
+respondent-61-tehri,1,7,Affordable and Clean Energy,49,Male,None of the above,tehri
+respondent-61-tehri,2,15,Life on Land,49,Male,None of the above,tehri
+respondent-61-tehri,3,3,Good Health and Well-being,49,Male,None of the above,tehri
+respondent-62-tehri,1,7,Affordable and Clean Energy,NA,Male,None of the above,tehri
+respondent-62-tehri,2,1,No Poverty,NA,Male,None of the above,tehri
+respondent-62-tehri,3,17,Partnerships for the Goals,NA,Male,None of the above,tehri
+respondent-63-tehri,1,2,Zero Hunger,37,Female,None of the above,tehri
+respondent-63-tehri,2,1,No Poverty,37,Female,None of the above,tehri
+respondent-63-tehri,3,1,No Poverty,37,Female,None of the above,tehri
+respondent-64-tehri,1,15,Life on Land,38,Male,None of the above,tehri
+respondent-64-tehri,2,13,Climate Action,38,Male,None of the above,tehri
+respondent-64-tehri,3,6,Clean Water and Sanitation,38,Male,None of the above,tehri
+respondent-65-tehri,1,7,Affordable and Clean Energy,56,Male,Not affected (far from dam),tehri
+respondent-65-tehri,2,13,Climate Action,56,Male,Not affected (far from dam),tehri
+respondent-65-tehri,3,9,"Industry, Innovation and Infrastructure",56,Male,Not affected (far from dam),tehri
+respondent-66-tehri,1,1,No Poverty,54,Female,Affected but not displaced (nearby village),tehri
+respondent-66-tehri,2,2,Zero Hunger,54,Female,Affected but not displaced (nearby village),tehri
+respondent-66-tehri,3,3,Good Health and Well-being,54,Female,Affected but not displaced (nearby village),tehri
+respondent-67-tehri,1,1,No Poverty,63,Male,Displaced,tehri
+respondent-67-tehri,2,2,Zero Hunger,63,Male,Displaced,tehri
+respondent-67-tehri,3,3,Good Health and Well-being,63,Male,Displaced,tehri
+respondent-68-tehri,1,2,Zero Hunger,68,Male,Displaced,tehri
+respondent-68-tehri,2,1,No Poverty,68,Male,Displaced,tehri
+respondent-68-tehri,3,1,No Poverty,68,Male,Displaced,tehri
+respondent-69-tehri,1,2,Zero Hunger,51,Male,Displaced,tehri
+respondent-69-tehri,2,1,No Poverty,51,Male,Displaced,tehri
+respondent-69-tehri,3,3,Good Health and Well-being,51,Male,Displaced,tehri
+respondent-7-arunachal,1,1,No Poverty,36,Male,NA,arunachal
+respondent-7-arunachal,2,3,Good Health and Well-being,36,Male,NA,arunachal
+respondent-7-arunachal,3,4,Quality Education,36,Male,NA,arunachal
+respondent-7-tehri,1,1,No Poverty,36,Female,Displaced,tehri
+respondent-7-tehri,2,2,Zero Hunger,36,Female,Displaced,tehri
+respondent-7-tehri,3,16,"Peace, Justice and Strong Institutions",36,Female,Displaced,tehri
+respondent-70-tehri,1,2,Zero Hunger,56,Male,Displaced,tehri
+respondent-70-tehri,2,1,No Poverty,56,Male,Displaced,tehri
+respondent-70-tehri,3,2,Zero Hunger,56,Male,Displaced,tehri
+respondent-71-tehri,1,1,No Poverty,82,Male,Displaced,tehri
+respondent-71-tehri,2,2,Zero Hunger,82,Male,Displaced,tehri
+respondent-71-tehri,3,2,Zero Hunger,82,Male,Displaced,tehri
+respondent-72-tehri,1,1,No Poverty,54,Male,Affected but not displaced (nearby village),tehri
+respondent-72-tehri,2,2,Zero Hunger,54,Male,Affected but not displaced (nearby village),tehri
+respondent-72-tehri,3,4,Quality Education,54,Male,Affected but not displaced (nearby village),tehri
+respondent-73-tehri,1,1,No Poverty,54,Male,Affected but not displaced (nearby village),tehri
+respondent-73-tehri,2,13,Climate Action,54,Male,Affected but not displaced (nearby village),tehri
+respondent-73-tehri,3,4,Quality Education,54,Male,Affected but not displaced (nearby village),tehri
+respondent-74-tehri,1,15,Life on Land,35,Male,Affected but not displaced (nearby village),tehri
+respondent-74-tehri,2,1,No Poverty,35,Male,Affected but not displaced (nearby village),tehri
+respondent-74-tehri,3,3,Good Health and Well-being,35,Male,Affected but not displaced (nearby village),tehri
+respondent-75-tehri,1,1,No Poverty,48,Female,Affected but not displaced (nearby village),tehri
+respondent-75-tehri,2,2,Zero Hunger,48,Female,Affected but not displaced (nearby village),tehri
+respondent-75-tehri,3,2,Zero Hunger,48,Female,Affected but not displaced (nearby village),tehri
+respondent-76-tehri,1,1,No Poverty,50,Female,Affected but not displaced (nearby village),tehri
+respondent-76-tehri,2,15,Life on Land,50,Female,Affected but not displaced (nearby village),tehri
+respondent-76-tehri,3,3,Good Health and Well-being,50,Female,Affected but not displaced (nearby village),tehri
+respondent-77-tehri,1,1,No Poverty,55,Male,Displaced,tehri
+respondent-77-tehri,2,2,Zero Hunger,55,Male,Displaced,tehri
+respondent-77-tehri,3,4,Quality Education,55,Male,Displaced,tehri
+respondent-78-tehri,1,15,Life on Land,62,Female,Displaced,tehri
+respondent-78-tehri,2,2,Zero Hunger,62,Female,Displaced,tehri
+respondent-78-tehri,3,5,Gender Equality,62,Female,Displaced,tehri
+respondent-79-tehri,1,15,Life on Land,57,Male,Displaced,tehri
+respondent-79-tehri,2,13,Climate Action,57,Male,Displaced,tehri
+respondent-79-tehri,3,4,Quality Education,57,Male,Displaced,tehri
+respondent-8-arunachal,1,15,Life on Land,65,Male,NA,arunachal
+respondent-8-arunachal,2,4,Quality Education,65,Male,NA,arunachal
+respondent-8-arunachal,3,6,Clean Water and Sanitation,65,Male,NA,arunachal
+respondent-8-tehri,1,2,Zero Hunger,28,Male,Affected but not displaced (nearby village),tehri
+respondent-8-tehri,2,1,No Poverty,28,Male,Affected but not displaced (nearby village),tehri
+respondent-8-tehri,3,15,Life on Land,28,Male,Affected but not displaced (nearby village),tehri
+respondent-80-tehri,1,15,Life on Land,50,Male,Displaced,tehri
+respondent-80-tehri,2,13,Climate Action,50,Male,Displaced,tehri
+respondent-80-tehri,3,16,"Peace, Justice and Strong Institutions",50,Male,Displaced,tehri
+respondent-81-tehri,1,2,Zero Hunger,48,Female,Displaced,tehri
+respondent-81-tehri,2,1,No Poverty,48,Female,Displaced,tehri
+respondent-81-tehri,3,1,No Poverty,48,Female,Displaced,tehri
+respondent-82-tehri,1,2,Zero Hunger,58,Female,Displaced,tehri
+respondent-82-tehri,2,1,No Poverty,58,Female,Displaced,tehri
+respondent-82-tehri,3,4,Quality Education,58,Female,Displaced,tehri
+respondent-83-tehri,1,13,Climate Action,45,Male,Displaced,tehri
+respondent-83-tehri,2,15,Life on Land,45,Male,Displaced,tehri
+respondent-83-tehri,3,6,Clean Water and Sanitation,45,Male,Displaced,tehri
+respondent-84-tehri,1,2,Zero Hunger,23,Male,Not affected (far from dam),tehri
+respondent-84-tehri,2,1,No Poverty,23,Male,Not affected (far from dam),tehri
+respondent-84-tehri,3,4,Quality Education,23,Male,Not affected (far from dam),tehri
+respondent-85-tehri,1,1,No Poverty,45,Male,Affected but not displaced (downstream),tehri
+respondent-85-tehri,2,2,Zero Hunger,45,Male,Affected but not displaced (downstream),tehri
+respondent-85-tehri,3,5,Gender Equality,45,Male,Affected but not displaced (downstream),tehri
+respondent-86-tehri,1,1,No Poverty,39,Male,Affected but not displaced (downstream),tehri
+respondent-86-tehri,2,13,Climate Action,39,Male,Affected but not displaced (downstream),tehri
+respondent-86-tehri,3,1,No Poverty,39,Male,Affected but not displaced (downstream),tehri
+respondent-87-tehri,1,2,Zero Hunger,22,Female,Affected but not displaced (downstream),tehri
+respondent-87-tehri,2,1,No Poverty,22,Female,Affected but not displaced (downstream),tehri
+respondent-87-tehri,3,3,Good Health and Well-being,22,Female,Affected but not displaced (downstream),tehri
+respondent-88-tehri,1,1,No Poverty,57,Male,Affected but not displaced (downstream),tehri
+respondent-88-tehri,2,2,Zero Hunger,57,Male,Affected but not displaced (downstream),tehri
+respondent-88-tehri,3,16,"Peace, Justice and Strong Institutions",57,Male,Affected but not displaced (downstream),tehri
+respondent-89-tehri,1,15,Life on Land,37,Male,Affected but not displaced (downstream),tehri
+respondent-89-tehri,2,2,Zero Hunger,37,Male,Affected but not displaced (downstream),tehri
+respondent-89-tehri,3,2,Zero Hunger,37,Male,Affected but not displaced (downstream),tehri
+respondent-9-arunachal,1,1,No Poverty,44,Male,NA,arunachal
+respondent-9-arunachal,2,4,Quality Education,44,Male,NA,arunachal
+respondent-9-arunachal,3,5,Gender Equality,44,Male,NA,arunachal
+respondent-9-tehri,1,2,Zero Hunger,57,Male,Displaced,tehri
+respondent-9-tehri,2,1,No Poverty,57,Male,Displaced,tehri
+respondent-9-tehri,3,9,"Industry, Innovation and Infrastructure",57,Male,Displaced,tehri
+respondent-90-tehri,1,1,No Poverty,45,Male,Affected but not displaced (downstream),tehri
+respondent-90-tehri,2,2,Zero Hunger,45,Male,Affected but not displaced (downstream),tehri
+respondent-90-tehri,3,1,No Poverty,45,Male,Affected but not displaced (downstream),tehri
+respondent-91-tehri,1,15,Life on Land,60,Male,Affected but not displaced (downstream),tehri
+respondent-91-tehri,2,7,Affordable and Clean Energy,60,Male,Affected but not displaced (downstream),tehri
+respondent-91-tehri,3,2,Zero Hunger,60,Male,Affected but not displaced (downstream),tehri
+respondent-92-tehri,1,2,Zero Hunger,58,Male,Affected but not displaced (downstream),tehri
+respondent-92-tehri,2,1,No Poverty,58,Male,Affected but not displaced (downstream),tehri
+respondent-92-tehri,3,1,No Poverty,58,Male,Affected but not displaced (downstream),tehri
+respondent-93-tehri,1,1,No Poverty,65,Male,Affected but not displaced (downstream),tehri
+respondent-93-tehri,2,2,Zero Hunger,65,Male,Affected but not displaced (downstream),tehri
+respondent-93-tehri,3,2,Zero Hunger,65,Male,Affected but not displaced (downstream),tehri
+respondent-94-tehri,1,7,Affordable and Clean Energy,23,Female,Affected but not displaced (downstream),tehri
+respondent-94-tehri,2,2,Zero Hunger,23,Female,Affected but not displaced (downstream),tehri
+respondent-94-tehri,3,6,Clean Water and Sanitation,23,Female,Affected but not displaced (downstream),tehri
+respondent-95-tehri,1,1,No Poverty,70,Female,Affected but not displaced (downstream),tehri
+respondent-95-tehri,2,2,Zero Hunger,70,Female,Affected but not displaced (downstream),tehri
+respondent-95-tehri,3,3,Good Health and Well-being,70,Female,Affected but not displaced (downstream),tehri
+respondent-96-tehri,1,7,Affordable and Clean Energy,68,Female,Affected but not displaced (downstream),tehri
+respondent-96-tehri,2,1,No Poverty,68,Female,Affected but not displaced (downstream),tehri
+respondent-96-tehri,3,2,Zero Hunger,68,Female,Affected but not displaced (downstream),tehri
+respondent-97-tehri,1,2,Zero Hunger,47,Female,Affected but not displaced (downstream),tehri
+respondent-97-tehri,2,15,Life on Land,47,Female,Affected but not displaced (downstream),tehri
+respondent-97-tehri,3,4,Quality Education,47,Female,Affected but not displaced (downstream),tehri
+respondent-98-tehri,1,15,Life on Land,29,Female,Affected but not displaced (downstream),tehri
+respondent-98-tehri,2,1,No Poverty,29,Female,Affected but not displaced (downstream),tehri
+respondent-98-tehri,3,3,Good Health and Well-being,29,Female,Affected but not displaced (downstream),tehri
+respondent-99-tehri,1,2,Zero Hunger,54,Female,Affected but not displaced (downstream),tehri
+respondent-99-tehri,2,1,No Poverty,54,Female,Affected but not displaced (downstream),tehri
+respondent-99-tehri,3,2,Zero Hunger,54,Female,Affected but not displaced (downstream),tehri

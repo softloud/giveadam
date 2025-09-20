@@ -1,0 +1,158 @@
+id_respondent,age,gender,displacement_status,region
+respondent-1-tehri,20,Male,Displaced,tehri
+respondent-2-tehri,34,Female,Not affected (near to dam),tehri
+respondent-4-tehri,47,Male,Displaced,tehri
+respondent-5-tehri,46,Male,Affected but not displaced (nearby village),tehri
+respondent-6-tehri,25,Male,Not affected (far from dam),tehri
+respondent-7-tehri,36,Female,Displaced,tehri
+respondent-8-tehri,28,Male,Affected but not displaced (nearby village),tehri
+respondent-9-tehri,57,Male,Displaced,tehri
+respondent-10-tehri,33,Female,Displaced,tehri
+respondent-11-tehri,27,Female,Affected but not displaced (nearby village),tehri
+respondent-12-tehri,33,Female,Not affected (far from dam),tehri
+respondent-13-tehri,26,Prefer not to say,Not affected (far from dam),tehri
+respondent-14-tehri,43,Female,Affected but not displaced (nearby village),tehri
+respondent-15-tehri,30,Male,Affected but not displaced (downstream),tehri
+respondent-16-tehri,NA,Male,Affected but not displaced (nearby village),tehri
+respondent-17-tehri,32,Male,Displaced,tehri
+respondent-18-tehri,38,Female,Not affected (far from dam),tehri
+respondent-19-tehri,35,Male,Not affected (far from dam),tehri
+respondent-20-tehri,21,Male,Affected but not displaced (nearby village),tehri
+respondent-21-tehri,20,Male,Affected but not displaced (nearby village),tehri
+respondent-22-tehri,24,Male,Affected but not displaced (nearby village),tehri
+respondent-23-tehri,38,Male,Affected but not displaced (nearby village),tehri
+respondent-24-tehri,19,Female,Affected but not displaced (nearby village),tehri
+respondent-25-tehri,19,Female,Displaced,tehri
+respondent-26-tehri,20,Male,Affected but not displaced (nearby village),tehri
+respondent-27-tehri,19,Female,Displaced,tehri
+respondent-28-tehri,19,Female,Not affected (far from dam),tehri
+respondent-29-tehri,26,Male,Displaced,tehri
+respondent-30-tehri,19,Male,Displaced,tehri
+respondent-31-tehri,23,Female,Affected but not displaced (nearby village),tehri
+respondent-32-tehri,39,Female,Affected but not displaced (downstream),tehri
+respondent-33-tehri,20,Female,Affected but not displaced (nearby village),tehri
+respondent-34-tehri,19,Male,Not affected (far from dam),tehri
+respondent-35-tehri,19,Male,Not affected (far from dam),tehri
+respondent-36-tehri,29,Male,Affected but not displaced (nearby village),tehri
+respondent-37-tehri,56,Male,Displaced,tehri
+respondent-38-tehri,34,Male,Affected but not displaced (nearby village),tehri
+respondent-39-tehri,24,Male,Not affected (near to dam),tehri
+respondent-40-tehri,39,Male,Displaced,tehri
+respondent-41-tehri,24,Male,Affected but not displaced (nearby village),tehri
+respondent-42-tehri,25,Female,Displaced,tehri
+respondent-43-tehri,52,Male,Displaced,tehri
+respondent-44-tehri,46,Male,Affected but not displaced (nearby village),tehri
+respondent-45-tehri,75,Female,Displaced,tehri
+respondent-46-tehri,50,Female,Affected but not displaced (nearby village),tehri
+respondent-47-tehri,64,Female,Displaced,tehri
+respondent-48-tehri,44,Female,Affected but not displaced (nearby village),tehri
+respondent-49-tehri,49,Male,Affected but not displaced (nearby village),tehri
+respondent-50-tehri,54,Female,Affected but not displaced (nearby village),tehri
+respondent-51-tehri,52,Male,Affected but not displaced (nearby village),tehri
+respondent-52-tehri,39,Female,Affected but not displaced (nearby village),tehri
+respondent-53-tehri,38,Female,Affected but not displaced (nearby village),tehri
+respondent-54-tehri,76,Male,Affected but not displaced (nearby village),tehri
+respondent-55-tehri,42,Male,Affected but not displaced (nearby village),tehri
+respondent-56-tehri,25,Female,Affected but not displaced (nearby village),tehri
+respondent-57-tehri,47,Male,Affected but not displaced (nearby village),tehri
+respondent-58-tehri,69,Female,Affected but not displaced (nearby village),tehri
+respondent-59-tehri,69,Female,Affected but not displaced (nearby village),tehri
+respondent-60-tehri,42,Female,Affected but not displaced (nearby village),tehri
+respondent-61-tehri,49,Male,None of the above,tehri
+respondent-62-tehri,NA,Male,None of the above,tehri
+respondent-63-tehri,37,Female,None of the above,tehri
+respondent-64-tehri,38,Male,None of the above,tehri
+respondent-65-tehri,56,Male,Not affected (far from dam),tehri
+respondent-66-tehri,54,Female,Affected but not displaced (nearby village),tehri
+respondent-67-tehri,63,Male,Displaced,tehri
+respondent-68-tehri,68,Male,Displaced,tehri
+respondent-69-tehri,51,Male,Displaced,tehri
+respondent-70-tehri,56,Male,Displaced,tehri
+respondent-71-tehri,82,Male,Displaced,tehri
+respondent-72-tehri,54,Male,Affected but not displaced (nearby village),tehri
+respondent-73-tehri,54,Male,Affected but not displaced (nearby village),tehri
+respondent-74-tehri,35,Male,Affected but not displaced (nearby village),tehri
+respondent-75-tehri,48,Female,Affected but not displaced (nearby village),tehri
+respondent-76-tehri,50,Female,Affected but not displaced (nearby village),tehri
+respondent-77-tehri,55,Male,Displaced,tehri
+respondent-78-tehri,62,Female,Displaced,tehri
+respondent-79-tehri,57,Male,Displaced,tehri
+respondent-80-tehri,50,Male,Displaced,tehri
+respondent-81-tehri,48,Female,Displaced,tehri
+respondent-82-tehri,58,Female,Displaced,tehri
+respondent-83-tehri,45,Male,Displaced,tehri
+respondent-84-tehri,23,Male,Not affected (far from dam),tehri
+respondent-85-tehri,45,Male,Affected but not displaced (downstream),tehri
+respondent-86-tehri,39,Male,Affected but not displaced (downstream),tehri
+respondent-87-tehri,22,Female,Affected but not displaced (downstream),tehri
+respondent-88-tehri,57,Male,Affected but not displaced (downstream),tehri
+respondent-89-tehri,37,Male,Affected but not displaced (downstream),tehri
+respondent-90-tehri,45,Male,Affected but not displaced (downstream),tehri
+respondent-91-tehri,60,Male,Affected but not displaced (downstream),tehri
+respondent-92-tehri,58,Male,Affected but not displaced (downstream),tehri
+respondent-93-tehri,65,Male,Affected but not displaced (downstream),tehri
+respondent-94-tehri,23,Female,Affected but not displaced (downstream),tehri
+respondent-95-tehri,70,Female,Affected but not displaced (downstream),tehri
+respondent-96-tehri,68,Female,Affected but not displaced (downstream),tehri
+respondent-97-tehri,47,Female,Affected but not displaced (downstream),tehri
+respondent-98-tehri,29,Female,Affected but not displaced (downstream),tehri
+respondent-99-tehri,54,Female,Affected but not displaced (downstream),tehri
+respondent-100-tehri,78,Female,Affected but not displaced (downstream),tehri
+respondent-101-tehri,25,Male,Affected but not displaced (downstream),tehri
+respondent-102-tehri,32,Male,Affected but not displaced (downstream),tehri
+respondent-103-tehri,66,Male,Affected but not displaced (downstream),tehri
+respondent-104-tehri,39,Female,Affected but not displaced (downstream),tehri
+respondent-105-tehri,67,Male,Not affected (far from dam),tehri
+respondent-106-tehri,45,Female,Affected but not displaced (downstream),tehri
+respondent-107-tehri,65,Male,Affected but not displaced (downstream),tehri
+respondent-108-tehri,21,Female,Affected but not displaced (downstream),tehri
+respondent-109-tehri,54,Male,Affected but not displaced (downstream),tehri
+respondent-110-tehri,48,Female,Affected but not displaced (downstream),tehri
+respondent-111-tehri,29,Male,Not affected (far from dam),tehri
+respondent-113-tehri,20,Male,Not affected (far from dam),tehri
+respondent-114-tehri,26,Female,Not affected (far from dam),tehri
+respondent-115-tehri,24,Female,Not affected (far from dam),tehri
+respondent-116-tehri,28,Male,Not affected (far from dam),tehri
+respondent-117-tehri,29,Female,Not affected (far from dam),tehri
+respondent-118-tehri,31,Male,Not affected (far from dam),tehri
+respondent-119-tehri,30,Female,Not affected (far from dam),tehri
+respondent-120-tehri,22,Female,Not affected (far from dam),tehri
+respondent-121-tehri,29,Female,Not affected (far from dam),tehri
+respondent-122-tehri,32,Male,Not affected (far from dam),tehri
+respondent-123-tehri,27,Female,Not affected (far from dam),tehri
+respondent-124-tehri,34,Male,Not affected (far from dam),tehri
+respondent-125-tehri,23,Female,Not affected (far from dam),tehri
+respondent-126-tehri,63,Female,Not affected (far from dam),tehri
+respondent-127-tehri,67,Female,Not affected (far from dam),tehri
+respondent-128-tehri,19,Male,Not affected (far from dam),tehri
+respondent-129-tehri,20,Male,Not affected (far from dam),tehri
+respondent-130-tehri,74,Female,Not affected (far from dam),tehri
+respondent-131-tehri,26,Female,Not affected (far from dam),tehri
+respondent-132-tehri,27,Female,Not affected (far from dam),tehri
+respondent-133-tehri,32,Male,Not affected (far from dam),tehri
+respondent-134-tehri,48,Male,Affected but not displaced (downstream),tehri
+respondent-135-tehri,68,Female,Affected but not displaced (downstream),tehri
+respondent-136-tehri,23,Female,Affected but not displaced (downstream),tehri
+respondent-137-tehri,62,Male,Affected but not displaced (downstream),tehri
+respondent-138-tehri,57,Female,Affected but not displaced (downstream),tehri
+respondent-1-arunachal,NA,Male,NA,arunachal
+respondent-2-arunachal,39,Male,NA,arunachal
+respondent-3-arunachal,27,Male,NA,arunachal
+respondent-4-arunachal,35,Female,NA,arunachal
+respondent-5-arunachal,40,Male,NA,arunachal
+respondent-6-arunachal,28,Male,NA,arunachal
+respondent-7-arunachal,36,Male,NA,arunachal
+respondent-8-arunachal,65,Male,NA,arunachal
+respondent-9-arunachal,44,Male,NA,arunachal
+respondent-10-arunachal,36,Male,NA,arunachal
+respondent-11-arunachal,29,Male,NA,arunachal
+respondent-12-arunachal,26,Male,NA,arunachal
+respondent-13-arunachal,37,Female,NA,arunachal
+respondent-14-arunachal,37,Female,NA,arunachal
+respondent-15-arunachal,31,Male,NA,arunachal
+respondent-16-arunachal,35,Male,NA,arunachal
+respondent-17-arunachal,30,Female,NA,arunachal
+respondent-18-arunachal,29,Female,NA,arunachal
+respondent-19-arunachal,30,Female,NA,arunachal
+respondent-20-arunachal,26,Female,NA,arunachal
+respondent-21-arunachal,30,Male,NA,arunachal
