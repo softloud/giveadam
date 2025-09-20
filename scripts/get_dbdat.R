@@ -12,7 +12,7 @@
 #' head(dailies)
 get_dbdat <- function(table_name) {
   # Path to the DuckDB database file (relative to project root)
-  db_path <- "database/dat.duckdb"
+  db_path <- "dbt_project/dev.duckdb"
 
   # Open a connection to the DuckDB database
   con <- DBI::dbConnect(duckdb::duckdb(), dbdir = db_path)

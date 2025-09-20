@@ -32,11 +32,11 @@ clean-targets:         # directories to be removed by `dbt clean`
 models:
   dbt_project:
     # Config indicated by + and applies to all files under models/example/
+    source_base:
+      +materialized: ephemeral
     source_entities: 
       +materialized: view
     semantic:
       +materialized: ephemeral
     analytic:
-      +materialized: table
-    observability:
       +materialized: table

@@ -3,4 +3,5 @@ dbt_profile:
     dev:
       type: duckdb
       schema: main
+      path: dev.duckdb
   target: dev

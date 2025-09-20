@@ -91,3 +91,75 @@ Community review and validation of this research data is welcomed. Please [open 
 **Missing Values:** Coded as "NA"  
 **Generated:** From dbt pipeline in [`dbt_project/`](../dbt_project/)  
 **Last Updated:** Check git commit history for latest changes
+
+## Citation & Licensing
+
+### How to Cite This Dataset
+
+**APA Style:**
+```
+Gupta, G., & Gray, C. T. (2025). Social impacts of dams in North India: Survey data on displacement and sustainable development preferences [Dataset]. GitHub. https://github.com/softloud/giveadam
+```
+
+**BibTeX:**
+```bibtex
+@dataset{gupta_gray_2025_giveadam,
+  author       = {Gupta, Garima and Gray, Charles T.},
+  title        = {Social impacts of dams in North India: Survey data on 
+                  displacement and sustainable development preferences},
+  year         = {2025},
+  publisher    = {GitHub},
+  url          = {https://github.com/softloud/giveadam},
+  note         = {Data collected in Tehri Dam region, Uttarakhand and 
+                  Arunachal Pradesh, India}
+}
+```
+
+### License
+
+This dataset is licensed under [Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/).
+
+**You are free to:**
+- **Share** — copy and redistribute the material in any medium or format
+- **Adapt** — remix, transform, and build upon the material for any purpose, even commercially
+
+**Under the following terms:**
+- **Attribution** — You must give appropriate credit, provide a link to the license, and indicate if changes were made
+
+### Digital Object Identifier (DOI)
+
+*DOI pending* - Consider registering this dataset with:
+- [Zenodo](https://zenodo.org) for free DOI assignment
+- [Figshare](https://figshare.com) for academic datasets
+- [Dryad](https://datadryad.org) for research data
+
+### Additional Citation Elements
+
+**Research Context:** This dataset supports research on social impacts of large infrastructure development projects in India, with focus on community displacement and sustainable development priorities.
+
+**Funding:** *[Add funding information if applicable]*
+
+**Data Collection Period:** *[Add collection timeframe if available]*
+
+**Geographic Bounds:** 
+- Tehri Dam region, Uttarakhand, India
+- Arunachal Pradesh, India
+
+**Ethical Considerations:** Survey data collected with participant consent. Personal identifiers removed for privacy protection.
+
+### Recommended Citation for Publications
+
+When using this data in academic publications, please cite both the dataset and the methodology:
+
+1. **Dataset Citation:** (See BibTeX above)
+2. **Methodology Reference:** Gray, C. T. (2025). Automated data pipeline documentation for transparent social impact research. *[Add publication details when available]*
+
+### Data Availability Statement Template
+
+For use in academic papers:
+```
+"The datasets supporting the conclusions of this article are available in the 
+giveadam repository, https://github.com/softloud/giveadam. Survey data on dam 
+impacts and SDG preferences are provided under CC BY 4.0 license with full 
+methodology documentation and automated quality assurance reports."
+```

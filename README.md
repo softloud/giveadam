@@ -5,12 +5,15 @@ This project provisions data for analysis of the social impacts of dams in North
 ## Project Structure
 
 ### Data Directories
-- **`raw_data/`** - Original survey data files provided by Garima Gupta
-  - Tehri and Arunachal Pradesh survey responses
-  - Column mapping helpers
+
 - **`data/`** - Published, processed datasets (output from dbt pipeline)
   - Clean, analysis-ready data tables
   - Derived metrics and aggregations
+  - Ready to be imported via url into Python or R analyses. 
+
+- **`raw_data/`** - Original survey data files provided by Garima Gupta
+  - Tehri (raw Kobo export) and Arunachal Pradesh (provenance currently to be provided by Garima Gupta) survey responses
+  - Column mapping helper for Tehri dataset
 
 ### Data Pipeline
 - **`dbt_project/`** - dbt data transformation pipeline
