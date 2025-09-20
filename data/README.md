@@ -128,18 +128,15 @@ This dataset is licensed under [Creative Commons Attribution 4.0 International (
 
 ### Digital Object Identifier (DOI)
 
-*DOI pending* - Consider registering this dataset with:
-- [Zenodo](https://zenodo.org) for free DOI assignment
-- [Figshare](https://figshare.com) for academic datasets
-- [Dryad](https://datadryad.org) for research data
+*DOI pending* - These data will be published on the beta rollout of Frontiers FAIR data platform.
 
 ### Additional Citation Elements
 
-**Research Context:** This dataset supports research on social impacts of large infrastructure development projects in India, with focus on community displacement and sustainable development priorities.
+**Research Context:** These data support research on social impacts of large infrastructure development projects in India, with focus on community displacement and sustainable development priorities.
 
-**Funding:** *[Add funding information if applicable]*
+**Funding:** *[Funding information pending]*
 
-**Data Collection Period:** *[Add collection timeframe if available]*
+**Data Collection Period:** *[Collection timeframe pending]*
 
 **Geographic Bounds:** 
 - Tehri Dam region, Uttarakhand, India
@@ -152,7 +149,7 @@ This dataset is licensed under [Creative Commons Attribution 4.0 International (
 When using this data in academic publications, please cite both the dataset and the methodology:
 
 1. **Dataset Citation:** (See BibTeX above)
-2. **Methodology Reference:** Gray, C. T. (2025). Automated data pipeline documentation for transparent social impact research. *[Add publication details when available]*
+2. **Methodology Reference:** Gray, C. T. (2025). Automated data pipeline documentation for transparent social impact research. *[Preprint]*
 
 ### Data Availability Statement Template
 
