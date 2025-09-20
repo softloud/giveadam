@@ -1,0 +1,24 @@
+version: 2
+
+models:
+  - name: se_respondents_arunachal
+    description: "Each row represents a respondent from Arunachal Pradesh."
+    data_tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns:
+              - id_respondent
+    columns:
+      - name: id_respondent
+        description: "Unique identifier for each respondent"
+        data_tests:
+          - not_null
+          - unique
+      - name: age
+        description: "Age of the respondent"
+      - name: gender
+        description: "Gender of the respondent"
+        data_tests:
+          - accepted_values:
+              values: ['Male', 'Female', 'Prefer not to say']
+

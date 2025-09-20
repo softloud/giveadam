@@ -1,0 +1,7 @@
+version: 2
+
+seeds: 
+  - name: seed_tehri
+    description: All tehri questions.
+  - name: seed_arunachal
+    description: Only top 5 ranking and age and gender in these data. 

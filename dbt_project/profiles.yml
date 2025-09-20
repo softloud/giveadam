@@ -1,0 +1,6 @@
+dbt_profile:
+  outputs:
+    dev:
+      type: duckdb
+      schema: main
+  target: dev
