@@ -2,6 +2,8 @@
 
 This project provisions data for analysis of the social impacts of dams in North India as measured by two surveys, using open source tools including dbt, DuckDB, R and Python.
 
+![](figures_and_tables/top3-treemap.png)
+
 ## Project Structure
 
 ### Data Directories

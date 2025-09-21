@@ -11,8 +11,19 @@
 \usepackage{url}
 \usepackage[left=0.25in, right=0.25in, top=0.5in, bottom=0.5in]{geometry}
 
+% hyperlinks
+% filepath: /home/cantabile/Documents/repos/giveadam/observability/obs.tex
+\usepackage{hyperref}
+\definecolor{darkolive}{RGB}{85, 107, 47}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=darkolive,
+    urlcolor=darkolive,
+    citecolor=darkolive
+}
+
 % title
-\title{Semantic data pipeline methodology and observability: giveadam project}
+\title{Questionable analytical observations\\and what to do about them}
 \author{Charles T. Gray}
 
 \begin{document}
@@ -22,7 +33,10 @@
 
 
 \begin{abstract}
-This document presents a novel semantic layering methodology for research data pipeline design, demonstrated through analysis of UN Sustainable Development Goal (SDG) priorities from dam-affected communities in North India. Survey data was collected by Garima Gupta from residents of Tehri (where a dam was constructed 20 years ago) and Arunachal Pradesh (where a dam is under development).
+
+A critical challenge in data management is balancing complex data transformation with the need for analytic transparency for domain-knowledge validation. FAIR (findable, accessible, interoperable, reusable) data principles as \textit{compliance} fall short when viewed as a checkbox exercise at publication. Living analyses evolve over time, and all analyses are iterative, requiring ongoing validation of data processing decisions. Contemporary data practices on the modern data stack provide robust tooling to validate data transformation, but in practice render data observability opaque to non-technical stakeholders. This creates a fundamental tension between engineering efficiency and analytic interpretability that undermines the core principles of FAIR data.
+
+This document presents a novel tool-agnostic semantic layering methodology for analytic data pipeline design, demonstrated through analysis of UN Sustainable Development Goal (SDG) priorities from dam-affected communities in North India.
 
 The central methodological contribution is a semantically-structured approach to data transformation that extends dbt's engineering-focused patterns to prioritize research interpretability and stakeholder communication. Unlike standard dbt implementations that emphasize technical efficiency, this semantic layering methodology explicitly preserves research context, makes harmonization decisions transparent, and maintains conceptual clarity throughout the data pipeline.
 
@@ -36,9 +50,37 @@ This semantic layering methodology offers a replicable framework for research da
 \listoftables
 \listoffigures
 
-\section{What are these data?}
 
-The data in this project aggregates two region-based surveys, with responses from participants in Tehri and Arunachal Pradesh, focusing on their ranked top three priorities of the United Nations Sustainable Development Goals (UN SDGs). The data was collected by Garima Gupta by surveying residents of the two regions in Hindi. The data is stored in the \texttt{data/} directory of the giveadam repository (see Section~\ref{sec:repository-arch} for complete repository structure). This project was created by Charles T. Gray to aggregate survey responses across regions using a novel semantic layering methodology (detailed in Section~\ref{sec:semantic-methodology}) to investigate the following question.
+\section{Questionable analytical observations}
+
+Underestimating the complexity of data transformation is a well-recognised driver of garbage in, garbage out data analysis. For example, gene name errors caused by Excel formatting issues are widespread---detected in 700 scientific publications (approximately 20 per cent of 3,500 publications analysed) \cite{ziemann2016gene}. More recently, the UK government's COVID-19 tracking lost about 16,000 cases due to Excel row limits \cite{bbc2020excel}. These examples illustrate how technical limitations and data handling errors can lead to significant analytical inaccuracies.
+
+\subsection{Questionable research practices}
+
+We argue questionable analytical observations need to be included in the pantheon of recognised questionable research practices, such as HARKing (hypothesising after results are known), p-hacking, and cherry picking. Questionable analytical observations arise when data transformation processes are not transparently validatable or interpretable to domain experts, leading to undiagnosed garbage in, garbage out analytics. This is particularly problematic in multi-source data integration contexts, where harmonization decisions can significantly impact analytical outcomes.
+
+\subsection{What to do about questionable analytical observations}
+
+To address questionable analytical observations, we propose a methodological bridge (Section~\ref{sec:semantic-methodology}) between modern data engineering practices and analytical validation. This involves:
+\begin{itemize}
+    \item \textbf{Semantic layering of data transformations} to preserve research context and make harmonization decisions explicit (Section~\ref{subsec:core-innovation});
+    \item \textbf{Automated observability frameworks} that generate transparent documentation and validation reports from pipeline artifacts (Section~\ref{subsec:obs-table-gen});
+    \item \textbf{Stakeholder-centric communication} using conceptual rather than technical terminology to facilitate domain expert validation (Figures~\ref{fig:dbtdag} and \ref{fig:tehri-exclusions});
+    \item \textbf{Iterative validation processes} that allow ongoing scrutiny of data processing decisions as analyses evolve over time.
+\end{itemize}
+
+
+
+\subsection{Case study: giveadam project}
+
+This manuscript and accompanying GitHub repository \href{https://github.com/softloud/giveadam}{\texttt{giveadam}} present a case study implementing the proposed methodology on open science data (Section~\ref{sec:aboutdata}). The project analyzes UN Sustainable Development Goal (SDG) priorities from dam-affected communities in North India, using survey data collected by Garima Gupta from residents of Tehri (where a dam was constructed 20 years ago) and Arunachal Pradesh (where a dam is under development).
+
+This case study demonstrates the methodology on small, analytic data where validation is tractable, but the principles are applicable to large-scale data contexts. To illustrate scalability, the methodology uses open source modern data stack tools standard in enterprise environments, such as Data Build Tool (dbt). The following sections detail the semantic layering methodology, repository architecture, and adherence to FAIR principles.
+
+\section{About the giveadam data}
+\label{sec:aboutdata}
+
+The data in this project aggregates two region-based surveys of UN SDG priorities from participants in Tehri and Arunachal Pradesh. Respondents ranked their top three UN SDG priorities, providing insights into development preferences in dam-affected communities. The data is stored in the \texttt{data/} directory of the giveadam repository (see Section~\ref{sec:repository-arch} for complete repository structure). This project aggregates survey responses across regions using the semantic layering methodology (detailed in Section~\ref{sec:semantic-methodology}) to investigate the following research question:
 
 \begin{quote}
   \textit{What are the differences in SDG priorities between residents of Tehri, where a dam was constructed 20 years ago for hydroelectric power, and Arunachal Pradesh, where a dam is currently being developed?}
@@ -124,7 +166,13 @@ The observability framework generates this methodology documentation automatical
 
 The complete automated documentation process includes both methodology generation and data publication. The validation tables in this document are generated through the automated process detailed in Section~\ref{subsec:obs-table-gen}. Additionally, \texttt{scripts/publish\_data.R} extracts the final analytic models from the dbt pipeline and exports them as CSV files to the \texttt{data/} directory for publication and external use.
 
-The validation tables presented in this document are high-level summaries. Engineers or researchers requiring deeper pipeline investigation can use \texttt{dbt docs generate} and \texttt{dbt docs serve} for an interactive exploration of the complete data lineage, including detailed model specifications, column-level lineage, and test results.
+The validation tables presented in this document are high-level summaries. Engineers or researchers requiring deeper pipeline investigation can use \texttt{dbt docs generate} and \texttt{dbt docs serve} for an interactive exploration (e.g., Figure~\ref{fig:tehri-exclusions}) of the complete data lineage (Figure~\ref{fig:dbtdag}), including detailed model specifications, column-level lineage, and test results. 
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=\textwidth]{img/dbt-docs-tehri-exclusions.png}
+  \caption{\label{fig:tehri-exclusions} Screenshot from interactive dbt documentation showing the SQL logic excluding two test rows from the Tehri dataset. This exclusion is fully documented in \texttt{dbt\_project/analyses/tehri\_rows\_excluded.sql} and reflects the methodological transparency principles outlined in Section~\ref{sec:semantic-methodology}. DBT documentation provides a user-friendly interface for engineers and stakeholders to verify data processing decisions without requiring technical expertise.}
+\end{figure}
 
 \section{FAIR principles implementation}
 \label{sec:fair}
@@ -332,6 +380,10 @@ Table~\ref{tab:dbt_tests} lists the dbt tests applied to \texttt{dbt\_project/} 
 \section{Use of NLP tools}
 
 The giveadam project architecture, semantic data pipeline design, and all data transformations were conceived and implemented by Charles T. Gray. GitHub Copilot \cite{copilot} was used for documentation editing and selected development operations tasks (supporting JSON manifest parsing scripts), but did not contribute to the fundamental design decisions, data modeling approach, or core analytical implementations. All code development, methodological innovations, and research insights represent the original work of the author.
+
+\section{Acknowledgements}
+
+The author gratefully thanks Garima Gupta for collecting and sharing the original survey data from Tehri and Arunachal Pradesh, North India. The author also acknowledges the open-source software community for developing the tools that made this project possible, including dbt, DuckDB, R, Python, and their associated libraries.
 
 \bibliographystyle{plain}
 \bibliography{references}

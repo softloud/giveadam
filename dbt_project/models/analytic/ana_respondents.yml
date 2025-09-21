@@ -1,0 +1,26 @@
+version: 2
+
+models:
+  - name: ana_respondents
+    description: "Cleaned and transformed respondents data for analysis."
+    columns:
+      - name: id_respondent
+        description: "Unique identifier for each respondent."
+        tests:
+          - unique
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('ana_sdg7')
+                field: id_respondent
+          - relationships:
+              arguments:
+                to: ref('ana_top3')
+                field: id_respondent
+      - name: age
+      - name: region
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ['tehri', 'arunachal']
+        

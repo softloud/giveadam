@@ -12,6 +12,7 @@ respondents as (
     age,
     gender,
     displacement_status,
+    displacement_group,
     region
   from {{ ref('sem_respondents') }}
 ),
@@ -21,10 +22,11 @@ joined as (
     responses.rank,
     responses.sdg_number,
     responses.sdg_label,
+    respondents.region,
+    respondents.displacement_group,
     respondents.age,
     respondents.gender,
-    respondents.displacement_status,
-    respondents.region
+    respondents.displacement_status
   from responses
   join respondents on responses.id_respondent = respondents.id_respondent
 )

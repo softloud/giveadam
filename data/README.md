@@ -7,7 +7,7 @@ This directory contains analysis-ready datasets derived from survey data on the 
 ### `respondents.csv`
 **Description:** Individual respondent demographics and displacement status across both survey regions.
 
-**Rows:** 157 respondents (excluding header)
+**Rows:** 157 respondents (excluding header), 21 from Arunachal Pradesh and 136 from Tehri Dam region.
 
 **Columns:**
 - `id_respondent` - Unique identifier for each survey respondent

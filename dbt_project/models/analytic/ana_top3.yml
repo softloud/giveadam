@@ -1,0 +1,20 @@
+version: 2
+
+models:
+  - name: ana_top3
+    description: "Top 3 analytical model for key metrics"
+    data_tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns:
+              - id_respondent
+              - rank
+    columns:
+      - name: id_respondent
+        description: "Unique identifier for each respondent"
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('ana_respondents')
+                field: id_respondent

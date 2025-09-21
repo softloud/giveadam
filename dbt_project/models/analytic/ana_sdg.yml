@@ -1,0 +1,22 @@
+version: 2
+
+models:
+
+  - name: ana_sdg
+    description: "UN SDG labels."
+    columns:
+      - name: sdg_id
+        description: "Numeric SDG ID"
+        tests:
+          - not_null
+          - unique
+      - name: sdg_number
+        description: "SDG number as per Arunachal convention"
+        tests:
+          - not_null
+          - unique
+      - name: sdg_label
+        description: "Full SDG label"
+        tests:
+          - not_null
+          - unique

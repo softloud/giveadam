@@ -1,0 +1,15 @@
+version: 2
+
+models:
+  - name: ana_sdg7
+    description: Dataset reporting if SDG 7 was prioritised in top 3 ranking by respondents.
+    columns:
+      - name: id_respondent
+        description: "Unique identifier for each respondent."
+        data_tests:
+          - not_null
+          - unique
+          - relationships:
+              arguments:
+                to: ref('ana_respondents')
+                field: id_respondent

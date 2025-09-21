@@ -11,4 +11,4 @@ This project utilises the following open source tools:
 
 ## VSC users
 
-Ensure VSC workspace python interpreter is pointed at .venv to invoke uv. Go to **File > Preferences > Settings**, choose Workspace (not User) tab, then Set the Python Interpreter for the Workspace to .venv/bin/python. Otherwise, preface commands with `uv run`.
+Ensure VSC workspace python interpreter is pointed at .venv to invoke uv. Go to **File > Preferences > Settings**, choose Workspace (not User) tab, then Set the Python Interpreter for the Workspace to `${workspaceFolder}/.venv/bin/python`. Otherwise, preface commands with `uv run`.
