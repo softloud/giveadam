@@ -1,0 +1,21 @@
+version: 2 
+
+models: 
+
+  - name: sem_sdg_labels
+    description: "This is a transformation table to integrate SDG labelling across the two survey datasets."
+    columns:
+      - name: sdg_tehri
+        description: "The code representing each Sustainable Development Goal (SDG) for the Tehri survey."
+        tests:
+          - not_null
+          - unique
+      - name: sdg_arunachal
+        description: "The code representing each Sustainable Development Goal (SDG) for the Arunachal Pradesh survey."
+        tests:
+          - not_null
+          - unique
+      - name: sdg_label
+        description: "The descriptive label for each Sustainable Development Goal (SDG)."
+        tests:
+          - not_null

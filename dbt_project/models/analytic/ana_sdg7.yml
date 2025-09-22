@@ -1,0 +1,31 @@
+version: 2
+
+models:
+  - name: ana_sdg7
+    description: Dataset reporting if SDG 7 was prioritised in top 3 ranking by respondents, with respondent metadata.
+    columns:
+      - name: id_respondent
+        description: "Unique identifier for each respondent."
+        data_tests:
+          - not_null
+          - unique
+          - relationships:
+              arguments:
+                to: ref('ana_respondents')
+                field: id_respondent
+      - name: region
+        description: "Survey conducted, identified by region."
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ['tehri', 'arunachal']
+      - name: age
+        description: "Age of the respondent."
+      - name: gender
+        description: "Gender of the respondent."  
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ['Male', 'Female', 'Prefer not to say']
+      - name: displacement_status
+        description: "Displacement status of the respondent."

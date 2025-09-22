@@ -1,0 +1,37 @@
+version: 2
+
+models: 
+
+  - name: sem_top3
+    description: Each row a ranking of top 3 SDG priorities, by one respondent from either the Tehri or Arunachal survey. In particular this step ensures that the SDG labels are harmonised across the two surveys.
+    data_tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns:
+              - id_respondent
+              - rank
+    columns:
+      - name: id_respondent
+        description: "Unique identifier for each respondent"
+        data_tests:
+          - not_null
+      - name: region
+        description: "Survey conducted, identified by region."
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ['tehri', 'arunachal']
+      - name: rank
+        description: "The rank assigned by the respondent to their top 3 SDG priorities, where 1 is highest."
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: [1, 2, 3]
+      - name: sdg_number
+        description: "The id representing each Sustainable Development Goal (SDG) priority, as ranked by the respondent."
+        data_tests:
+          - not_null
+      - name: sdg_label
+        description: "The descriptive label for each Sustainable Development Goal (SDG) priority, as ranked by the respondent."
+        data_tests:
+          - not_null

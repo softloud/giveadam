@@ -24,7 +24,7 @@
 
 % title
 \title{Questionable analytical observations\\and what to do about them}
-\author{Charles T. Gray}
+\author{Charles T. Gray \& Hannah Fraser}
 
 \begin{document}
 
@@ -78,6 +78,36 @@ To address questionable analytical observations, we propose a methodological bri
 This manuscript and accompanying GitHub repository \href{https://github.com/softloud/giveadam}{\texttt{giveadam}} present a case study implementing the proposed methodology on open science data (Section~\ref{sec:aboutdata}). The project analyzes UN Sustainable Development Goal (SDG) priorities from dam-affected communities in North India, using survey data collected by Garima Gupta from residents of Tehri (where a dam was constructed 20 years ago) and Arunachal Pradesh (where a dam is under development).
 
 This case study demonstrates the methodology on small, analytic data where validation is tractable, but the principles are applicable to large-scale data contexts. To illustrate scalability, the methodology uses open source modern data stack tools standard in enterprise environments, such as Data Build Tool (dbt). The following sections detail the semantic layering methodology, repository architecture, and adherence to FAIR principles.
+
+\subsubsection{Minimal representation}
+
+This case study was chosen as it provides a minimal representation of two key challenges in data managemen:
+
+\begin{itemize}
+  \item \textbf{Multi-source data integration:} The project integrates two regional survey datasets with differing formats and labeling conventions, requiring explicit harmonization decisions that impact analytical outcomes. 
+  \item \textbf{Stakeholder alignment:} Interoperation of three people with different roles and expertise: Garima Gupta (data collection and domain expertise); Charles T. Gray (data engineering and pipeline design); and Hannah Fraser (code review and validation). Crucially, it is Garima Gupta who possessses the domain knowledge to validate the data processing decisions, but she is not a data engineer. This necessitates a methodology that facilitates transparent communication and validation across technical and domain expertise boundaries. Similarly, Hannah Fraser is not a data engineer, but she is a domain expert and can validate the data processing decisions are interpretable.
+\end{itemize}
+
+\subsection{Enterprise applications for data governance at scale}
+
+The case study described above was chosen so that the methodology is interpretable on data that can be validated by eye. However, at scale, in large data platforms simply opening datasets is not an option. Platforms at scale for enterprise data management and public good typically involve:
+
+\begin{itemize}
+  \item hundreds, if not  \textbf{thousands, of sources} many of which are provisioned in legacy formats (e.g. Excel, CSV, XML, JSON, SQL dumps);
+  \item hundreds, if not \textbf{thousands, of databases} requiring aggregation with integrity;
+  \item \textbf{billions of rows of living data} per table in each database equiring ongoing validation specific to \texttt{snapshot} or \texttt{incremental} data processing.
+\end{itemize}
+
+When working across legacy sources in the volatility of the technology landscape, data engineers typically have little more to work with than inscrutable table names and column headers. Only after many complex steps requiring advanced software engineering codebases is the data available in a way that is accessible to stakeholders with enough domain knowledge to validate that what has been extracted by, say, ETL (extract, transform, load) pipelines is the desired output. 
+
+\subsubsection{Modern data stack}
+
+Advances in the modern data stack (a term to loosely define the steps of cloud-oriented computational tools to manage data \cite{modern_data_stack_airbyte}), such as dbt \cite{dbt_core} and dagster \cite{dagster} have unpredented potential to address these challenges. However, there is a prevailing tendency for these tools to be oriented to interpretability by engineers, rendering the complexity of data processin --- crucially the assumptions made --- opaque to domain experts. 
+
+This creates a fundamental tension between engineering efficiency and analytic interpretability that undermines the core principles of FAIR data. The semantic layering methodology presented in Section~\ref{sec:semantic-methodology} addresses this tension by reorienting data transformation pipelines around research concepts rather than technical convenience, enabling both computational efficiency and methodological rigor.
+
+
+
 
 \section{About the giveadam data}
 \label{sec:aboutdata}

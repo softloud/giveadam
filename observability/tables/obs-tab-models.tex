@@ -9,13 +9,15 @@ Model & Description\\
 \midrule
 \addlinespace[0.3em]
 \multicolumn{2}{l}{\textbf{Analytic Models}}\\
-\hspace{1em}\cellcolor{gray!10}{ana\_respondents} & \cellcolor{gray!10}{NA}\\
-\hspace{1em}ana\_top3 & NA\\
+\hspace{1em}\cellcolor{gray!10}{ana\_respondents} & \cellcolor{gray!10}{Cleaned and transformed respondents data for analysis.}\\
+\hspace{1em}ana\_sdg & UN SDG labels and numbers as identifiers.\\
+\hspace{1em}\cellcolor{gray!10}{ana\_sdg7} & \cellcolor{gray!10}{Dataset reporting if SDG 7 was prioritised in top 3 ranking by respondents, with respondent metadata.}\\
+\hspace{1em}ana\_top3 & Top 3 analytical model for key metrics\\
 \addlinespace[0.3em]
 \multicolumn{2}{l}{\textbf{Semantic Models}}\\
-\hspace{1em}\cellcolor{gray!10}{sem\_respondents} & \cellcolor{gray!10}{NA}\\
-\hspace{1em}sem\_sdg\_labels & NA\\
-\hspace{1em}\cellcolor{gray!10}{sem\_top3} & \cellcolor{gray!10}{NA}\\
+\hspace{1em}\cellcolor{gray!10}{sem\_respondents} & \cellcolor{gray!10}{Each row represents one respondent in either the survey undertaken in Tehri or the survey undertaken in Arunachale Pradesh.}\\
+\hspace{1em}sem\_sdg\_labels & This is a transformation table to integrate SDG labelling across the two survey datasets.\\
+\hspace{1em}\cellcolor{gray!10}{sem\_top3} & \cellcolor{gray!10}{Each row a ranking of top 3 SDG priorities, by one respondent from either the Tehri or Arunachal survey. In particular this step ensures that the SDG labels are harmonised across the two surveys.}\\
 \hspace{1em}sem\_top3\_arunachal\_long & Long format of top 3 SDG rankings from Arunachal Pradesh respondents.\\
 \hspace{1em}\cellcolor{gray!10}{sem\_top3\_tehri\_long} & \cellcolor{gray!10}{Each row represents a respondent's ranking of their top 3 UN Sustainable Development Goals (SDGs) for Tehri, India.}\\
 \addlinespace[0.3em]

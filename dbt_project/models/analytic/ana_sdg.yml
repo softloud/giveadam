@@ -3,7 +3,7 @@ version: 2
 models:
 
   - name: ana_sdg
-    description: "UN SDG labels."
+    description: "UN SDG labels and numbers as identifiers."
     columns:
       - name: sdg_id
         description: "Numeric SDG ID"
