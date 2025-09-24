@@ -15,12 +15,6 @@ models:
         description: "Unique identifier for each respondent"
         data_tests:
           - not_null
-      - name: region
-        description: "Survey conducted, identified by region."
-        data_tests:
-          - accepted_values:
-              arguments:
-                values: ['tehri', 'arunachal']
       - name: rank
         description: "The rank assigned by the respondent to their top 3 SDG priorities, where 1 is highest."
         data_tests:

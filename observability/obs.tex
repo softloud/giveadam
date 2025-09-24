@@ -196,7 +196,7 @@ The observability framework generates this methodology documentation automatical
     \item Stakeholders can verify data processing decisions without technical expertise
 \end{itemize}
 
-The complete automated documentation process includes both methodology generation and data publication. The validation tables in this document are generated through the automated process detailed in Section~\ref{subsec:obs-table-gen}. Additionally, \texttt{scripts/publish\_data.R} extracts the final analytic models from the dbt pipeline and exports them as CSV files to the \texttt{data/} directory for publication and external use.
+The complete automated documentation process includes both methodology generation and data publication. The validation tables in this document are generated through the automated process detailed in Section~\ref{subsec:obs-table-gen}. Additionally, \texttt{scripts/publish\_data.R} extracts all final analytic models from the dbt pipeline and exports them as CSV files to the \texttt{data/} directory for publication and external use.
 
 The validation tables presented in this document are high-level summaries. Engineers or researchers requiring deeper pipeline investigation can use \texttt{dbt docs generate} and \texttt{dbt docs serve} for an interactive exploration (e.g., Figure~\ref{fig:tehri-exclusions}) of the complete data lineage (Figure~\ref{fig:dbtdag}), including detailed model specifications, column-level lineage, and test results. 
 
@@ -213,7 +213,7 @@ The giveadam project implements all four FAIR principles \cite{wilkinson2016fair
 
 \subsection{Findable: Discovery and identification}
 
-\textbf{Rich metadata and identifiers:} The datasets are published with comprehensive metadata in \texttt{data/README.md}, including detailed column descriptions, data provenance, and research context. Each dataset has unique identifiers (\texttt{respondents.csv}, \texttt{SDG\_rankings.csv}) and is version-controlled in the GitHub repository \texttt{giveadam} at \texttt{https://github.com/softloud/giveadam}.
+\textbf{Rich metadata and identifiers:} The datasets are published with comprehensive metadata in \texttt{data/README.md}, including detailed column descriptions, data provenance, and research context. Each dataset has unique identifiers (\texttt{respondents.csv}, \texttt{SDG\_rankings.csv}, \texttt{SDG\_labels.csv}, \texttt{SDG7\_analysis.csv}) and is version-controlled in the GitHub repository \texttt{giveadam} at \texttt{https://github.com/softloud/giveadam}.
 
 \textbf{Semantic documentation:} Unlike standard data repositories, the semantic layering approach provides findable documentation at multiple conceptual levels. Researchers can locate relevant transformations by research concept (semantic models in Table~\ref{tab:dbt_models}) rather than technical implementation details. The four-layer architecture shown in Figure~\ref{fig:dbtdag} enables discovery through conceptual navigation.
 
@@ -258,6 +258,30 @@ By enriching the responses with respondent metadata, we can analyse responses in
   \item \textbf{displacement\_status:} Impact classification related to dam construction
   \item \textbf{region:} Survey location (tehri, arunachal)
 \end{itemize}
+
+\subsubsection{SDG labels dataset}
+
+This reference dataset provides standardized UN Sustainable Development Goal identifiers and labels:
+\begin{itemize}
+  \item \textbf{sdg\_id:} Standardized identifier (e.g., "SDG\_1", "SDG\_2")
+  \item \textbf{sdg\_number:} UN SDG number (1-17)
+  \item \textbf{sdg\_label:} Full name of the Sustainable Development Goal
+\end{itemize}
+
+\subsubsection{SDG7 analysis dataset}
+
+This analysis-ready dataset focuses on energy priorities (SDG 7: Affordable and Clean Energy):
+\begin{itemize}
+  \item \textbf{id\_respondent:} Unique identifier linking to respondents table
+  \item \textbf{region:} Survey location (tehri, arunachal)
+  \item \textbf{age:} Age of respondent in years
+  \item \textbf{gender:} Self-reported gender
+  \item \textbf{displacement\_status:} Dam impact classification
+  \item \textbf{displacement\_group:} Grouped displacement categories for analysis
+  \item \textbf{sdg\_7\_chosen:} Binary indicator (1 = SDG 7 in top 3, 0 = not in top 3)
+\end{itemize}
+
+This dataset enables focused analysis of energy priorities across demographic groups and displacement categories, supporting research into how dam construction impacts community energy preferences.
 
 \subsection{Interoperable: Integration and exchange}
 

@@ -45,6 +45,34 @@ This directory contains analysis-ready datasets derived from survey data on the 
 
 **Structure:** Each respondent contributes 3 rows (their top 3 SDG preferences)
 
+### `SDG_labels.csv`
+**Description:** Reference table of UN Sustainable Development Goals with standardized identifiers and labels.
+
+**Rows:** 17 SDGs (excluding header)
+
+**Columns:**
+- `sdg_id` - Standardized identifier (e.g., "SDG_1", "SDG_2") 
+- `sdg_number` - UN SDG number (1-17)
+- `sdg_label` - Full name of the Sustainable Development Goal
+
+**Purpose:** Provides consistent SDG labeling across datasets and enables lookup of SDG details by number or identifier.
+
+### `SDG7_analysis.csv`
+**Description:** Analysis-ready dataset showing whether each respondent prioritized SDG 7 (Affordable and Clean Energy) in their top 3 rankings, with demographic metadata.
+
+**Rows:** 157 respondents (excluding header)
+
+**Columns:**
+- `id_respondent` - Unique identifier linking to respondents table
+- `region` - Survey location (tehri, arunachal)
+- `age` - Age of respondent in years
+- `gender` - Self-reported gender
+- `displacement_status` - Dam impact classification (see respondents.csv)
+- `displacement_group` - Grouped displacement categories for analysis
+- `sdg_7_chosen` - Binary indicator (1 = SDG 7 in top 3, 0 = not in top 3)
+
+**Purpose:** Enables focused analysis of energy priorities across different demographic groups and displacement categories.
+
 ## Data Provenance
 
 ### Source Data

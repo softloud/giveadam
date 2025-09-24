@@ -1,16 +1,16 @@
 node,description
 model.dbt_project.sem_top3_tehri_long,"Each row represents a respondent's ranking of their top 3 UN Sustainable Development Goals (SDGs) for Tehri, India."
 model.dbt_project.sem_sdg_labels,This is a transformation table to integrate SDG labelling across the two survey datasets.
+model.dbt_project.sem_respondents,Each row represents one respondent in either the survey undertaken in Tehri or the survey undertaken in Arunachale Pradesh.
 model.dbt_project.sem_top3_arunachal_long,Long format of top 3 SDG rankings from Arunachal Pradesh respondents.
+model.dbt_project.sem_top3,"Each row a ranking of top 3 SDG priorities, by one respondent from either the Tehri or Arunachal survey. In particular this step ensures that the SDG labels are harmonised across the two surveys."
+model.dbt_project.base_tehri,"Raw data from survey in Tehri, collected by Dr Garima Gupta. Each row represents the survey responses of a single respondent. This step loads the data into the pipeline and establishes an identifier for each respondent. See `raw_data/tehri_cols.md` for details on all questions included in this dataset."
 model.dbt_project.base_arunachal,"Raw data from survey in Arunachal Pradesh, collected by Dr Garima Gupta. Each row represents the survey responses of a single respondent. This step loads the data into the pipeline and establishes an identifier for each respondent. Only top 5 ranking and age and gender in these data, an extraction from the full arunachal dataset which is not available due to institutional restrictions. For this pipeline the top 3 rankings are extracted for analysis."
 model.dbt_project.se_top3_tehri,"Each row represents a respondent's ranking of their top 3 UN Sustainable Development Goals (SDGs) for Tehri, India. These data are extracted in wide format from the original survey data preserving labelling for data validation."
 model.dbt_project.se_top3_arunachal,"Each row represents a respondent's ranking top 3 UN Sustainable Development Goals (SDGs) for Arunachal Pradesh, India. These data are extracted in wide format from the original survey data preserving labelling for data validation."
 model.dbt_project.se_respondents_arunachal,Each row represents a respondent from Arunachal Pradesh.
-model.dbt_project.base_tehri,"Raw data from survey in Tehri, collected by Dr Garima Gupta. Each row represents the survey responses of a single respondent. This step loads the data into the pipeline and establishes an identifier for each respondent. See `raw_data/tehri_cols.md` for details on all questions included in this dataset."
 model.dbt_project.se_respondents_tehri,Each row represents a respondent from Tehri.
-model.dbt_project.ana_respondents,Cleaned and transformed respondents data for analysis.
 model.dbt_project.ana_top3,Top 3 analytical model for key metrics
+model.dbt_project.ana_respondents,Cleaned and transformed respondents data for analysis.
 model.dbt_project.ana_sdg,UN SDG labels and numbers as identifiers.
-model.dbt_project.sem_top3,"Each row a ranking of top 3 SDG priorities, by one respondent from either the Tehri or Arunachal survey. In particular this step ensures that the SDG labels are harmonised across the two surveys."
 model.dbt_project.ana_sdg7,"Dataset reporting if SDG 7 was prioritised in top 3 ranking by respondents, with respondent metadata."
-model.dbt_project.sem_respondents,Each row represents one respondent in either the survey undertaken in Tehri or the survey undertaken in Arunachale Pradesh.

@@ -1,4 +1,4 @@
-library(tidyverse)
+oselibrary(tidyverse)
 library(xtable)
 library(glue)
 library(gt)
@@ -36,7 +36,7 @@ extract_model_name <- function(test_node, models_cleaned) {
   # get the list of models
   model_name <- models_cleaned$model
 
-  model_name[which(sapply(model_name, function(x) str_detect(test_node, x)))]  
+  model_name[which(sapply(model_name, function(x) str_detect(test_node, x)))][1]
 }
 
 tests_cleaned <- dbt_tests |>
