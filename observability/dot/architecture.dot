@@ -1,0 +1,71 @@
+digraph architecture {
+  style=dashed
+  color=grey
+  edge[style=dashed, color=lightgrey]
+  node[shape=box, color=grey]
+  rankdir=BT
+  size="8,6!"
+  # dpi=300
+
+  subgraph cluster_base {
+    label="Base"
+    color=lightgrey
+    style=dashed
+    edge[style=dotted, color=lightgrey]
+
+    arunachal [label="Raw Arunachal Pradesh Survey Data"]
+    tehri [label="Raw Tehri Survey Data"]
+  }
+
+  subgraph cluster_se {
+    label="Source entities"
+    color=lightgrey
+    style=dashed
+    edge[style=dotted, color=lightgrey]
+
+    respondents_arunachal [label="Arunachal Pradesh Respondents"]
+    respondents_tehri [label="Tehri Respondents"]
+    responses_arunachal [label="Arunachal Pradesh Responses"]
+    responses_tehri [label="Tehri Responses"]
+
+  }
+  
+  subgraph cluster_sem {
+    label="Semantic"
+    color=lightgrey
+    style=dashed
+    edge[style=dotted, color=lightgrey]
+
+    respondents [label="Unified Respondents"]
+    responses [label="Unified Responses"]
+  }
+
+  subgraph cluster_ana {
+    label="Analytic"
+    color=lightgrey
+    style=dashed
+    edge[style=dotted, color=lightgrey]
+
+    ana_responses [label = "Ranked responses"]
+    ana_respondents [label = "Respondents"]
+    ana_sdg [label = "Sustainable development goals"]
+    ana_sdg7 [label = "SDG 7 prioritised indicator responses"]
+  }
+
+  arunachal -> respondents_arunachal
+  arunachal -> responses_arunachal
+  tehri -> respondents_tehri
+  tehri -> responses_tehri
+  respondents_arunachal -> respondents
+  respondents_tehri -> respondents
+  responses_arunachal -> responses
+  responses_tehri -> responses
+  responses -> ana_responses
+  respondents -> ana_respondents
+  respondents -> ana_responses
+  responses -> ana_sdg
+  responses -> ana_sdg7
+  respondents -> ana_sdg7
+
+
+}

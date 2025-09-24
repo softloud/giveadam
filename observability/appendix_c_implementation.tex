@@ -1,0 +1,81 @@
+% Appendix C: Semantic layer implementation and observability
+\section{Semantic layer implementation and observability}
+\label{app:semantic-implementation}
+
+The observability framework operationalizes the semantic layering methodology through automated monitoring and validation at each conceptual stage. This implementation demonstrates how semantic design principles translate into technical infrastructure while maintaining research transparency.
+
+\subsection{Semantic layers as methodological framework}
+\label{subsec:semantic-layers}
+
+The four-layer semantic architecture serves as both a conceptual framework and technical implementation. Each layer embodies specific research methodology principles:
+
+\begin{itemize}
+    \item \textbf{Source Base Models:} Embody the principle of data integrity preservation. These foundational models maintain fidelity to original data sources while implementing only essential cleaning operations. By materializing as seeds, they create an immutable record of processed raw data, enabling complete methodological auditing.
+
+    \item \textbf{Source Entities:} Operationalize the context preservation principle. Each regional dataset maintains its original structure and labeling conventions, preventing premature harmonization. This layer enables validation of regional data characteristics and supports comparative analysis of data collection methodologies.
+    
+    \item \textbf{Semantic Models:} Implement the transparent harmonization principle. This layer explicitly documents how cross-source differences are resolved, such as reconciling disparate SDG labeling systems. All harmonization logic is encoded in SQL with accompanying documentation, making methodological decisions auditable and modifiable.
+    
+    \item \textbf{Analytic Models:} Realize the research-readiness principle. These models combine harmonized data with enriched metadata to directly support specific research questions. By materializing as tables, they optimize performance for iterative analysis while maintaining full lineage to upstream decisions.
+\end{itemize}
+
+\subsubsection{Methodological advantages of semantic layering}
+
+This semantic architecture delivers specific methodological benefits that standard data engineering approaches cannot provide:
+
+\begin{enumerate}
+    \item \textbf{Assumption explicitness:} Every harmonization decision is documented and testable
+    \item \textbf{Context preservation:} Regional and methodological differences are maintained until explicitly resolved
+    \item \textbf{Stakeholder communication:} Layer names and logic reflect research concepts rather than technical implementation
+    \item \textbf{Methodological auditability:} Complete transformation lineage enables scholarly review and replication
+    \item \textbf{Iterative extensibility:} New research directions can be accommodated without fundamental restructuring
+\end{enumerate}
+
+\subsection{Interactive data exploration}
+
+The validation tables presented in this document provide high-level summaries of data quality and pipeline structure. For comprehensive pipeline investigation, stakeholders can access the full interactive documentation using:
+
+\begin{verbatim}
+cd dbt_project/
+dbt docs generate
+dbt docs serve
+\end{verbatim}
+
+This provides an interactive web interface showing detailed model specifications, column-level lineage, test results, and complete data flow visualization.
+
+\subsection{Observability table generation}
+\label{subsec:obs-table-gen}
+
+The validation tables presented in this document (Tables~\ref{tab:dbt_models} and~\ref{tab:dbt_tests}) are automatically generated from dbt artifacts to ensure methodology documentation remains synchronized with the actual pipeline implementation.
+
+\subsubsection{Automated metadata extraction}
+
+The observability tables are generated through the following automated process:
+
+\begin{enumerate}
+    \item \textbf{dbt artifacts generation} — Running \texttt{dbt build} produces \texttt{manifest.json} and \texttt{run\_results.json} containing complete pipeline metadata
+    \item \textbf{Python extraction} — \texttt{create-obs-tables/get-obs-dat.py} extracts model descriptions and test results from JSON artifacts
+    \item \textbf{R formatting} — \texttt{create-obs-tables/obs-table.R} formats extracted data into LaTeX tables
+    \item \textbf{Document compilation} — LaTeX tables are included in this methodology document via \texttt{\textbackslash input} commands
+\end{enumerate}
+
+This automation ensures that any changes to model descriptions, test specifications, or pipeline structure are immediately reflected in the methodology documentation, maintaining complete transparency between implementation and documentation.
+
+\subsubsection{Model materializations}
+
+The semantic layers employ different dbt materializations optimized for their function:
+
+\begin{itemize}
+    \item \textbf{Source base models} — Materialized as \texttt{seeds} (CSV files loaded directly into DuckDB)
+    \item \textbf{Source entity models} — Materialized as \texttt{views} to preserve disk space while maintaining fast access for downstream models
+    \item \textbf{Semantic models} — Materialized as \texttt{views} to enable flexible harmonization logic without storage overhead
+    \item \textbf{Analytic models} — Materialized as \texttt{tables} to optimize query performance for research analysis and data export
+\end{itemize}
+
+The progression from views to tables reflects the increasing stability and query frequency of models as they approach the analytical layer. Source and semantic layers prioritize flexibility and maintainability through views, while analytic models prioritize performance through table materialization for repeated research queries.
+
+\subsection{Data validation}
+
+Table~\ref{tab:dbt_tests} lists the dbt tests applied to \texttt{dbt\_project/} transformations, ordered by semantic layer. These tests document the data quality assumptions validated at each transformation step in the lineage (Figure~\ref{fig:dbtdag}). The tests ensure data integrity across the semantic pipeline and provide automated quality assurance for research reproducibility.
+
+\input{tables/obs-tab-tests.tex}
