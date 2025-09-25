@@ -12,7 +12,6 @@ This project provisions data for analysis of the social impacts of dams in North
 
 ![](figures_and_tables/top3-displacement-treemap.png)
 
-
 ## Project Structure
 
 ### Data Directories
