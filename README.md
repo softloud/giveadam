@@ -4,11 +4,19 @@ This project provisions data for analysis of the social impacts of dams in North
 
 ## Analyses WIP
 
+### overview
+
 ![](figures_and_tables/top3-treemap.png)
+
+### displacement simplified
 
 ![](figures_and_tables/top3-displacement-simplified-treemap.png)
 
+### gender
+
 ![](figures_and_tables/top3-gender-treemap.png)
+
+### displacement detailed
 
 ![](figures_and_tables/top3-displacement-treemap.png)
 
