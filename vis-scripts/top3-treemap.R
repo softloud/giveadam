@@ -239,5 +239,5 @@ top3 |>
     legend.position = "none"
   )
 
-ggsave('figures_and_tables/top3-displacement-simplified-treemap.png', width = 12, height = 12)
+ggsave('figures_and_tables/top3-displacement-simplified-treemap.png', width = 12, height = 8)
 
