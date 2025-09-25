@@ -137,3 +137,55 @@ top3 |>
 
 ggsave('figures_and_tables/top3-gender-treemap.png', width = 12, height = 12)
 
+
+
+top3 |>
+  filter(!str_detect(region, 'Arunachal')) |>
+  group_by(displacement_group) |>
+  mutate(
+    displacement_group = glue("{displacement_group} ({n_distinct(id_respondent)})"),
+  ) |>
+  ungroup() |>
+  group_by(displacement_group, sdg_label, sdg_number) |>
+  summarise(
+    sdg_count = n_distinct(id_respondent)
+  ) |>
+  mutate(
+    sdg_count_label = glue("respondents = {sdg_count}")
+  ) |>
+  ungroup() |>
+  ggplot(aes(area = sdg_count, fill = sdg_number)) +
+  geom_treemap() +
+  geom_treemap_text(
+    aes(label = sdg_count_label),
+    size = 15,
+    alpha = 0.5,
+    fontface = "italic",
+    place = "bottomright", 
+    colour = "white") +
+  geom_treemap_text(
+    aes(label = sdg_label),
+    fontface = "italic",
+    size = 30, 
+    alpha = 0.7,
+    colour = "white") +
+  geom_treemap_text(
+    aes(label = sdg_number),
+    size = 80,
+    # alpha = 0.5,
+    place = "center", 
+    fontface = "bold", 
+    colour = "white") +   
+  facet_wrap(~displacement_group) + 
+  scale_fill_manual(values = sdg_colors) +
+  labs(title = "UN SDG priorities in Tehri, by displacement group",
+      subtitle = "Poverty (SDG 1) and hunger (SDG 2) urgent issues for those affected or dispalced by Tehri dam "|> str_wrap(70),
+      caption = "Sized by the number of respondents who prioritised (in top 3) each UN SDG." |> str_wrap(80))  +
+  theme_minimal(base_size = 20) +
+  theme(
+    strip.text = element_text(size = 30),
+    legend.position = "none"
+  )
+
+ggsave('figures_and_tables/top3-displacement-treemap.png', width = 12, height = 12)
+
