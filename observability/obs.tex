@@ -81,7 +81,7 @@ To address questionable analytical observations, we propose a methodological bri
 \begin{figure}[ht]
   \centering
   \includegraphics[width=0.95\textwidth]{figures/architecture.pdf}
-  \caption{Data architecture: semantic layering from base to analytic models of \texttt{giveadam} data (described in Section~\ref{sec:case-study}), ordered by observability. This layering explictly delineates between loading the data (base), extracting source-specific entities (source entities), harmonizing across sources (semantic), and preparing analysis-ready datasets (analytic). Each layer serves a distinct purpose in the data transformation pipeline, enhancing transparency and interpretability for domain experts. This layering provides a domain-agnostic minimal test-driven development architecture checking unique keys for missingness and duplicates.}
+  \caption{Data architecture: semantic layering from base to analytic models of \texttt{giveadam} data (described in Section~\ref{sec:case-study}), ordered by observability. This layering explictly delineates between loading the data (base), extracting source-specific entities (source entities), harmonizing across sources (semantic), and preparing analysis-ready datasets (analytic). Each layer serves a distinct purpose in the data transformation pipeline, enhancing transparency and interpretability for domain experts. This layering provides a domain and context agnostic minimal test-driven development architecture checking unique keys for missingness and duplicates.}
   \label{fig:architecture}
 \end{figure}
 

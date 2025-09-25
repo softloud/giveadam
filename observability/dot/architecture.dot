@@ -1,16 +1,24 @@
 digraph architecture {
-  style=dashed
-  color=grey
-  edge[style=dashed, color=lightgrey]
-  node[shape=box, color=grey]
+  # style=dashed
+  # color=darkgrey
+  fontsize=30
+  # fontcolor=darkgrey
+  edge[
+    # style=dashed
+    color=darkgrey
+  ]
+  node[shape=box, color=grey, fontsize=25, fontcolor=darkgrey]
   rankdir=BT
-  size="8,6!"
-  # dpi=300
+  size="14,6!"
+  dpi=300
+  nodesep=1.0
+  ranksep=2.0
+  
 
   subgraph cluster_base {
     label="Base"
-    color=lightgrey
-    style=dashed
+    # color=lightgrey
+    # style=dashed
     edge[style=dotted, color=lightgrey]
 
     arunachal [label="Raw Arunachal Pradesh Survey Data"]
@@ -19,8 +27,8 @@ digraph architecture {
 
   subgraph cluster_se {
     label="Source entities"
-    color=lightgrey
-    style=dashed
+    # color=lightgrey
+    # style=dashed
     edge[style=dotted, color=lightgrey]
 
     respondents_arunachal [label="Arunachal Pradesh Respondents"]
@@ -32,18 +40,19 @@ digraph architecture {
   
   subgraph cluster_sem {
     label="Semantic"
-    color=lightgrey
-    style=dashed
+    # color=lightgrey
+    # style=dashed
     edge[style=dotted, color=lightgrey]
 
     respondents [label="Unified Respondents"]
     responses [label="Unified Responses"]
+    sdg_labels [label="SDG Labels"]
   }
 
   subgraph cluster_ana {
     label="Analytic"
-    color=lightgrey
-    style=dashed
+    # color=lightgrey
+    # style=dashed
     edge[style=dotted, color=lightgrey]
 
     ana_responses [label = "Ranked responses"]
@@ -63,9 +72,13 @@ digraph architecture {
   responses -> ana_responses
   respondents -> ana_respondents
   respondents -> ana_responses
-  responses -> ana_sdg
+  sdg_labels -> ana_sdg
   responses -> ana_sdg7
   respondents -> ana_sdg7
+  responses_tehri -> sdg_labels
+  responses_arunachal -> sdg_labels
+  sdg_labels -> responses
+
 
 
 }

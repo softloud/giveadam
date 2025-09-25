@@ -1,5 +1,6 @@
 library(tidyverse)
 library(treemapify)
+library(glue)
 
 sdg_colors <- c(
   "1"  = "#E5243B",
@@ -24,7 +25,8 @@ source('scripts/get_dbdat.R')
 
 top3 <- get_dbdat('ana_top3') |> 
   mutate(
-    region = str_to_sentence(region),
+    region = if_else(region == "arunachal", "arunachal pradesh", region),
+    region = str_to_title(region),
     sdg_label = str_wrap(sdg_label, width = 10),
     sdg_number = as.character(sdg_number)
   )
@@ -34,25 +36,44 @@ top3 |>
 
 
 top3 |>
+  group_by(region) |>
+  mutate(region = glue("{region} ({n_distinct(id_respondent)})")) |>
+  ungroup() |>
   group_by(region, sdg_label, sdg_number) |>
-  summarise(sdg_count = n()) |>
-  ggplot(aes(area = sdg_count, fill = sdg_number, label = sdg_label)) +
+  summarise(
+    sdg_count = n_distinct(id_respondent)
+  ) |>
+  mutate(
+    sdg_count_label = glue("respondents = {sdg_count}")
+  ) |>
+  ungroup() |>
+  ggplot(aes(area = sdg_count, fill = sdg_number)) +
   geom_treemap() +
   geom_treemap_text(
-    size = 15, 
+    aes(label = sdg_count_label),
+    size = 15,
+    alpha = 0.5,
+    fontface = "italic",
+    place = "bottomright", 
+    colour = "white") +
+  geom_treemap_text(
+    aes(label = sdg_label),
+    fontface = "italic",
+    size = 30, 
+    alpha = 0.7,
     colour = "white") +
   geom_treemap_text(
     aes(label = sdg_number),
-    size = 60,
-    alpha = 0.7,
+    size = 80,
+    # alpha = 0.5,
     place = "center", 
     fontface = "bold", 
-    colour = "white") +
+    colour = "white") +   
   facet_wrap(~region) + 
   scale_fill_manual(values = sdg_colors) +
-  labs(title = "UN SDG priorities in Arunachal and Tehri",
-      subtitle = "Affordable & clean energy (SDG 7) more urgent in Tehri, in spite of the development of the dam"|> str_wrap(70),
-      caption = "Count of SDGs selected in top 3 priorities by respondents in Arunachal and Tehri") +
+  labs(title = "UN SDG priorities in Arunachal Pradesh and Tehri",
+      subtitle = "Affordable & clean energy (SDG 7) more urgent in Tehri, in spite of the development of the dam 20 years ago"|> str_wrap(70),
+      caption = "Sized by the number of respondents who prioritised (in top 3) each UN SDG.") +
   theme_minimal(base_size = 20) +
   theme(
     strip.text = element_text(size = 30),
@@ -62,26 +83,57 @@ top3 |>
 ggsave('figures_and_tables/top3-treemap.png', width = 12, height = 8)
 
 
+
 top3 |>
-  group_by(region, sdg_label, gender, sdg_number) |>
-  filter(gender %in% c("Male", "Female")) |>
-  summarise(sdg_count = n()) |>
+  filter(gender %in% c('Male', 'Female')) |>
+  group_by(region) |>
+  mutate(
+    region = glue("{region} ({n_distinct(id_respondent)})"),
+  ) |>
+  ungroup() |>
+  group_by(gender) |>
+  mutate(gender = glue("{gender} ({n_distinct(id_respondent)})")) |>
+  ungroup() |>
+  group_by(region, sdg_label, sdg_number, gender) |>
+  summarise(
+    sdg_count = n_distinct(id_respondent)
+  ) |>
+  mutate(
+    sdg_count_label = glue("respondents = {sdg_count}")
+  ) |>
+  ungroup() |>
   ggplot(aes(area = sdg_count, fill = sdg_number)) +
   geom_treemap() +
-  geom_treemap_text(size = 20,aes(label = sdg_label), alpha = 0.6) +
-  geom_treemap_text(size = 30, aes(label = sdg_number), place = "center", fontface = "bold", colour = "white") +
-  facet_grid(gender~region) +
+  geom_treemap_text(
+    aes(label = sdg_count_label),
+    size = 15,
+    alpha = 0.5,
+    fontface = "italic",
+    place = "bottomright", 
+    colour = "white") +
+  geom_treemap_text(
+    aes(label = sdg_label),
+    fontface = "italic",
+    size = 30, 
+    alpha = 0.7,
+    colour = "white") +
+  geom_treemap_text(
+    aes(label = sdg_number),
+    size = 80,
+    # alpha = 0.5,
+    place = "center", 
+    fontface = "bold", 
+    colour = "white") +   
+  facet_grid(gender~region) + 
   scale_fill_manual(values = sdg_colors) +
-  labs(title = "SDG priorities in Arunachal and Tehri",
-       subtitle = "Count of SDGs ranked in top 3 by respondents in Arunachal and Tehri") +
-  theme_minimal(base_size = 15) +
+  labs(title = "UN SDG priorities in Arunachal Pradesh and Tehri, by gender",
+      subtitle = "Little difference between male and female respondents' priorities"|> str_wrap(70),
+      caption = "Sized by the number of respondents who prioritised (in top 3) each UN SDG. One respondent chose 'Prefer not to say' and is excluded from this visualisation." |> str_wrap(80))  +
+  theme_minimal(base_size = 20) +
   theme(
     strip.text = element_text(size = 30),
     legend.position = "none"
   )
 
 ggsave('figures_and_tables/top3-gender-treemap.png', width = 12, height = 12)
-
-top3 |>
-  group_by(region, sdg_label)
 
