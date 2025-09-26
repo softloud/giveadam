@@ -1,4 +1,4 @@
-oselibrary(tidyverse)
+library(tidyverse)
 library(xtable)
 library(glue)
 library(gt)
@@ -50,20 +50,36 @@ tests_cleaned <- dbt_tests |>
       str_detect(test_node, '^unique') ~ 'unique',
       str_detect(test_node, '^accepted_values') ~ 'accepted_values',
       str_detect(test_node, '^dbt_utils_unique_combination_of_columns') ~ 'dbt_utils_unique_combination_of_columns',
-      TRUE ~ NA_character_
+      str_detect(test_node, '^relationships') ~ 'relationships',
+      TRUE ~ 'custom'
     ),
     # remove the test prefix and test id
     test_stripped = str_remove(test_node, glue('^{test}_')) |>
-      str_remove('.[\\d|\\w]+$'),
+      str_remove('.[\\d|\\w]+$')) |>
+  # splitting here for dubugging
+  mutate(
+    # when the test is custom replace with test node
+    test_stripped = if_else(test_stripped=='', test_node, test_stripped),
     model_name = map_chr(test_stripped, extract_model_name, models_cleaned = models_cleaned),
     tested_details = str_remove(test_stripped, glue('^{model_name}_')),
     test = str_remove(test, '^dbt_utils_'),
     layer = extract_layer(model_name)  |>
       factor(levels = c('base', 'source entities', 'semantic', 'analytic'))
   ) |>
-  separate(tested_details, into = c('tested_columns', 'test_arguments'), sep = '__', extra = "merge") |>
-  select(layer, model_name, test, tested_columns, test_arguments, result) |>
-  arrange(desc(layer), model_name, test)
+  separate(tested_details, into = c('tested_entities', 'test_arguments'), sep = '__', extra = "merge") |>
+  # more cleaning
+  mutate(
+    # remove _ from end of test arguments
+    test_arguments = str_remove(test_arguments, '_$') |>
+    # replace __ with , for readability 
+      str_replace_all('__', ', '),
+    # trim _ from start of tested entities, and replace _ with , for readability
+    tested_entities = str_remove(tested_entities, '^_') |>
+      str_replace_all('__', ', ')
+  ) |>
+  # remove test node after dev
+  select(layer, model_name, test, tested_entities, test_arguments, result) |>
+  arrange(desc(layer), model_name, test) # |> group_by(test) |> sample_n(2) |> View()
 
 # check all tests were categorized
 tests_cleaned |> filter(is.na(test))
@@ -107,9 +123,15 @@ models_tex <- models_cleaned |>
   pack_rows("Base Models", sum(models_cleaned$layer %in% c("analytic", "semantic", "source entities")) + 1,
             nrow(models_cleaned), bold = TRUE)
 
+
+# please rework this to a function that produces a table *for each layer*.
+# each caption needs to begin with the layer name, then we can append the rest of the caption
+# instead of layer as the grouping, we will use the model name as the grouping and 
+# then remove model name column so that we can fit these tables on the page
+
 # Create tests table with text wrapping and full text width
 tests_tex <- tests_cleaned |>
-  select(model_name, test, tested_columns, test_arguments, result) |>
+  select(model_name, test, tested_entities, test_arguments, result) |>
   kbl(format = "latex",
       caption = tests_caption, 
       label = tests_label,

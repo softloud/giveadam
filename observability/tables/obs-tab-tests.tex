@@ -9,25 +9,71 @@ Model & Test & Columns & Arguments & Result\\
 \midrule
 \addlinespace[0.3em]
 \multicolumn{5}{l}{\textbf{Analytic Model Tests}}\\
-\hspace{1em}\hspace{1em}\cellcolor{gray!10}{ana\_respondents} & \cellcolor{gray!10}{unique\_combination\_of\_columns} & \cellcolor{gray!10}{id\_respondent} & \cellcolor{gray!10}{NA} & \cellcolor{gray!10}{pass}\\
+\hspace{1em}\cellcolor{gray!10}{ana\_respondents} & \cellcolor{gray!10}{accepted\_values} & \cellcolor{gray!10}{region} & \cellcolor{gray!10}{tehri, arunachal} & \cellcolor{gray!10}{pass}\\
+\hspace{1em}ana\_respondents & custom & check\_n\_respondents & NA & pass\\
+\hspace{1em}\cellcolor{gray!10}{ana\_respondents} & \cellcolor{gray!10}{not\_null} & \cellcolor{gray!10}{id\_respondent} & \cellcolor{gray!10}{NA} & \cellcolor{gray!10}{pass}\\
+\hspace{1em}ana\_respondents & relationships & id\_respondent & id\_respondent, ref\_ana\_sdg7 & pass\\
+\hspace{1em}\cellcolor{gray!10}{ana\_respondents} & \cellcolor{gray!10}{relationships} & \cellcolor{gray!10}{ana\_sdg7\_id\_respondent} & \cellcolor{gray!10}{id\_respondent, ref\_ana\_respondents} & \cellcolor{gray!10}{pass}\\
+\hspace{1em}ana\_respondents & relationships & id\_respondent & id\_respondent, ref\_ana\_top3 & pass\\
+\hspace{1em}\cellcolor{gray!10}{ana\_respondents} & \cellcolor{gray!10}{relationships} & \cellcolor{gray!10}{ana\_top3\_id\_respondent} & \cellcolor{gray!10}{id\_respondent, ref\_ana\_respondents} & \cellcolor{gray!10}{pass}\\
+\hspace{1em}ana\_respondents & unique & id\_respondent & NA & pass\\
+\hspace{1em}\cellcolor{gray!10}{ana\_sdg} & \cellcolor{gray!10}{accepted\_values} & \cellcolor{gray!10}{ana\_sdg7\_gender} & \cellcolor{gray!10}{Male, Female, Prefer\_not\_to\_say} & \cellcolor{gray!10}{pass}\\
+\hspace{1em}ana\_sdg & accepted\_values & ana\_sdg7\_region & tehri, arunachal & pass\\
+\hspace{1em}\cellcolor{gray!10}{ana\_sdg} & \cellcolor{gray!10}{custom} & \cellcolor{gray!10}{check\_n\_sdgs} & \cellcolor{gray!10}{NA} & \cellcolor{gray!10}{pass}\\
+\hspace{1em}ana\_sdg & not\_null & sdg\_id & NA & pass\\
+\hspace{1em}\cellcolor{gray!10}{ana\_sdg} & \cellcolor{gray!10}{not\_null} & \cellcolor{gray!10}{sdg\_label} & \cellcolor{gray!10}{NA} & \cellcolor{gray!10}{pass}\\
+\hspace{1em}ana\_sdg & not\_null & sdg\_number & NA & pass\\
+\hspace{1em}\cellcolor{gray!10}{ana\_sdg} & \cellcolor{gray!10}{not\_null} & \cellcolor{gray!10}{ana\_sdg7\_id\_respondent} & \cellcolor{gray!10}{NA} & \cellcolor{gray!10}{pass}\\
+\hspace{1em}ana\_sdg & unique & sdg\_id & NA & pass\\
+\hspace{1em}\cellcolor{gray!10}{ana\_sdg} & \cellcolor{gray!10}{unique} & \cellcolor{gray!10}{sdg\_label} & \cellcolor{gray!10}{NA} & \cellcolor{gray!10}{pass}\\
+\hspace{1em}ana\_sdg & unique & sdg\_number & NA & pass\\
+\hspace{1em}\cellcolor{gray!10}{ana\_sdg} & \cellcolor{gray!10}{unique} & \cellcolor{gray!10}{ana\_sdg7\_id\_respondent} & \cellcolor{gray!10}{NA} & \cellcolor{gray!10}{pass}\\
+\hspace{1em}ana\_top3 & not\_null & id\_respondent & NA & pass\\
+\hspace{1em}\cellcolor{gray!10}{ana\_top3} & \cellcolor{gray!10}{unique\_combination\_of\_columns} & \cellcolor{gray!10}{id\_respondent} & \cellcolor{gray!10}{rank} & \cellcolor{gray!10}{pass}\\
 \addlinespace[0.3em]
 \multicolumn{5}{l}{\textbf{Semantic Model Tests}}\\
+\hspace{1em}sem\_respondents & accepted\_values & gender & Male, Female, Prefer\_not\_to\_say & pass\\
+\hspace{1em}\cellcolor{gray!10}{sem\_respondents} & \cellcolor{gray!10}{accepted\_values} & \cellcolor{gray!10}{region} & \cellcolor{gray!10}{tehri, arunachal} & \cellcolor{gray!10}{pass}\\
+\hspace{1em}sem\_respondents & not\_null & id\_respondent & NA & pass\\
+\hspace{1em}\cellcolor{gray!10}{sem\_respondents} & \cellcolor{gray!10}{unique\_combination\_of\_columns} & \cellcolor{gray!10}{id\_respondent} & \cellcolor{gray!10}{NA} & \cellcolor{gray!10}{pass}\\
+\hspace{1em}sem\_sdg\_labels & not\_null & sdg\_arunachal & NA & pass\\
+\hspace{1em}\cellcolor{gray!10}{sem\_sdg\_labels} & \cellcolor{gray!10}{not\_null} & \cellcolor{gray!10}{sdg\_label} & \cellcolor{gray!10}{NA} & \cellcolor{gray!10}{pass}\\
+\hspace{1em}sem\_sdg\_labels & not\_null & sdg\_tehri & NA & pass\\
+\hspace{1em}\cellcolor{gray!10}{sem\_sdg\_labels} & \cellcolor{gray!10}{unique} & \cellcolor{gray!10}{sdg\_arunachal} & \cellcolor{gray!10}{NA} & \cellcolor{gray!10}{pass}\\
+\hspace{1em}sem\_sdg\_labels & unique & sdg\_tehri & NA & pass\\
+\hspace{1em}\cellcolor{gray!10}{sem\_top3} & \cellcolor{gray!10}{accepted\_values} & \cellcolor{gray!10}{arunachal\_long\_rank} & \cellcolor{gray!10}{1, 2, 3} & \cellcolor{gray!10}{pass}\\
+\hspace{1em}sem\_top3 & accepted\_values & tehri\_long\_rank & 1, 2, 3 & pass\\
+\hspace{1em}\cellcolor{gray!10}{sem\_top3} & \cellcolor{gray!10}{accepted\_values} & \cellcolor{gray!10}{rank} & \cellcolor{gray!10}{1, 2, 3} & \cellcolor{gray!10}{pass}\\
+\hspace{1em}sem\_top3 & not\_null & arunachal\_long\_id\_respondent & NA & pass\\
+\hspace{1em}\cellcolor{gray!10}{sem\_top3} & \cellcolor{gray!10}{not\_null} & \cellcolor{gray!10}{tehri\_long\_id\_respondent} & \cellcolor{gray!10}{NA} & \cellcolor{gray!10}{pass}\\
+\hspace{1em}sem\_top3 & not\_null & tehri\_long\_rank & NA & pass\\
+\hspace{1em}\cellcolor{gray!10}{sem\_top3} & \cellcolor{gray!10}{not\_null} & \cellcolor{gray!10}{tehri\_long\_sdg\_tehri} & \cellcolor{gray!10}{NA} & \cellcolor{gray!10}{pass}\\
+\hspace{1em}sem\_top3 & not\_null & id\_respondent & NA & pass\\
+\hspace{1em}\cellcolor{gray!10}{sem\_top3} & \cellcolor{gray!10}{not\_null} & \cellcolor{gray!10}{sdg\_label} & \cellcolor{gray!10}{NA} & \cellcolor{gray!10}{pass}\\
+\hspace{1em}sem\_top3 & not\_null & sdg\_number & NA & pass\\
+\hspace{1em}\cellcolor{gray!10}{sem\_top3} & \cellcolor{gray!10}{unique\_combination\_of\_columns} & \cellcolor{gray!10}{arunachal\_long\_id\_respondent} & \cellcolor{gray!10}{rank} & \cellcolor{gray!10}{pass}\\
+\hspace{1em}sem\_top3 & unique\_combination\_of\_columns & tehri\_long\_id\_respondent & rank & pass\\
+\hspace{1em}\cellcolor{gray!10}{sem\_top3} & \cellcolor{gray!10}{unique\_combination\_of\_columns} & \cellcolor{gray!10}{id\_respondent} & \cellcolor{gray!10}{rank} & \cellcolor{gray!10}{pass}\\
 \addlinespace[0.3em]
 \multicolumn{5}{l}{\textbf{Source Entity Tests}}\\
-\hspace{1em}\hspace{1em}se\_respondents\_arunachal & accepted\_values & gender & Male\_\_Female\_\_Prefer\_not\_to\_say & pass\\
+\hspace{1em}se\_respondents\_arunachal & accepted\_values & gender & Male, Female, Prefer\_not\_to\_say & pass\\
 \hspace{1em}\cellcolor{gray!10}{se\_respondents\_arunachal} & \cellcolor{gray!10}{not\_null} & \cellcolor{gray!10}{id\_respondent} & \cellcolor{gray!10}{NA} & \cellcolor{gray!10}{pass}\\
 \hspace{1em}se\_respondents\_arunachal & unique & id\_respondent & NA & pass\\
 \hspace{1em}\cellcolor{gray!10}{se\_respondents\_arunachal} & \cellcolor{gray!10}{unique\_combination\_of\_columns} & \cellcolor{gray!10}{id\_respondent} & \cellcolor{gray!10}{NA} & \cellcolor{gray!10}{pass}\\
-\hspace{1em}se\_respondents\_tehri & accepted\_values & gender & Male\_\_Female\_\_Prefer\_not\_to\_say & pass\\
+\hspace{1em}se\_respondents\_tehri & accepted\_values & gender & Male, Female, Prefer\_not\_to\_say & pass\\
 \hspace{1em}\cellcolor{gray!10}{se\_respondents\_tehri} & \cellcolor{gray!10}{not\_null} & \cellcolor{gray!10}{id\_respondent} & \cellcolor{gray!10}{NA} & \cellcolor{gray!10}{pass}\\
 \hspace{1em}se\_respondents\_tehri & unique & id\_respondent & NA & pass\\
 \hspace{1em}\cellcolor{gray!10}{se\_respondents\_tehri} & \cellcolor{gray!10}{unique\_combination\_of\_columns} & \cellcolor{gray!10}{id\_respondent} & \cellcolor{gray!10}{NA} & \cellcolor{gray!10}{pass}\\
-\hspace{1em}se\_top3\_arunachal & accepted\_values & rank & 1\_\_2\_\_3 & pass\\
-\hspace{1em}\cellcolor{gray!10}{se\_top3\_arunachal} & \cellcolor{gray!10}{not\_null} & \cellcolor{gray!10}{id\_respondent} & \cellcolor{gray!10}{NA} & \cellcolor{gray!10}{pass}\\
-\hspace{1em}se\_top3\_arunachal & unique\_combination\_of\_columns & id\_respondent & rank & pass\\
-\hspace{1em}\cellcolor{gray!10}{se\_top3\_tehri} & \cellcolor{gray!10}{accepted\_values} & \cellcolor{gray!10}{rank} & \cellcolor{gray!10}{1\_\_2\_\_3} & \cellcolor{gray!10}{pass}\\
-\hspace{1em}se\_top3\_tehri & not\_null & id\_respondent & NA & pass\\
-\hspace{1em}\cellcolor{gray!10}{se\_top3\_tehri} & \cellcolor{gray!10}{unique\_combination\_of\_columns} & \cellcolor{gray!10}{id\_respondent} & \cellcolor{gray!10}{rank} & \cellcolor{gray!10}{pass}\\
+\hspace{1em}se\_top3\_arunachal & not\_null & id\_respondent & NA & pass\\
+\hspace{1em}\cellcolor{gray!10}{se\_top3\_arunachal} & \cellcolor{gray!10}{not\_null} & \cellcolor{gray!10}{ranked\_sdg\_first} & \cellcolor{gray!10}{NA} & \cellcolor{gray!10}{pass}\\
+\hspace{1em}se\_top3\_arunachal & not\_null & ranked\_sdg\_second & NA & pass\\
+\hspace{1em}\cellcolor{gray!10}{se\_top3\_arunachal} & \cellcolor{gray!10}{not\_null} & \cellcolor{gray!10}{ranked\_sdg\_third} & \cellcolor{gray!10}{NA} & \cellcolor{gray!10}{pass}\\
+\hspace{1em}se\_top3\_arunachal & unique\_combination\_of\_columns & id\_respondent & NA & pass\\
+\hspace{1em}\cellcolor{gray!10}{se\_top3\_tehri} & \cellcolor{gray!10}{not\_null} & \cellcolor{gray!10}{id\_respondent} & \cellcolor{gray!10}{NA} & \cellcolor{gray!10}{pass}\\
+\hspace{1em}se\_top3\_tehri & not\_null & ranked\_sdg\_first & NA & pass\\
+\hspace{1em}\cellcolor{gray!10}{se\_top3\_tehri} & \cellcolor{gray!10}{not\_null} & \cellcolor{gray!10}{ranked\_sdg\_second} & \cellcolor{gray!10}{NA} & \cellcolor{gray!10}{pass}\\
+\hspace{1em}se\_top3\_tehri & not\_null & ranked\_sdg\_third & NA & pass\\
+\hspace{1em}\cellcolor{gray!10}{se\_top3\_tehri} & \cellcolor{gray!10}{unique\_combination\_of\_columns} & \cellcolor{gray!10}{id\_respondent} & \cellcolor{gray!10}{NA} & \cellcolor{gray!10}{pass}\\
 \addlinespace[0.3em]
 \multicolumn{5}{l}{\textbf{Base Model Tests}}\\
 \hspace{1em}base\_arunachal & unique\_combination\_of\_columns & id\_respondent & NA & pass\\
