@@ -1,0 +1,40 @@
+\begin{table}[!h]
+\centering
+\caption{\label{tab:dbt_tests_semantic}Semantic tests applied to dbt\_project models in this layer.}
+\centering
+\fontsize{8}{10}\selectfont
+\begin{tabular}[t]{>{\raggedright\arraybackslash}p{0.25\textwidth}>{\raggedright\arraybackslash}p{0.15\textwidth}>{\raggedright\arraybackslash}p{0.35\textwidth}>{\raggedright\arraybackslash}p{0.15\textwidth}}
+\toprule
+Test & Columns & Arguments & Result\\
+\midrule
+\addlinespace[0.3em]
+\multicolumn{4}{l}{\textbf{sem\_respondents}}\\
+\hspace{1em}\cellcolor{gray!10}{accepted\_values} & \cellcolor{gray!10}{gender} & \cellcolor{gray!10}{Male, Female, Prefer\_not\_to\_say} & \cellcolor{gray!10}{pass}\\
+\hspace{1em}accepted\_values & region & tehri, arunachal & pass\\
+\hspace{1em}\cellcolor{gray!10}{not\_null} & \cellcolor{gray!10}{id\_respondent} & \cellcolor{gray!10}{NA} & \cellcolor{gray!10}{\vphantom{1} pass}\\
+\hspace{1em}unique\_combination\_of\_columns & id\_respondent & NA & pass\\
+\addlinespace[0.3em]
+\multicolumn{4}{l}{\textbf{sem\_sdg\_labels}}\\
+\hspace{1em}\cellcolor{gray!10}{not\_null} & \cellcolor{gray!10}{sdg\_arunachal} & \cellcolor{gray!10}{NA} & \cellcolor{gray!10}{pass}\\
+\hspace{1em}not\_null & sdg\_label & NA & \vphantom{1} pass\\
+\hspace{1em}\cellcolor{gray!10}{not\_null} & \cellcolor{gray!10}{sdg\_tehri} & \cellcolor{gray!10}{NA} & \cellcolor{gray!10}{pass}\\
+\hspace{1em}unique & sdg\_arunachal & NA & pass\\
+\hspace{1em}\cellcolor{gray!10}{unique} & \cellcolor{gray!10}{sdg\_tehri} & \cellcolor{gray!10}{NA} & \cellcolor{gray!10}{pass}\\
+\addlinespace[0.3em]
+\multicolumn{4}{l}{\textbf{sem\_top3}}\\
+\hspace{1em}accepted\_values & arunachal\_long\_rank & 1, 2, 3 & pass\\
+\hspace{1em}\cellcolor{gray!10}{accepted\_values} & \cellcolor{gray!10}{tehri\_long\_rank} & \cellcolor{gray!10}{1, 2, 3} & \cellcolor{gray!10}{pass}\\
+\hspace{1em}accepted\_values & rank & 1, 2, 3 & pass\\
+\hspace{1em}\cellcolor{gray!10}{not\_null} & \cellcolor{gray!10}{arunachal\_long\_id\_respondent} & \cellcolor{gray!10}{NA} & \cellcolor{gray!10}{pass}\\
+\hspace{1em}not\_null & tehri\_long\_id\_respondent & NA & pass\\
+\hspace{1em}\cellcolor{gray!10}{not\_null} & \cellcolor{gray!10}{tehri\_long\_rank} & \cellcolor{gray!10}{NA} & \cellcolor{gray!10}{pass}\\
+\hspace{1em}not\_null & tehri\_long\_sdg\_tehri & NA & pass\\
+\hspace{1em}\cellcolor{gray!10}{not\_null} & \cellcolor{gray!10}{id\_respondent} & \cellcolor{gray!10}{NA} & \cellcolor{gray!10}{pass}\\
+\hspace{1em}not\_null & sdg\_label & NA & pass\\
+\hspace{1em}\cellcolor{gray!10}{not\_null} & \cellcolor{gray!10}{sdg\_number} & \cellcolor{gray!10}{NA} & \cellcolor{gray!10}{pass}\\
+\hspace{1em}unique\_combination\_of\_columns & arunachal\_long\_id\_respondent & rank & pass\\
+\hspace{1em}\cellcolor{gray!10}{unique\_combination\_of\_columns} & \cellcolor{gray!10}{tehri\_long\_id\_respondent} & \cellcolor{gray!10}{rank} & \cellcolor{gray!10}{pass}\\
+\hspace{1em}unique\_combination\_of\_columns & id\_respondent & rank & pass\\
+\bottomrule
+\end{tabular}
+\end{table}

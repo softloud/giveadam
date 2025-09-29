@@ -1,0 +1,39 @@
+\begin{table}[!h]
+\centering
+\caption{\label{tab:dbt_tests_analytic}Analytic tests applied to dbt\_project models in this layer.}
+\centering
+\fontsize{8}{10}\selectfont
+\begin{tabular}[t]{>{\raggedright\arraybackslash}p{0.25\textwidth}>{\raggedright\arraybackslash}p{0.15\textwidth}>{\raggedright\arraybackslash}p{0.35\textwidth}>{\raggedright\arraybackslash}p{0.15\textwidth}}
+\toprule
+Test & Columns & Arguments & Result\\
+\midrule
+\addlinespace[0.3em]
+\multicolumn{4}{l}{\textbf{ana\_respondents}}\\
+\hspace{1em}\cellcolor{gray!10}{accepted\_values} & \cellcolor{gray!10}{region} & \cellcolor{gray!10}{tehri, arunachal} & \cellcolor{gray!10}{pass}\\
+\hspace{1em}custom & check\_n\_respondents & NA & pass\\
+\hspace{1em}\cellcolor{gray!10}{not\_null} & \cellcolor{gray!10}{id\_respondent} & \cellcolor{gray!10}{NA} & \cellcolor{gray!10}{\vphantom{1} pass}\\
+\hspace{1em}relationships & id\_respondent & id\_respondent, ref\_ana\_sdg7 & pass\\
+\hspace{1em}\cellcolor{gray!10}{relationships} & \cellcolor{gray!10}{ana\_sdg7\_id\_respondent} & \cellcolor{gray!10}{id\_respondent, ref\_ana\_respondents} & \cellcolor{gray!10}{pass}\\
+\hspace{1em}relationships & id\_respondent & id\_respondent, ref\_ana\_top3 & pass\\
+\hspace{1em}\cellcolor{gray!10}{relationships} & \cellcolor{gray!10}{ana\_top3\_id\_respondent} & \cellcolor{gray!10}{id\_respondent, ref\_ana\_respondents} & \cellcolor{gray!10}{pass}\\
+\hspace{1em}unique & id\_respondent & NA & pass\\
+\addlinespace[0.3em]
+\multicolumn{4}{l}{\textbf{ana\_sdg}}\\
+\hspace{1em}\cellcolor{gray!10}{accepted\_values} & \cellcolor{gray!10}{ana\_sdg7\_gender} & \cellcolor{gray!10}{Male, Female, Prefer\_not\_to\_say} & \cellcolor{gray!10}{pass}\\
+\hspace{1em}accepted\_values & ana\_sdg7\_region & tehri, arunachal & pass\\
+\hspace{1em}\cellcolor{gray!10}{custom} & \cellcolor{gray!10}{check\_n\_sdgs} & \cellcolor{gray!10}{NA} & \cellcolor{gray!10}{pass}\\
+\hspace{1em}not\_null & sdg\_id & NA & pass\\
+\hspace{1em}\cellcolor{gray!10}{not\_null} & \cellcolor{gray!10}{sdg\_label} & \cellcolor{gray!10}{NA} & \cellcolor{gray!10}{pass}\\
+\hspace{1em}not\_null & sdg\_number & NA & pass\\
+\hspace{1em}\cellcolor{gray!10}{not\_null} & \cellcolor{gray!10}{ana\_sdg7\_id\_respondent} & \cellcolor{gray!10}{NA} & \cellcolor{gray!10}{pass}\\
+\hspace{1em}unique & sdg\_id & NA & pass\\
+\hspace{1em}\cellcolor{gray!10}{unique} & \cellcolor{gray!10}{sdg\_label} & \cellcolor{gray!10}{NA} & \cellcolor{gray!10}{pass}\\
+\hspace{1em}unique & sdg\_number & NA & pass\\
+\hspace{1em}\cellcolor{gray!10}{unique} & \cellcolor{gray!10}{ana\_sdg7\_id\_respondent} & \cellcolor{gray!10}{NA} & \cellcolor{gray!10}{pass}\\
+\addlinespace[0.3em]
+\multicolumn{4}{l}{\textbf{ana\_top3}}\\
+\hspace{1em}not\_null & id\_respondent & NA & pass\\
+\hspace{1em}\cellcolor{gray!10}{unique\_combination\_of\_columns} & \cellcolor{gray!10}{id\_respondent} & \cellcolor{gray!10}{rank} & \cellcolor{gray!10}{pass}\\
+\bottomrule
+\end{tabular}
+\end{table}

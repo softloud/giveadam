@@ -1,4 +1,4 @@
-oselibrary(tidyverse)
+library(tidyverse)
 library(xtable)
 library(glue)
 library(gt)
@@ -50,20 +50,36 @@ tests_cleaned <- dbt_tests |>
       str_detect(test_node, '^unique') ~ 'unique',
       str_detect(test_node, '^accepted_values') ~ 'accepted_values',
       str_detect(test_node, '^dbt_utils_unique_combination_of_columns') ~ 'dbt_utils_unique_combination_of_columns',
-      TRUE ~ NA_character_
+      str_detect(test_node, '^relationships') ~ 'relationships',
+      TRUE ~ 'custom'
     ),
     # remove the test prefix and test id
     test_stripped = str_remove(test_node, glue('^{test}_')) |>
-      str_remove('.[\\d|\\w]+$'),
+      str_remove('.[\\d|\\w]+$')) |>
+  # splitting here for dubugging
+  mutate(
+    # when the test is custom replace with test node
+    test_stripped = if_else(test_stripped=='', test_node, test_stripped),
     model_name = map_chr(test_stripped, extract_model_name, models_cleaned = models_cleaned),
     tested_details = str_remove(test_stripped, glue('^{model_name}_')),
     test = str_remove(test, '^dbt_utils_'),
     layer = extract_layer(model_name)  |>
       factor(levels = c('base', 'source entities', 'semantic', 'analytic'))
   ) |>
-  separate(tested_details, into = c('tested_columns', 'test_arguments'), sep = '__', extra = "merge") |>
-  select(layer, model_name, test, tested_columns, test_arguments, result) |>
-  arrange(desc(layer), model_name, test)
+  separate(tested_details, into = c('tested_entities', 'test_arguments'), sep = '__', extra = "merge") |>
+  # more cleaning
+  mutate(
+    # remove _ from end of test arguments
+    test_arguments = str_remove(test_arguments, '_$') |>
+    # replace __ with , for readability 
+      str_replace_all('__', ', '),
+    # trim _ from start of tested entities, and replace _ with , for readability
+    tested_entities = str_remove(tested_entities, '^_') |>
+      str_replace_all('__', ', ')
+  ) |>
+  # remove test node after dev
+  select(layer, model_name, test, tested_entities, test_arguments, result) |>
+  arrange(desc(layer), model_name, test) # |> group_by(test) |> sample_n(2) |> View()
 
 # check all tests were categorized
 tests_cleaned |> filter(is.na(test))
@@ -107,9 +123,77 @@ models_tex <- models_cleaned |>
   pack_rows("Base Models", sum(models_cleaned$layer %in% c("analytic", "semantic", "source entities")) + 1,
             nrow(models_cleaned), bold = TRUE)
 
-# Create tests table with text wrapping and full text width
+
+# please rework this to a function that produces a table *for each layer*.
+# each caption needs to begin with the layer name, then we can append the rest of the caption
+# instead of layer as the grouping, we will use the model name as the grouping and 
+# then remove model name column so that we can fit these tables on the page
+
+# Function to create a tests table for a specific layer
+create_layer_tests_table <- function(layer_name, base_caption) {
+  # Filter tests for this layer
+  layer_tests <- tests_cleaned |> filter(layer == layer_name)
+  
+  # If no tests for this layer, return NULL
+  if (nrow(layer_tests) == 0) return(NULL)
+  
+  # Create caption with layer name
+  layer_caption <- paste(str_to_title(layer_name), base_caption)
+  layer_label <- paste0("dbt_tests_", str_replace_all(layer_name, " ", "_"))
+  
+  # Create base table without model_name column
+  base_table <- layer_tests |>
+    select(test, tested_entities, test_arguments, result) |>
+    kbl(format = "latex",
+        caption = layer_caption,
+        label = layer_label,
+        booktabs = TRUE,
+        col.names = c("Test", "Columns", "Arguments", "Result"),
+        escape = TRUE) |>
+    kable_styling(latex_options = c("striped", "hold_position"), 
+                  font_size = 8) |>
+    column_spec(1, width = "0.25\\\\textwidth") |>
+    column_spec(2, width = "0.15\\\\textwidth") |>
+    column_spec(3, width = "0.35\\\\textwidth") |>
+    column_spec(4, width = "0.15\\\\textwidth")
+  
+  # Add pack_rows for each model in this layer
+  models_in_layer <- layer_tests |> pull(model_name) |> unique()
+  start_row <- 1
+  
+  for (model in models_in_layer) {
+    model_tests_count <- sum(layer_tests$model_name == model)
+    end_row <- start_row + model_tests_count - 1
+    base_table <- base_table |> 
+      pack_rows(model, start_row, end_row, bold = TRUE)
+    start_row <- end_row + 1
+  }
+  
+  return(base_table)
+}
+
+# Create tables for each layer
+base_caption <- "tests applied to dbt\\_project models in this layer."
+layers <- c("analytic", "semantic", "source entities", "base")
+
+# Generate tables for each layer that has tests
+layer_tables <- map(layers, ~create_layer_tests_table(.x, base_caption)) |>
+  set_names(layers) |>
+  compact()  # Remove NULL entries (layers with no tests)
+
+# Write individual layer tables to files
+iwalk(layer_tables, function(table, layer_name) {
+  filename <- paste0("observability/tables/obs-tab-tests-", 
+                     str_replace_all(layer_name, " ", "-"), ".tex")
+  writeLines(table, filename)
+})
+
+# Write to files
+writeLines(models_tex, "observability/tables/obs-tab-models.tex")
+
+# Also keep the combined table for backward compatibility if needed
 tests_tex <- tests_cleaned |>
-  select(model_name, test, tested_columns, test_arguments, result) |>
+  select(model_name, test, tested_entities, test_arguments, result) |>
   kbl(format = "latex",
       caption = tests_caption, 
       label = tests_label,
@@ -131,9 +215,8 @@ tests_tex <- tests_cleaned |>
   pack_rows("Base Model Tests", sum(tests_cleaned$layer %in% c("analytic", "semantic", "source entities")) + 1,
             nrow(tests_cleaned), bold = TRUE)
 
-# Write to files
-
-writeLines(models_tex, "observability/tables/obs-tab-models.tex")
 writeLines(tests_tex, "observability/tables/obs-tab-tests.tex")
 
 cat("LaTeX tables written to observability/tables/\n")
+cat("Individual layer test tables written as:\n")
+cat(paste0("  - obs-tab-tests-", str_replace_all(names(layer_tables), " ", "-"), ".tex\n"))

@@ -115,7 +115,7 @@ When working across legacy sources in the volatility of the technology landscape
 
 \subsubsection{Modern data stack}
 
-Advances in the modern data stack (a term to loosely define the steps of cloud-oriented computational tools to manage data \cite{modern_data_stack_airbyte}), such as dbt \cite{dbt_core} and dagster \cite{dagster} have unpredented potential to address these challenges. However, there is a prevailing tendency for these tools to be oriented to interpretability by engineers, rendering the complexity of data processin --- crucially the assumptions made --- opaque to domain experts. 
+Advances in the modern data stack (a term to loosely define the 'collection of tools and cloud data technologies used to collect, process, store, and analyze data' \cite{prakashWhatDefinesModern2023}), such as dbt \cite{dbt_core} and dagster \cite{dagster} have unprecedented potential to address these challenges. However, there is a prevailing tendency for these tools to be oriented to interpretability by engineers, rendering the complexity of data processing --- crucially the assumptions made --- opaque to domain experts.
 
 This creates a fundamental tension between engineering efficiency and analytic interpretability that undermines the core principles of FAIR data. The semantic layering methodology presented in Section~\ref{sec:semantic-methodology} addresses this tension by reorienting data transformation pipelines around research concepts rather than technical convenience, enabling both computational efficiency and methodological rigor.
 
@@ -141,7 +141,13 @@ By structuring the data in tidy format (one row per ranking by one respondent), 
 \section{Semantic data pipeline methodology}
 \label{sec:semantic-methodology}
 
-The core methodological innovation of the giveadam project is a semantic layering approach that reconceptualizes data transformation pipelines for research contexts. This methodology addresses a fundamental limitation in current data engineering practices: the tension between technical efficiency and research interpretability within the modern data stack paradigm \cite{modern_data_stack_airbyte}.
+The core methodological innovation of the giveadam project is a semantic layering approach that reconceptualizes data transformation pipelines for research contexts. This methodology addresses a fundamental limitation in current data engineering practices: the tension between technical efficiency and research interpretability within the modern data stack paradigm \cite{prakashWhatDefinesModern2023}. Pipelines and the scale of 'big data' are becoming recognised as an integral component of reproducible analyses, however FAIRness is still framed from an extrinsic rather than intrinsic perspective \cite{leipzigRoleMetadataReproducible2021}. Furthermore, the structure of code and data is becoming recognised as a critical factor in ensuring the long-term usability and reproducibility of research outputs \cite{trisovicRepositoryApproachesImproving2021}. 
+
+The focus in this manuscript is on embedding FAIR principles intrinsically within the data transformation process itself in recognition that right across the contexts of enterprise, large-scale public good, as well as extensible research requires transparency and accessibility of data transformation over time --- measured not in months, but \textit{decades}. If we are to trust data we must embrace it evolves over time with interoperators changing and data sources being added and removed. Toward an any analytic goal, we are now in a landscape of not \textit{data} but \textit{platforms that provision data} a diversity of people whose needs evolve, maintained by engineers who work in a fragile ecosystem where layoffs are commonplace.
+
+Data engineering communities such as the vibrant open-source community developing dbt \cite{dbt_core} have made significant strides in democratizing data transformation through accessible tooling and best practices \cite{dbt_docs_structure}. However, these tools are primarily oriented toward engineering efficiency, often at the expense of interpretability for non-technical stakeholders. This creates a fundamental tension between engineering efficiency and analytic interpretability that undermines the core principles of FAIR data. 
+
+Currently academic solutions to FAIR and enterprise engineering are evolving in disjunct worlds. We argue the solution lies in bridging the two worlds by reimagining robust techniques developed by engineers as FAIR to stakeholders. Duplicates, missingness, and scale are challenges in both research and enterprise contexts; there is no reason for advances in the modern data stack and FAIR research to be siloed.
 
 \subsection{The semantic layering paradigm}
 \label{subsec:semantic-paradigm}
@@ -176,7 +182,9 @@ The giveadam repository is organized into distinct functional areas:
 \subsection{Core innovation: Semantic transformation architecture}
 \label{subsec:core-innovation}
 
-The central methodological contribution lies in reimagining data transformation layers as conceptual research stages rather than technical processing steps. Standard dbt implementations use staging → intermediate → marts layers optimized for engineering workflows \cite{dbt_docs_structure}. The semantic layering methodology introduces a fundamentally different paradigm:
+The central methodological contribution lies in reimagining data transformation layers as conceptual research stages rather than technical processing steps. Standard Data Build Tool implementations use staging $\to$ intermediate $\to$ marts layers optimized for engineering workflows \cite{dbt_docs_structure}. Layering data transformation is commendable for maintainability, however these terms are inscrutable to domain experts and obscure the analytic logic underpinning data processing.
+
+The semantic layering methodology replaces these with four conceptually distinct stages (Figure~\ref{fig:architecture}) that separate  data transformations into layers interpretable to domain experts:
 
 \begin{itemize}
     \item \textbf{source\_base/} — Raw data integrity and initial cleaning
