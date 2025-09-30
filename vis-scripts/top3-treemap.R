@@ -81,6 +81,7 @@ top3 |>
   )
 
 ggsave('figures_and_tables/top3-treemap.png', width = 12, height = 8)
+ggsave('figures_and_tables/top3-treemap.svg', width = 12, height = 8)
 
 
 
@@ -136,7 +137,7 @@ top3 |>
   )
 
 ggsave('figures_and_tables/top3-gender-treemap.png', width = 12, height = 12)
-
+ggsave('figures_and_tables/top3-gender-treemap.svg', width = 12, height = 12)
 
 
 top3 |>

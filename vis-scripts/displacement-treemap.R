@@ -46,4 +46,4 @@ plot <- respondents |>
     legend.position = 'none'
   )
 
-ggsave(plot = plot, filename = 'figures_and_tables/displacement-treemap.png', width = 12, height = 6)
+ggsave(plot = plot, filename = 'figures_and_tables/displacement-treemap.svg', width = 12, height = 6)
