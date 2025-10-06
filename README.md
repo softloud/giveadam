@@ -4,6 +4,10 @@ This project provisions data for analysis of the social impacts of dams in North
 
 ## Analyses WIP
 
+## UN SDGs
+
+![](figures_and_tables/sdgs.svg)
+
 ### overview
 
 ![](figures_and_tables/top3-treemap.svg)
