@@ -81,6 +81,18 @@ This directory contains analysis-ready datasets derived from survey data on the 
 - **Collector:** Garima Gupta
 - **Raw Data Location:** [`raw_data/`](../raw_data/)
 
+### Data ethics
+
+Subjects are deidentified to protect privacy. No personal identifiers are included in the datasets.
+
+#### Tehri survey ethics statement
+
+The study was reviewed and approved by the General University Ethics Panel of the University of Stirling, UK. Key ethical considerations included ensuring complete anonymization of the data. Interviews were documented with the interviewees' consent, but no audio or video recordings were made. To protect the participants' identity, the locations of the interviewees were not recorded.
+
+#### Arunachal Pradesh survey ethics statement
+
+To do - data collector.
+
 ### Processing Pipeline
 Data transformation and quality assurance performed using:
 - **dbt (data build tool)** for SQL-based transformations
