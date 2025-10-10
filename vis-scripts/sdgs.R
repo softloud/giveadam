@@ -66,3 +66,4 @@ sdgs %>%
 
 
 ggsave(filename = 'figures_and_tables/sdgs.svg', width = 24, height = 12)
+ggsave(filename = 'figures_and_tables/sdgs.png', width = 24, height = 12)
