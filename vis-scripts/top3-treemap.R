@@ -64,6 +64,7 @@ top3 |>
   )
 
 ggsave('figures_and_tables/top3-treemap.svg', width = 12, height = 8)
+ggsave('figures_and_tables/top3-treemap.png', width = 12, height = 8)
 
 
 
@@ -119,7 +120,7 @@ top3 |>
   )
 
 ggsave('figures_and_tables/top3-gender-treemap.svg', width = 12, height = 12)
-
+ggsave('figures_and_tables/top3-gender-treemap.png', width = 12, height = 12)
 
 top3 |>
   filter(!str_detect(region, 'Arunachal')) |>
@@ -170,6 +171,7 @@ top3 |>
   )
 
 ggsave('figures_and_tables/top3-displacement-treemap.svg', width = 12, height = 12)
+ggsave('figures_and_tables/top3-displacement-treemap.png', width = 12, height = 12)
 
 top3 |>
   filter(!str_detect(region, 'Arunachal')) |>
@@ -222,4 +224,4 @@ top3 |>
   )
 
 ggsave('figures_and_tables/top3-displacement-simplified-treemap.svg', width = 12, height = 8)
-
+ggsave('figures_and_tables/top3-displacement-simplified-treemap.png', width = 12, height = 8)
