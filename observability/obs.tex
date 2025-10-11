@@ -81,7 +81,7 @@ To address questionable analytical observations, we propose a methodological bri
 \begin{figure}[ht]
   \centering
   \includegraphics[width=0.95\textwidth]{figures/architecture.pdf}
-  \caption{Data architecture: semantic layering from base to analytic models of \texttt{giveadam} data (described in Section~\ref{sec:case-study}), ordered by observability. This layering explictly delineates between loading the data (base), extracting source-specific entities (source entities), harmonizing across sources (semantic), and preparing analysis-ready datasets (analytic). Each layer serves a distinct purpose in the data transformation pipeline, enhancing transparency and interpretability for domain experts. This layering provides a domain and context agnostic minimal test-driven development architecture checking unique keys for missingness and duplicates.}
+  \caption[Data architecture]{Data architecture: semantic layering from base to analytic models of \texttt{giveadam} data (described in Section~\ref{sec:case-study}), ordered by observability. This layering explictly delineates between loading the data (base), extracting source-specific entities (source entities), harmonizing across sources (semantic), and preparing analysis-ready datasets (analytic). Each layer serves a distinct purpose in the data transformation pipeline, enhancing transparency and interpretability for domain experts. This layering provides a domain and context agnostic minimal test-driven development architecture checking unique keys for missingness and duplicates.}
   \label{fig:architecture}
 \end{figure}
 
@@ -133,7 +133,7 @@ Figure \ref{fig:top3-treemap} shows a treemap of the top 3 UN SDG priorities fro
 \begin{figure}[ht]
   \centering
   %\includegraphics[width=0.95\textwidth]{../figures_and_tables/top3-treemap.png}
-  \caption{\label{fig:top3-treemap} Treemap of top 3 UN SDG priorities from survey respondents in Tehri (dam constructed 20 years ago) and Arunachal Pradesh (dam under development), North India. Each rectangle represents a specific UN SDG, with its size proportional to the number of respondents who ranked it among their top three priorities. The treemap visually highlights the most and least prioritized SDGs in each region, providing insights into regional differences in development priorities.}
+  \caption[Give a dam data]{\label{fig:top3-treemap} Treemap of top 3 UN SDG priorities from survey respondents in Tehri (dam constructed 20 years ago) and Arunachal Pradesh (dam under development), North India. Each rectangle represents a specific UN SDG, with its size proportional to the number of respondents who ranked it among their top three priorities. The treemap visually highlights the most and least prioritized SDGs in each region, providing insights into regional differences in development priorities.}
 \end{figure}
 
 By structuring the data in tidy format (one row per ranking by one respondent), the dataset enables flexible analysis across multiple dimensions of respondent characteristics and preferences. 
@@ -225,7 +225,7 @@ The validation tables presented in this document are high-level summaries. Engin
 \begin{figure}[ht]
   \centering
   \includegraphics[width=\textwidth]{img/dbt-docs-tehri-exclusions.png}
-  \caption{\label{fig:tehri-exclusions} Screenshot from interactive dbt documentation showing the SQL logic excluding two test rows from the Tehri dataset. This exclusion is fully documented in \texttt{dbt\_project/analyses/tehri\_rows\_excluded.sql} and reflects the methodological transparency principles outlined in Section~\ref{sec:semantic-methodology}. DBT documentation provides a user-friendly interface for engineers and stakeholders to verify data processing decisions without requiring technical expertise.}
+  \caption[DBT documentation]{\label{fig:tehri-exclusions} Screenshot from interactive dbt documentation showing the SQL logic excluding two test rows from the Tehri dataset. This exclusion is fully documented in \texttt{dbt\_project/analyses/tehri\_rows\_excluded.sql} and reflects the methodological transparency principles outlined in Section~\ref{sec:semantic-methodology}. DBT documentation provides a user-friendly interface for engineers and stakeholders to verify data processing decisions without requiring technical expertise.}
 \end{figure}
 
 \section{FAIR principles implementation}
